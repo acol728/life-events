@@ -1,0 +1,13 @@
+{
+    "extends": "airbnb",
+    "env": {
+        "mocha": true
+    },
+    "plugins": [
+        "babel",
+        "import"
+    ],
+    "rules": {
+        "import/extensions": 0
+    }
+}

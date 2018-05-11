@@ -1,0 +1,35 @@
+{
+  "name": "life-events",
+  "version": "1.0.0",
+  "description": "Life financial events game",
+  "main": "server.js",
+  "scripts": {
+    "babel-node": "babel-node ./src/server.js",
+    "build": "webpack --mode=development ",
+    "start": "npm run build && nodemon --exec npm run babel-node",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "couturier": "1.5.1",
+    "express": "^4.16.3",
+    "express-handlebars": "^3.0.0",
+    "jquery": "3.3.1"
+  },
+  "devDependencies": {
+    "autoprefixer": "8.4.1",
+    "babel-core": "6.26.3",
+    "babel-loader": "7.1.4",
+    "babel-preset-env": "1.7.0",
+    "css-loader": "0.28.11",
+    "extract-text-webpack-plugin": "4.0.0-beta.0",
+    "node-sass": "4.9.0",
+    "nodemon": "1.17.4",
+    "postcss-loader": "2.1.5",
+    "sass-loader": "7.0.1",
+    "style-loader": "0.21.0",
+    "webpack": "4.8.1",
+    "webpack-cli": "2.1.3"
+  }
+}

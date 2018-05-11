@@ -1,0 +1,10 @@
+@import '~couturier/styles/settings';
+
+.my-class {
+  color: $color-primary-nm-blue;
+  font-size: rem-calc(32px);
+
+  @include breakpoint(medium) {
+    font-size: rem-calc(64px);
+  }
+}
