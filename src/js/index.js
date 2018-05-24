@@ -1,20 +1,21 @@
 import $ from 'jquery'
-import { anotherFunction } from './another'
+import '../styles/entry.scss'
+import globals from './globals'
+import { navigateForward, navigateBackward } from './navigation'
+import createChart from './chart'
 
-const test = (string) => {
-    console.log("I'M RUNNING:", $('#data').click(() => {
-        alert("HELLO")
-    }))
 
-    return ": I'm in " + string
+
+$(document).ready(() => {
+
+    createChart()
+
+    $('#navigate-forward').click(navigateForward)
+
+    $('#navigate-back').click(navigateBackward)
+})
+
+module.exports = {
+    ...globals,
+    createChart
 }
-
-export {
-    test,
-    anotherFunction
-}
-
-// var jQuery = require('jQuery');
-// jQuery(function ($) {
-//     $('body').html('<h1>Hello jQuery</h1>');
-// });

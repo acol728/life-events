@@ -1,0 +1,62 @@
+// https://github.com/lvtech/ui-toolkit/blob/master/src/scss/core/_toolkit-def.scss
+// https://github.com/lvtech/ui-toolkit/blob/master/docs/usage/CUSTOM_BUILDS.md
+
+//
+// CUSTOM HIGH-LEVEL DEFAULTS
+//
+// Setting defaults to be referenced later at the component-level.
+//
+
+$include-html-classes: true;
+$include-lv-font-face-declarations: true;
+
+//
+// OVERRIDE EXCLUSIONS
+//
+// Including CSS declarations for cwqustom LV-specific overrides of foundation
+// components.
+$include-lv-html-top-level-classes: true;
+$include-lv-html-notification-classes: false;
+$include-lv-html-button-classes: true;
+$include-lv-html-grid-classes: true;
+$include-lv-html-block-grid-classes: false;
+$include-lv-html-form-classes: true;
+$include-lv-html-material-form-classes: true;
+$include-lv-html-label-classes: false;
+$include-lv-html-tabs-classes: false;
+$include-lv-html-tables-classes: false;
+$include-lv-html-type-classes: true;
+$include-lv-html-visibility-classes: false;
+
+//
+// CUSTOM INCLUSIONS
+//
+// Including CSS declarations for LV-proprietary components that do NOT ship
+// with Foundation.
+//
+$include-lv-html-select-button-classes: false;
+$include-lv-html-keyval-charts-classes: true;
+$include-lv-html-utility-classes: true;
+$include-lv-html-card-classes: true;
+$include-lv-html-tooltip-classes: false;
+$include-lv-html-modals-classes: true;
+$include-lv-html-icons-classes: true;
+$include-lv-html-loading-indicators-classes: true;
+$include-lv-html-navigation-classes: false;
+$include-lv-html-graph-classes: false;
+
+//
+// SUB-COMPONENT INCLUSIONS
+//
+// Including CSS declarations for LV-proprietary sub-components that do NOT ship
+// with Foundation, but that are directly associated with another component who
+// that may or may not ship with Foundation.
+//
+// By default, these inclusion settings will be set to the value of their parent
+// component's inclusion setting.
+//
+$include-lv-html-multi-control-classes: $include-lv-html-form-classes false;
+$asset-build-path: "https://uitk.learnvest.com/v/1.19.0";
+
+@import "node_modules/ui-toolkit/src/scss/theme/nm-cx";
+@import "node_modules/ui-toolkit/src/scss/core";

@@ -1,10 +1,14 @@
-@import '~couturier/styles/settings';
 
-.my-class {
-  color: $color-primary-nm-blue;
-  font-size: rem-calc(32px);
+@import './fonts.scss';
+@import './uitk.scss';
 
-  @include breakpoint(medium) {
-    font-size: rem-calc(64px);
-  }
+// Remove the outline around elements
+*:focus {
+  outline: none;
+}
+
+body {
+    margin: 0px;
+    background-color: #FFFFFF;
+
 }

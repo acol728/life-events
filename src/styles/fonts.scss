@@ -1,0 +1,88 @@
+@font-face {
+    font-family: "Guardian Sans Headline";
+    src: url(https://assets.northwesternmutual.com/fonts/assets/public/GuardianSans-Regular-Web.woff) format("woff");
+  }
+  
+  @font-face {
+    font-family: "Guardian Sans Headline";
+    font-weight: 100;
+    src: url(https://assets.northwesternmutual.com/fonts/assets/public/GuardianSans-Thin-Web.woff) format("woff");
+  }
+  
+  @font-face {
+    font-family: "Guardian Sans Headline";
+    font-weight: 300;
+    src: url(https://assets.northwesternmutual.com/fonts/assets/public/GuardianSans-Light-Web.woff) format("woff");
+  }
+  
+  @font-face {
+    font-family: "Guardian Sans Text";
+    src: url(https://assets.northwesternmutual.com/fonts/assets/public/GuardianTextSans-Regular-Web.woff) format("woff");
+  }
+  
+  @font-face {
+    font-family: "Guardian Sans Text";
+    font-weight: bold;
+    src: url(https://assets.northwesternmutual.com/fonts/assets/public/GuardianTextSans-Bold-Web.woff) format("woff");
+  }
+  
+  @font-face {
+    font-family: "Guardian Sans Text";
+    font-style: italic;
+    src: url(https://assets.northwesternmutual.com/fonts/assets/public/GuardianTextSans-RegularIt-Web.woff) format("woff");
+  }
+  
+  @font-face {
+    font-family: "Guardian Sans Text TF";
+    src: url(https://assets.northwesternmutual.com/fonts/assets/public/GuardianTextSansTF-Regular-Web.woff) format("woff");
+  }
+  
+  @font-face {
+    font-family: "Guardian Sans Text TF";
+    font-weight: bold;
+    src: url(https://assets.northwesternmutual.com/fonts/assets/public/GuardianTextSansTF-Bold-Web.woff) format("woff");
+  }
+  
+  
+  // font variables organized by font file name
+  
+  %guardian-sans-regular {
+    font-family: Guardian Sans Headline,Helvetica Neue,Helvetica,sans-serif;
+    font-weight: normal;
+  }
+  
+  %guardian-sans-thin {
+    font-family: Guardian Sans Headline,Helvetica Neue,Helvetica,sans-serif;
+    font-weight: 100;
+  }
+  
+  %guardian-sans-light {
+    font-family: Guardian Sans Headline,Helvetica Neue,Helvetica,sans-serif;
+    font-weight: 300;
+  }
+  
+  %guardian-text-sans {
+    font-family: Guardian Sans Text,Helvetica Neue,Helvetica,sans-serif;
+    font-weight: 300;
+  }
+  
+  %guardian-text-sans-bold {
+    font-family: Guardian Sans Text,Helvetica Neue,Helvetica,sans-serif;
+    font-weight: bold;
+  }
+  
+  %guardian-text-sans-regular-italic {
+    font-family: Guardian Sans Text,Helvetica Neue,Helvetica,sans-serif;
+    font-style: italic;
+  }
+  
+  %guardian-text-sans-tf {
+    font-family: Guardian Sans Text TF,Helvetica Neue,Helvetica,sans-serif;
+    font-weight: normal;
+  }
+  
+  %guardian-text-sans-tf-bold {
+    font-family: Guardian Sans Text TF,Helvetica Neue,Helvetica,sans-serif;
+    font-weight: bold;
+  }
+  

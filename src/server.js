@@ -1,11 +1,11 @@
 var path = require('path');
 var express = require('express');
 var exphbs = require('express-handlebars');
-
 var app = express();
 
 const hbs = exphbs.create({
     defaultLayout: 'main',
+    helpers: require("./js/helpers").helpers,
     layoutsDir: 'src/views/layouts',
     partialsDir: [
         'src/shared/templates/',
