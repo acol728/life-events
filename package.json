@@ -7,7 +7,8 @@
     "babel-node": "babel-node ./src/server.js",
     "build": "webpack --mode=development ",
     "start": "npm run build && nodemon --exec npm run babel-node",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint --fix ./"
   },
   "author": "",
   "license": "ISC",

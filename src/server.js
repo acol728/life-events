@@ -18,6 +18,7 @@ app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 app.set('views', path.join(__dirname, 'views'));
 app.set('layouts', path.join(__dirname, 'layouts'));
+
 app.get('/', function (req, res) {
     const { id } = req.params
     res.render('home', {

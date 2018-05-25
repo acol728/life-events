@@ -1,11 +1,11 @@
 <div class="card" style="float:left; width: 100vw; position:relative; height: 75vh; padding: 10vh">
-    {{#each (getQuestions)}}
+    {{#each (getPages)}}
     <div id="{{id}}" style="{{#unless show}}display: none;{{/unless}}">
         <!-- Card content goes here -->
         <h5 style="font-size: 5rem">{{title}}</h5>
         <div class="md-text-field with-floating-label">
             {{#each questions}}
-            <input type="text" id="input_1" style="font-size: 3rem; height: 4.5rem; " placeholder="{{placeholder}}"></input>
+            <input type="{{type}}" id="{{id}}" style="font-size: 3rem; height: 4.5rem; " placeholder="{{placeholder}}"></input>
             {{/each}}
         </div>
     </div>

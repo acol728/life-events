@@ -1,4 +1,14 @@
+import pages from '../questions/pages'
 import helpersModule from 'handlebars-helpers';
+const getPage = (i) => {
+    //return true
+    return pages[i]
+}
+
+const getPages = (i) => {
+    //return true
+    return pages
+}
 
 const debug = (optionalValue) => {
     console.log("Current Context");
@@ -18,6 +28,8 @@ const register = function (Handlebars) {
 
     const helpers = {
         ...externalHelpers,
+        getPage,
+        getPages,
         debug
     }
 

@@ -1,13 +1,27 @@
 {
-    "extends": "airbnb",
+    "extends": [
+        "standard",
+        "airbnb"
+    ],
     "env": {
-        "mocha": true
+        "es6": true,
+        "browser": true,
+        "node": true,
+        "mocha": true,
+        "jest": true
     },
     "plugins": [
+        "standard",
         "babel",
         "import"
     ],
     "rules": {
-        "import/extensions": 0
+        "import/extensions": 0,
+        "indent": [
+            2,
+            "tab"
+        ],
+        "no-tabs": 0,
+        "semi": 0
     }
 }

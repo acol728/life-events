@@ -4,10 +4,15 @@ const initialInfoPage = {
     show: true,
     questions: [
         {
-            placeholder: "Age"
+            id: "ageInput",
+            placeholder: "Age",
+            type: "text"
+
         },
         {
-            placeholder: "Networth"
+            id: "networkInput",
+            placeholder: "Networth",
+            type: "text"
         }
     ]
 }
@@ -18,14 +23,30 @@ const careerPlansPage = {
     show: false,
     questions: [
         {
-            placeholder: "Career"
+            id: "careerInput",
+            placeholder: "Career",
+            type: "text"
+        },
+    ]
+}
+
+const retirementPlansPage = {
+    id: "retirementPlansPage",
+    title: "What are your retirement plans...",
+    show: false,
+    questions: [
+        {
+            id: "401KInput",
+            placeholder: "401K / Month",
+            type: "text"
         },
     ]
 }
 
 let pages = [
     initialInfoPage,
-    careerPlansPage
+    careerPlansPage,
+    retirementPlansPage
 ]
 
 export default pages

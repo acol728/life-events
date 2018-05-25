@@ -35,12 +35,6 @@ module.exports = {
             './src/js/index.js'
         ]
     },
-
-
-    // output: {
-    //     filename: '[name].[hash].js',
-    //     path: path.resolve(fileRoot, 'build/public')
-    //   }
     output: {
         filename: '[name].[hash].js',
         path: path.resolve(__dirname, 'dist'),
@@ -82,17 +76,6 @@ module.exports = {
                 }),
                 include: path.join(fileRoot, 'src')
             }
-            // {
-            //     test: /\.s?css$/,
-            //     use: ExtractTextPlugin.extract(
-            //         {
-            //             fallback: 'style-loader',
-            //             use: ['css-loader', 'sass-loader']
-            //         }),
-            //     include: path.join(__dirname, 'src/styles')
-            //     //use: ['style-loader', 'css-loader', 'postcss-loader', 'sass-loader']
-            // },
-
         ]
     },
     plugins: [
@@ -111,40 +94,8 @@ module.exports = {
                         }
                     }
                 }
-                // splitChunks: {
-                //     chunks: "async",
-                //     minSize: 30000,
-                //     minChunks: 1,
-                //     maxAsyncRequests: 5,
-                //     maxInitialRequests: 3,
-                //     automaticNameDelimiter: '~',
-                //     name: true,
-                //     cacheGroups: {
-                //         vendors: {
-                //             test: /[\\/]node_modules[\\/]/,
-                //             priority: -10
-                //         },
-                //         default: {
-                //             minChunks: 2,
-                //             priority: -20,
-                //             reuseExistingChunk: true
-                //         }
-                //     }
-                // }
-
             }
         ),
-
-        // Extract all 3rd party modules into a separate 'vendor' chunk
-        // new webpack.optimize.SplitChunksPlugin({
-        //     name: 'vendor',
-        //     minChunks: ({ resource }) => /node_modules/.test(resource),
-        // }),
-
-        // new webpack.optimize.SplitChunksPlugin({
-        //     name: "manifest",
-        //     minChunks: Infinity
-        // }),
         new AssetsWebpackPlugin({
             filename: 'assets.json',
             path: path.join(__dirname, 'dist')
