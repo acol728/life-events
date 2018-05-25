@@ -4,18 +4,14 @@ import globals from './globals'
 import { navigateForward, navigateBackward } from './navigation'
 import createChart from './chart'
 
-
-
 $(document).ready(() => {
+	createChart()
+	$('#navigate-forward').click(navigateForward)
 
-    createChart()
-
-    $('#navigate-forward').click(navigateForward)
-
-    $('#navigate-back').click(navigateBackward)
+	$('#navigate-back').click(navigateBackward)
 })
 
 module.exports = {
-    ...globals,
-    createChart
+	...globals,
+	createChart
 }

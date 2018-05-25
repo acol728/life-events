@@ -1,27 +1,27 @@
 {
-    "extends": [
-        "standard",
-        "airbnb"
-    ],
-    "env": {
-        "es6": true,
-        "browser": true,
-        "node": true,
-        "mocha": true,
-        "jest": true
-    },
-    "plugins": [
-        "standard",
-        "babel",
-        "import"
-    ],
-    "rules": {
-        "import/extensions": 0,
-        "indent": [
-            2,
-            "tab"
-        ],
-        "no-tabs": 0,
-        "semi": 0
-    }
+	"extends": [
+		"airbnb-base",
+		"standard"
+	],
+	"env": {
+		"es6": true,
+		"browser": true,
+		"node": true,
+		"mocha": true,
+		"jest": true
+	},
+	"plugins": [
+		"standard",
+		"babel",
+		"import"
+	],
+	"rules": {
+		"import/extensions": 0,
+		"indent": [
+			2,
+			"tab"
+		],
+		"no-tabs": 0,
+		"semi": 0
+	}
 }

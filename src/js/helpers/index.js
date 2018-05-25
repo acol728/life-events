@@ -1,51 +1,53 @@
+/* eslint no-console: "off" */
+import helpersModule from 'handlebars-helpers'
 import pages from '../questions/pages'
-import helpersModule from 'handlebars-helpers';
-const getPage = (i) => {
-    //return true
-    return pages[i]
-}
 
-const getPages = (i) => {
-    //return true
-    return pages
-}
+const getPage = i =>
+	// return true
+	pages[i]
+
+const getPages = () =>
+	// return true
+	pages
 
 const debug = (optionalValue) => {
-    console.log("Current Context");
-    console.log("====================");
-    console.log(this);
+	console.log('Current Context');
+	console.log('====================');
+	console.log(this);
 
-    if (optionalValue) {
-        console.log("Value");
-        console.log("====================");
-        console.log(optionalValue);
-    }
+	if (optionalValue) {
+		console.log('Value');
+		console.log('====================');
+		console.log(optionalValue);
+	}
 }
 
-const register = function (Handlebars) {
+const register = (Handlebars) => {
+	const externalHelpers = helpersModule()
 
-    const externalHelpers = helpersModule()
+	const helpers = {
+		...externalHelpers,
+		getPage,
+		getPages,
+		debug
+	}
 
-    const helpers = {
-        ...externalHelpers,
-        getPage,
-        getPages,
-        debug
-    }
+	if (Handlebars && typeof Handlebars.registerHelper === 'function') {
+		helpers.keys.map((prop) => {
+			Handlebars.registerHelper(prop, helpers[prop])
+			return prop
+		})
+		// for (const prop in helpers) {
+		// 	if (helpers.hasOwnProperty(prop)) { Handlebars.registerHelper(prop, helpers[prop]); }
+		// }
+	}
 
-    if (Handlebars && typeof Handlebars.registerHelper === "function") {
-        for (var prop in helpers) {
-            Handlebars.registerHelper(prop, helpers[prop]);
-        }
-    } else {
-        return helpers;
-    }
-
-};
+	return helpers;
+}
 
 const helpers = register(null)
 
 export {
-    register,
-    helpers
+	register,
+	helpers
 }
