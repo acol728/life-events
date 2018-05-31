@@ -3,22 +3,38 @@
 	<div id="{{id}}" style="{{#unless show}}display: none;{{/unless}}">
 		<!-- Card content goes here -->
 		<h5 style="font-size: 5rem">{{title}}</h5>
+
+		{{#each questions}} {{#compare type "===" "text"}}
 		<div class="md-text-field with-floating-label">
-			{{#each questions}}
-			<input type="{{type}}" id="{{id}}" style="font-size: 3rem; height: 4.5rem; " placeholder="{{placeholder}}"></input>
-			{{/each}}
+			<input type="{{type}}" id="{{id}}" style="font-size: 3rem; height: 4.5rem; width: 24vw" placeholder="{{placeholder}}"></input>
 		</div>
+		{{/compare}} {{#compare type "===" "select-dropdown"}}
+		<div class="uitk-select md-text-field with-floating-label" style="margin-top: 4rem; width: 24vw">
+			<input type="text" class="select-input" readonly="true" value="{{placeholder}}" required>
+			<span class="select-arrow"></span>
+			<ul class="select-dropdown">
+				{{#each values}}
+				<li>{{text}}</li>
+				{{/each}}
+			</ul>
+			<label>{{label}}</label>
+		</div>
+		{{/compare}} {{/each}}
+
+
 	</div>
 	{{/each }}
-	<div id="navigation" style="padding-bottom: 4vh; position: absolute; bottom: 0px;">
-		<button id="navigate-back">
-			<div class="icon icon-util-left-back" style="font-size: 5rem"></div>
-		</button>
-		<button id="navigate-forward">
-			<div class="icon icon-util-right-forward" style="font-size: 5rem"></div>
-		</button>
-	</div>
-	<div class="sg-illustrative-icon">
-		<span class="icon-illustrative icon-ill-coin"></span>
-	</div>
+</div>
+
+<div id="navigation" style="padding-bottom: 4vh; position: absolute; bottom: 0px;">
+	<button id="navigate-back">
+		<div class="icon icon-util-left-back" style="font-size: 5rem"></div>
+	</button>
+	<button id="navigate-forward">
+		<div class="icon icon-util-right-forward" style="font-size: 5rem"></div>
+	</button>
+</div>
+<div class="sg-illustrative-icon">
+	<span class="icon-illustrative icon-ill-coin"></span>
+</div>
 </div>
