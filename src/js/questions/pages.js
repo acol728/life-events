@@ -1,7 +1,11 @@
 /* eslint no-console: "off" */
-import { INITIAL_PAGE, QUESTION_IDS } from './constants'
-import { setInputEvents } from './helpers'
+import CONSTANTS from './constants'
+import { setInputEvents, selectInputClickEvent } from './helpers'
 import changeEvents from './changeEvents'
+
+const { INITIAL_PAGE, CAREER_PLANS_PAGE } = CONSTANTS.IDs.PAGE_IDS
+const { QUESTION_IDS } = CONSTANTS.IDs
+const { OCCUPATIONAL_DATA } = CONSTANTS
 
 const initialInfoPage = {
 
@@ -36,8 +40,8 @@ const careerPlansPage = {
 			label: 'Career',
 			placeholder: 'Choose a Career...',
 			type: 'select-dropdown',
-			values: [
-				{ text: 'Toastmaker' }, { text: 'ApplePicker' }, { text: 'Cow Tipper' }]
+			changeEvent: changeEvents[QUESTION_IDS[CAREER_PLANS_PAGE].CAREER_DROPDOWN],
+			values: OCCUPATIONAL_DATA
 		}
 	]
 }
@@ -61,6 +65,6 @@ const pages = [
 	retirementPlansPage
 ]
 
-export { setInputEvents }
+export { setInputEvents, selectInputClickEvent }
 
 export default pages

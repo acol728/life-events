@@ -10,18 +10,16 @@
 		</div>
 		{{/compare}} {{#compare type "===" "select-dropdown"}}
 		<div class="uitk-select md-text-field with-floating-label" style="margin-top: 4rem; width: 24vw">
-			<input type="text" class="select-input" readonly="true" value="{{placeholder}}" required>
+			<input id="{{id}}" type="text" class="select-input" readonly="true" placeholder="{{placeholder}}" required>
 			<span class="select-arrow"></span>
 			<ul class="select-dropdown">
 				{{#each values}}
-				<li>{{text}}</li>
+				<li id="{{id}}">{{text}}</li>
 				{{/each}}
 			</ul>
 			<label>{{label}}</label>
 		</div>
 		{{/compare}} {{/each}}
-
-
 	</div>
 	{{/each }}
 </div>

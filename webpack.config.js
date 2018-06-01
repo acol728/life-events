@@ -45,6 +45,9 @@ module.exports = {
 		libraryTarget: 'umd',
 		chunkFilename: '[name].[hash].js'
 	},
+	// devtool: 'cheap-module-source-map',  // may speed up rebuild but no source maps
+	devtool: 'eval-source-map', // source maps
+
 	resolve: {
 		extensions: ['.js', '.scss', '.css'],
 		modules: ['src/js', 'node_modules', 'src/styles']

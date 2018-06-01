@@ -18,8 +18,10 @@
     "d3-axis": "1.0.8",
     "express": "^4.16.3",
     "express-handlebars": "^3.0.0",
+    "financejs": "4.1.0",
     "handlebars-helpers": "0.10.0",
     "jquery": "3.3.1",
+    "ramda": "0.25.0",
     "ui-toolkit": "1.19.0"
   },
   "devDependencies": {
