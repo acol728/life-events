@@ -7,6 +7,22 @@ const updatePages = (pages, pageIndex) => (pages || []).map((page, i) => {
 	return { ...page, show }
 })
 
+function navigateToAPage () {
+	const { pages } = state.ui
+	const checkID = page => page.id === $(this)[0].attributes.pageid.value
+	const index = pages.findIndex(checkID)
+	const newPages = updatePages(state.ui.pages, index)
+	const newState = {
+		...state,
+		ui: {
+			...state.ui,
+			navigation: { ...state.ui.navigation, currentPage: index },
+			pages: newPages
+		}
+	}
+	state = { ...newState }
+}
+
 const navigateForward = () => {
 	const { currentPage } = state.ui.navigation
 	const { pages } = state.ui
@@ -55,5 +71,6 @@ const navigateBackward = () => {
 
 export {
 	navigateForward,
-	navigateBackward
+	navigateBackward,
+	navigateToAPage
 }

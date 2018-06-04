@@ -42,7 +42,7 @@ $include-lv-html-tooltip-classes: false;
 $include-lv-html-modals-classes: true;
 $include-lv-html-icons-classes: true;
 $include-lv-html-loading-indicators-classes: true;
-$include-lv-html-navigation-classes: false;
+$include-lv-html-navigation-classes: true;
 $include-lv-html-graph-classes: false;
 
 //
@@ -55,7 +55,7 @@ $include-lv-html-graph-classes: false;
 // By default, these inclusion settings will be set to the value of their parent
 // component's inclusion setting.
 //
-$include-lv-html-multi-control-classes: $include-lv-html-form-classes false;
+$include-lv-html-multi-control-classes: $include-lv-html-form-classes true;
 $asset-build-path: "https://uitk.learnvest.com/v/1.19.0";
 
 @import "node_modules/ui-toolkit/src/scss/theme/nm-cx";

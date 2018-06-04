@@ -1,4 +1,4 @@
-<div class="card" style="float:left; width: 100vw; position:relative; height: 75vh; padding: 10vh">
+<div id="page" class="card" style="float:left; width: 80vw;  height: 75vh; padding: 10vh">
 	{{#each (getPages)}}
 	<div id="{{id}}" style="{{#unless show}}display: none;{{/unless}}">
 		<!-- Card content goes here -->
@@ -29,17 +29,12 @@
 		{{/compare}}{{/each}}
 	</div>
 	{{/each }}
-</div>
-
-<div id="navigation " style="padding-bottom: 4vh; position: absolute; bottom: 0px; ">
-	<button id="navigate-back">
-		<div class="icon icon-util-left-back " style="font-size: 5rem "></div>
-	</button>
-	<button id="navigate-forward">
-		<div class="icon icon-util-right-forward " style="font-size: 5rem "></div>
-	</button>
-</div>
-<div class="sg-illustrative-icon">
-	<span class="icon-illustrative icon-ill-coin "></span>
-</div>
+	<div id="navigation" style="padding-bottom: 4vh; position: absolute; bottom: 0px;">
+		<button id="navigate-back">
+			<div class="icon icon-util-left-back" style="font-size: 5rem"></div>
+		</button>
+		<button id="navigate-forward">
+			<div class="icon icon-util-right-forward" style="font-size: 5rem"></div>
+		</button>
+	</div>
 </div>

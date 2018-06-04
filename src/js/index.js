@@ -3,13 +3,17 @@
 import $ from 'jquery'
 import '../styles/entry.scss'
 import globals, { setInputEvents, selectInputClickEvent } from './globals'
-import { navigateForward, navigateBackward } from './navigation'
+import { navigateForward, navigateBackward, navigateToAPage } from './navigation'
 import chart from './chart'
 
 $(document).ready(() => {
 	// chart.createChart()
 	console.log('NAVIGATE FORWARD: ', navigateForward)
 	$('#navigate-forward').click(navigateForward)
+
+	const navButton = $('.nav-button')
+	console.log('navButton', navButton)
+	navButton.on('click', navigateToAPage)
 
 	$('#navigate-back').click(navigateBackward)
 

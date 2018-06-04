@@ -3,15 +3,23 @@ import CONSTANTS from './constants'
 import { setInputEvents, selectInputClickEvent } from './helpers'
 import changeEvents from './changeEvents'
 
-const { INITIAL_PAGE, CAREER_PLANS_PAGE } = CONSTANTS.IDs.PAGE_IDS
+const { WELCOME_PAGE, INITIAL_PAGE, CAREER_PLANS_PAGE, RETIREMENT_PLANS_PAGE } = CONSTANTS.IDs.PAGE_IDS
 const { QUESTION_IDS } = CONSTANTS.IDs
 const { OCCUPATIONAL_DATA, EDU_PUBLIC_PRIVATE_DATA } = CONSTANTS
+
+const welcomePage = {
+	id: WELCOME_PAGE,
+	nav: 'Welcome',
+	title: 'Welcome',
+	show: true
+}
 
 const initialInfoPage = {
 
 	id: INITIAL_PAGE,
+	nav: 'Get Started',
 	title: "Let's start with where you are at...",
-	show: true,
+	show: false,
 
 	questions: [
 		{
@@ -31,7 +39,8 @@ const initialInfoPage = {
 }
 
 const careerPlansPage = {
-	id: 'careerPlansPage',
+	id: CAREER_PLANS_PAGE,
+	nav: 'Career',
 	title: 'What are your aspirations...',
 	show: false,
 	questions: [
@@ -57,7 +66,8 @@ const careerPlansPage = {
 }
 
 const retirementPlansPage = {
-	id: 'retirementPlansPage',
+	id: RETIREMENT_PLANS_PAGE,
+	nav: 'Retirement',
 	title: 'What are your retirement plans...',
 	show: false,
 	questions: [
@@ -70,6 +80,7 @@ const retirementPlansPage = {
 }
 
 const pages = [
+	welcomePage,
 	initialInfoPage,
 	careerPlansPage,
 	retirementPlansPage

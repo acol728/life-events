@@ -1,1 +1,12 @@
-<div style="background: #002B49; float:right; width: 20vw; position:relative; height: 75vh">NAVIGATION</div>
+<div id="actualNav" style="background-color: #ffffff; float:left; width: 20vw; height: 100vh">
+	<h1>
+		NAVIGATION
+	</h1>
+	<ul class="filter-nav vertical">
+		{{#each (getPages)}}
+		<li class="filter-nav-entry ">
+			<button class="nav-button" id="nav-{{id}}" pageid={{id}}>{{nav}}</button>
+		</li>
+		{{/each}}
+	</ul>
+</div>
