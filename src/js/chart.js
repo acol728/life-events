@@ -24,6 +24,7 @@ const createChart = () => {
 }
 
 const calculateFunds = () => {
+	const MONTHS = 12
 	const age = state.ui.values.ageInput || DEFAULT_AGE
 	const initialFunds = state.ui.values.networthInput || 0
 	const careerId = state.ui.values.careerInput || ''
@@ -36,10 +37,20 @@ const calculateFunds = () => {
 		startingSalary = careerObj ? careerObj.salary : 0
 	}
 
+	const calcMonthlyData = R.curry((lastYearNW, salary, month) => {
+		const currentMonthlySalary = salary / MONTHS
+		return {
+			month: month + 1,
+			currentMonthlySalary,
+			totalNetworth: lastYearNW + (currentMonthlySalary * (month + 1))
+		}
+	})
+
 	let money = [
 		{
 			age,
 			currentSalary: startingSalary,
+			monthly: R.times(calcMonthlyData(initialFunds, startingSalary), MONTHS),
 			totalNetworth: initialFunds + startingSalary
 		}]
 
@@ -47,11 +58,13 @@ const calculateFunds = () => {
 	money = R.reduce((accum, currentAge) => {
 		const year = currentAge - age
 		const lastYear = R.last(accum) || {}
-		const currentSalary = startingSalary * (1 + (DEFAULT_COLA_ADJ / 1)) ** year
+		const currentAnnualSalary = (startingSalary * (1 + (DEFAULT_COLA_ADJ / 1)) ** year)
+
 		return [...accum, {
 			age: currentAge,
-			currentSalary,
-			totalNetworth: lastYear.totalNetworth + currentSalary
+			currentAnnualSalary,
+			monthly: R.times(calcMonthlyData(lastYear.totalNetworth, currentAnnualSalary), MONTHS),
+			totalNetworth: lastYear.totalNetworth + currentAnnualSalary
 		}]
 	}, money)(years)
 
