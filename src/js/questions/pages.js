@@ -20,7 +20,6 @@ const initialInfoPage = {
 	nav: 'Get Started',
 	title: "Let's start with where you are at...",
 	show: false,
-
 	questions: [
 		{
 			id: QUESTION_IDS[INITIAL_PAGE].AGE_TEXT,

@@ -1,6 +1,7 @@
 /* eslint no-console: "off" */
 import helpersModule from 'handlebars-helpers'
 import pages from '../questions/pages'
+import state from '../globals'
 
 const getPage = i =>
 	// return true
@@ -9,6 +10,8 @@ const getPage = i =>
 const getPages = () =>
 	// return true
 	pages
+
+const getState = () => state
 
 const debug = (optionalValue) => {
 	console.log('Current Context');
@@ -27,6 +30,7 @@ const register = (Handlebars) => {
 
 	const helpers = {
 		...externalHelpers,
+		getState,
 		getPage,
 		getPages,
 		debug

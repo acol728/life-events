@@ -9,12 +9,10 @@ import { navigateForward, navigateBackward, navigateToAPage } from './navigation
 import chart from './chart'
 
 $(document).ready(() => {
-	// chart.createChart()
-	console.log('NAVIGATE FORWARD: ', navigateForward)
+	chart.createChart()
 	$('#navigate-forward').click(navigateForward)
 
-	const navButton = $('.nav-button')
-	navButton.on('click', navigateToAPage)
+	$('.nav-button').on('click', navigateToAPage)
 
 	$('#navigate-back').click(navigateBackward)
 

@@ -11,7 +11,9 @@ const state = {
 	},
 	data: {
 
-	}
+	},
+	scott: 'testing'
+
 }
 
 export { setInputEvents, selectInputClickEvent }

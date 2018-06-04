@@ -4,6 +4,8 @@ import $ from 'jquery'
 const updatePages = (pages, pageIndex) => (pages || []).map((page, i) => {
 	const show = i === pageIndex
 	$(`#${page.id}`).css('display', show ? 'block' : 'none');
+	console.log('hello', page.id)
+	show ? $(`#nav-${page.id}`).parent().addClass('active') : $(`#nav-${page.id}`).parent().removeClass('active')
 	return { ...page, show }
 })
 
