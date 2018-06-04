@@ -1,12 +1,12 @@
-<div id="page" class="card" style="float:left; width: 70vw;  height: 75vh; padding: 10vh">
+<div id="page" class="small-7 columns" style="height: 75vh; background-color: #ffffff;">
 	{{#each (getPages)}}
 	<div id="{{id}}" style="{{#unless show}}display: none;{{/unless}}">
 		<!-- Card content goes here -->
-		<h5 style="font-size: 5rem">{{title}}</h5>
+		<h5 style="font-size: 4rem; line-height: 4rem;">{{title}}</h5>
 
 		{{#each questions}} {{#compare type "===" "text"}}
 		<div class="md-text-field with-floating-label">
-			<input type="{{type}}" id="{{id}}" style="font-size: 3rem; height: 4.5rem; width: 24vw" placeholder="{{placeholder}}"></input>
+			<input type="{{type}}" id="{{id}}" style="font-size: 3rem; height: 6rem; width: 24vw;" placeholder="{{placeholder}}"></input>
 		</div>
 		{{/compare}} {{#compare type "===" "select-dropdown"}}
 		<div class="uitk-select md-text-field with-floating-label" style="margin-top: 4rem; width: 24vw">
