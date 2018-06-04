@@ -2,6 +2,8 @@
 /* eslint no-console: "off" */
 import $ from 'jquery'
 import '../styles/entry.scss'
+import { navigateForward, navigateBackward, navigateToAPage } from './navigation'
+import chart from './chart'
 import globals, { setInputEvents, selectInputClickEvent } from './globals'
 import { navigateForward, navigateBackward, navigateToAPage } from './navigation'
 import chart from './chart'
@@ -12,7 +14,6 @@ $(document).ready(() => {
 	$('#navigate-forward').click(navigateForward)
 
 	const navButton = $('.nav-button')
-	console.log('navButton', navButton)
 	navButton.on('click', navigateToAPage)
 
 	$('#navigate-back').click(navigateBackward)
