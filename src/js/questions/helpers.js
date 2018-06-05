@@ -3,7 +3,7 @@ import $ from 'jquery'
 
 export const setInputEvents = () => {
 	state.ui.pages.map((page) => {
-		page.questions.map((question) => {
+		(page.questions || []).map((question) => {
 			if (question.changeEvent) {
 				$(`#${question.id}`).change(question.changeEvent)
 			}

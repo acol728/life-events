@@ -1,45 +1,35 @@
-<div class="card" style="float:left; width: 100vw; position:relative; height: 75vh; padding: 10vh">
-	{{#each (getPages)}}
-	<div id="{{id}}" style="{{#unless show}}display: none;{{/unless}}">
-		<!-- Card content goes here -->
-		<h5 style="font-size: 5rem">{{title}}</h5>
+<div class="small-10 columns">
+	<div id="main_section" class="card" style="height: 73vh; margin-bottom: 2vh">
+		<div class="row" style="height: 65vh; ">
+			<div id="page" class="small-8 columns" style=" background-color: #ffffff; overflow: auto;">
+				{{#each (getPages)}}
+				<div id="{{id}}" style="{{#unless show}}display: none;{{/unless}}">
+					<!-- Card content goes here -->
+					<h5 style="font-size: 4rem; line-height: 4rem;">{{title}}</h5>
 
-		{{#each questions}} {{#compare type "===" "text"}}
-		<div class="md-text-field with-floating-label">
-			<input type="{{type}}" id="{{id}}" style="font-size: 3rem; height: 4.5rem; width: 24vw" placeholder="{{placeholder}}"></input>
-		</div>
-		{{/compare}} {{#compare type "===" "select-dropdown"}}
-		<div class="uitk-select md-text-field with-floating-label" style="margin-top: 4rem; width: 24vw">
-			<input id="{{id}}" type="text" class="select-input" readonly="true" placeholder="{{placeholder}}" required>
-			<span class="select-arrow"></span>
-			<ul class="select-dropdown">
-				{{#each values}}
-				<li id="{{id}}">{{text}}</li>
-				{{/each}}
-			</ul>
-			<label>{{label}}</label>
-		</div>
-		{{/compare}} {{#compare type "===" "radio"}}
-		<div id="{{id}}" class="md-multi-ctrl-field " style="{{#unless show}}display: none;{{/unless}}">
-			{{#each values}}
-			<input name="{{../id}}" id="{{id}}" type="{{../type}}">
-			<label for="{{id}}">{{text}}</label>
-			{{/each}}
-		</div>
-		{{/compare}}{{/each}}
-	</div>
-	{{/each }}
-</div>
-
-<div id="navigation " style="padding-bottom: 4vh; position: absolute; bottom: 0px; ">
-	<button id="navigate-back">
-		<div class="icon icon-util-left-back " style="font-size: 5rem "></div>
-	</button>
-	<button id="navigate-forward">
-		<div class="icon icon-util-right-forward " style="font-size: 5rem "></div>
-	</button>
-</div>
-<div class="sg-illustrative-icon">
-	<span class="icon-illustrative icon-ill-coin "></span>
-</div>
-</div>
+					{{#each questions}} {{#compare type "===" "text"}}
+					<div class="md-text-field with-floating-label">
+						<input type="{{type}}" id="{{id}}" style="font-size: 3rem; height: 6rem; width: 24vw;" placeholder="{{placeholder}}"></input>
+					</div>
+					{{/compare}} {{#compare type "===" "select-dropdown"}}
+					<div class="uitk-select md-text-field with-floating-label" style="margin-top: 4rem; width: 24vw">
+						<input id="{{id}}" type="text" class="select-input" readonly="true" placeholder="{{placeholder}}" required>
+						<span class="select-arrow"></span>
+						<ul class="select-dropdown">
+							{{#each values}}
+							<li id="{{id}}">{{text}}</li>
+							{{/each}}
+						</ul>
+						<label>{{label}}</label>
+					</div>
+					{{/compare}}{{#compare type "===" "radio"}}
+					<div id="{{id}}" class="md-multi-ctrl-field " style="{{#unless show}}display: none;{{/unless}}">
+						{{#each values}}
+						<input name="{{../id}}" id="{{id}}" type="{{../type}}">
+						<label for="{{id}}">{{text}}</label>
+						{{/each}}
+					</div>
+					{{/compare}} {{/each}}
+				</div>
+				{{/each }}
+			</div>

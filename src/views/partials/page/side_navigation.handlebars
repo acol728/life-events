@@ -1,0 +1,15 @@
+<div id="side_navigation" class="small-2 columns" style="background-color: #ffffff; height: 100vh">
+	<h5>
+		Life Events Financial Calculator
+	</h5>
+	<ul class="filter-nav vertical">
+		{{#each (getPages)}}
+		<li class="filter-nav-entry ">
+			<button class="nav-button active" id="nav-{{id}}" pageid={{id}}>{{nav}}</button>
+		</li>
+		{{/each}}
+	</ul>
+	{{#with (getState)}}
+	<p>{{ui.navigation.currentPage}}</p>
+	{{/with}}
+</div>

@@ -16,7 +16,7 @@ const createChart = () => {
 	const axis = d3.axisLeft(scale)
 	d3.select('.chart')
 		.append('svg')
-		.attr('width', 1440)
+		.attr('width', 1000)
 		.attr('height', 30)
 		.append('g')
 		.attr('transform', 'translate(0,30)')
