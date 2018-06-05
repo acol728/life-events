@@ -7,7 +7,8 @@ import { navigateForward, navigateBackward } from './navigation'
 import chart from './chart'
 
 $(document).ready(() => {
-	chart.createChart()
+	// chart.createChart()
+	console.log('NAVIGATE FORWARD: ', navigateForward)
 	$('#navigate-forward').click(navigateForward)
 
 	$('#navigate-back').click(navigateBackward)

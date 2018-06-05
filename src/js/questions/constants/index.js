@@ -1,6 +1,6 @@
 import IDs from './pages'
 import OCCUPATIONAL_DATA from './occupationData'
-import EDUCATIONAL_DATA from './educationData'
+import EDUCATIONAL_DATA, { EDU_PUBLIC_PRIVATE_DATA, EDUCATION_LEVELS } from './educationData'
 
 const DEFAULT_AGE = 18
 const DEFAULT_DEATH_AGE = 80
@@ -17,6 +17,8 @@ export default {
 	IDs,
 	OCCUPATIONAL_DATA,
 	EDUCATIONAL_DATA,
+	EDUCATION_LEVELS,
+	EDU_PUBLIC_PRIVATE_DATA,
 	DEFAULT_AGE,
 	DEFAULT_DEATH_AGE,
 	DEFAULT_COLA_ADJ,

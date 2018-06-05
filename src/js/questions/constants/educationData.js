@@ -1,50 +1,79 @@
+
+export const EDU_PUBLIC_PRIVATE_DATA = [
+	{
+		id: 'edu_public',
+		text: 'Public'
+	},
+	{
+		id: 'edu_Private',
+		text: 'Private'
+	}
+]
+
+export const EDUCATION_LEVELS = {
+	NONE: 'none',
+	HS_OR_EQ: 'hs_or_eq',
+	SOME_COL_NO_DEG: 'some_col_no_deg',
+	ASSC_DEG: 'assc_deg',
+	BACH_DEG: 'bach_deg',
+	POST_SEC_NON_DEG: 'post_sec_non_deg',
+	MAST_DEG: 'mast_deg',
+	DOC_OR_PROF_DEG: 'doc_or_prof_deg'
+}
+
+// All numbers in here are guesses
+// Real figures should come from https://collegescorecard.ed.gov/data/
 export default [
 	{
-		id: 'none',
+		id: EDUCATION_LEVELS.NONE,
 		text: 'No formal educational credential',
-		costPerYear: 0,
 		years: 0
 	},
 	{
-		id: 'hs_or_eq',
+		id: EDUCATION_LEVELS.HS_OR_EQ,
 		text: 'High School or Equivalent',
-		costPerYear: 0,
 		years: 0
 	},
 	{
-		id: 'some_col_no_deg',
+		id: EDUCATION_LEVELS.SOME_COL_NO_DEG,
 		text: 'Some college, no degree',
-		costPerYear: 15000,
-		years: 1
+		years: 1,
+		annualPublicCost: 8826,
+		annualPrivateCost: 17015
 	},
 	{
-		id: 'assc_deg',
+		id: EDUCATION_LEVELS.ASSC_DEG,
 		text: "Associate's degree",
-		costPerYear: 10000,
-		years: 2
+		years: 2,
+		annualPublicCost: 7746,
+		annualPrivateCost: 15039
 	},
 	{
-		id: 'bach_deg',
+		id: EDUCATION_LEVELS.BACH_DEG,
 		text: "Bachelor's Degree",
-		costPerYear: 15000,
-		years: 4
+		years: 4,
+		annualPublicCost: 8000,
+		annualPrivateCost: 15039
 	},
 	{
-		id: 'post_sec_non_deg',
+		id: EDUCATION_LEVELS.POST_SEC_NON_DEG,
 		text: 'Postsecondary nondegree award',
-		costPerYear: [15000, 15000, 15000, 15000, 20000],
-		years: 6
+		years: 6,
+		annualPublicCost: [15000, 15000, 15000, 15000, 20000],
+		annualPrivateCost: [15000, 15000, 15000, 15000, 20000]
 	},
 	{
-		id: 'mast_deg',
+		id: EDUCATION_LEVELS.MAST_DEG,
 		text: 'Masters Degree',
-		costPerYear: [15000, 15000, 15000, 15000, 20000],
-		years: 6
+		years: 6,
+		annualPublicCost: [15000, 15000, 15000, 15000, 20000],
+		annualPrivateCost: [15000, 15000, 15000, 15000, 20000]
 	},
 	{
-		id: 'doc_or_prof_deg',
+		id: EDUCATION_LEVELS.DOC_OR_PROF_DEG,
 		text: 'Doctoral or professional degree',
-		costPerYear: [15000, 15000, 15000, 15000, 20000],
-		years: 8
+		years: 8,
+		annualPublicCost: [15000, 15000, 15000, 15000, 20000],
+		annualPrivateCost: [15000, 15000, 15000, 15000, 20000]
 	}
 ]

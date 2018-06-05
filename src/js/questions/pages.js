@@ -5,7 +5,7 @@ import changeEvents from './changeEvents'
 
 const { INITIAL_PAGE, CAREER_PLANS_PAGE } = CONSTANTS.IDs.PAGE_IDS
 const { QUESTION_IDS } = CONSTANTS.IDs
-const { OCCUPATIONAL_DATA } = CONSTANTS
+const { OCCUPATIONAL_DATA, EDU_PUBLIC_PRIVATE_DATA } = CONSTANTS
 
 const initialInfoPage = {
 
@@ -36,12 +36,22 @@ const careerPlansPage = {
 	show: false,
 	questions: [
 		{
-			id: 'careerInput',
+			id: QUESTION_IDS[CAREER_PLANS_PAGE].CAREER_DROPDOWN,
 			label: 'Career',
+			show: true,
 			placeholder: 'Choose a Career...',
 			type: 'select-dropdown',
 			changeEvent: changeEvents[QUESTION_IDS[CAREER_PLANS_PAGE].CAREER_DROPDOWN],
 			values: OCCUPATIONAL_DATA
+		},
+		{
+			id: QUESTION_IDS[CAREER_PLANS_PAGE].EDUCATION_PUBLIC_PRIVATE_RADIO,
+			label: 'Education',
+			show: false,
+			placeholder: 'Choose a type of school...',
+			type: 'radio',
+			changeEvent: changeEvents[QUESTION_IDS[CAREER_PLANS_PAGE].EDUCATION_PUBLIC_PRIVATE_RADIO],
+			values: EDU_PUBLIC_PRIVATE_DATA
 		}
 	]
 }
