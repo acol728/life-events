@@ -1,8 +1,9 @@
 /* global state:true */
 import $ from 'jquery'
 
-const showPage = (page, show) => {
+const showPageAndTitle = (page, show) => {
 	$(`#${page.id}`).css('display', show ? 'block' : 'none');
+	$(`#title-${page.id}`).css('display', show ? 'block' : 'none');
 }
 
 const showAndHideLowerNav = (pageIndex, numberOfPages) => {
@@ -17,7 +18,7 @@ const highlightSideNav = (page, show) => {
 const updatePages = (pages, pageIndex) => (pages || []).map((page, i) => {
 	const show = i === pageIndex
 	const numberOfPages = pages.length - 1
-	showPage(page, show)
+	showPageAndTitle(page, show)
 	showAndHideLowerNav(pageIndex, numberOfPages)
 	highlightSideNav(page, show)
 	return { ...page, show }
