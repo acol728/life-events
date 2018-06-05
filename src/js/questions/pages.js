@@ -3,11 +3,9 @@ import CONSTANTS from './constants'
 import { setInputEvents, selectInputClickEvent } from './helpers'
 import changeEvents from './changeEvents'
 
-<<<<<<< HEAD
-const { INITIAL_PAGE, CAREER_PLANS_PAGE, LIFESTYLE_PLANS_PAGE } = CONSTANTS.IDs.PAGE_IDS
-=======
-const { WELCOME_PAGE, INITIAL_PAGE, CAREER_PLANS_PAGE, RETIREMENT_PLANS_PAGE } = CONSTANTS.IDs.PAGE_IDS
->>>>>>> master
+const {
+	WELCOME_PAGE, INITIAL_PAGE, CAREER_PLANS_PAGE, LIFESTYLE_PLANS_PAGE, RETIREMENT_PLANS_PAGE
+} = CONSTANTS.IDs.PAGE_IDS
 const { QUESTION_IDS } = CONSTANTS.IDs
 const { OCCUPATIONAL_DATA, EDU_PUBLIC_PRIVATE_DATA, HOUSING_OPTIONS_DATA } = CONSTANTS
 
@@ -70,6 +68,7 @@ const careerPlansPage = {
 
 const lifestylePage = {
 	id: 'lifestylePage',
+	nav: 'Lifestyle',
 	title: 'How do you want to live...',
 	show: false,
 	questions: [

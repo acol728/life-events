@@ -1,4 +1,3 @@
-
 export const INITIAL_PAGE = 'initialPage'
 export const CAREER_PLANS_PAGE = 'careerPlansPage'
 export const LIFESTYLE_PLANS_PAGE = 'lifestylePlansPage'
@@ -25,7 +24,6 @@ export const QUESTION_IDS = {
 	},
 	[LIFESTYLE_PLANS_PAGE]: {
 		MORTGAGE_RENT_RADIO: 'mortgageRentInput'
-
 	},
 	[RETIREMENT_PLANS_PAGE]: {
 		FOUR01K_TEXT: '401KInput'

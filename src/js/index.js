@@ -2,8 +2,6 @@
 /* eslint no-console: "off" */
 import $ from 'jquery'
 import '../styles/entry.scss'
-import { navigateForward, navigateBackward, navigateToAPage } from './navigation'
-import chart from './chart'
 import globals, { setInputEvents, selectInputClickEvent } from './globals'
 import { navigateForward, navigateBackward, navigateToAPage } from './navigation'
 import chart from './chart'
