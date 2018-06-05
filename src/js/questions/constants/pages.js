@@ -1,11 +1,13 @@
 
 export const INITIAL_PAGE = 'initialPage'
 export const CAREER_PLANS_PAGE = 'careerPlansPage'
+export const LIFESTYLE_PLANS_PAGE = 'lifestylePlansPage'
 export const RETIREMENT_PLANS_PAGE = 'retirementPlansPage'
 
 export const PAGE_IDS = {
 	INITIAL_PAGE,
 	CAREER_PLANS_PAGE,
+	LIFESTYLE_PLANS_PAGE,
 	RETIREMENT_PLANS_PAGE
 }
 
@@ -17,6 +19,10 @@ export const QUESTION_IDS = {
 	[CAREER_PLANS_PAGE]: {
 		CAREER_DROPDOWN: 'careerInput',
 		EDUCATION_PUBLIC_PRIVATE_RADIO: 'eduPublicPrivateInput'
+	},
+	[LIFESTYLE_PLANS_PAGE]: {
+		MORTGAGE_RENT_RADIO: 'mortgageRentInput'
+
 	},
 	[RETIREMENT_PLANS_PAGE]: {
 		FOUR01K_TEXT: '401KInput'

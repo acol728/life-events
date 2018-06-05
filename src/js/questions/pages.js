@@ -3,9 +3,9 @@ import CONSTANTS from './constants'
 import { setInputEvents, selectInputClickEvent } from './helpers'
 import changeEvents from './changeEvents'
 
-const { INITIAL_PAGE, CAREER_PLANS_PAGE } = CONSTANTS.IDs.PAGE_IDS
+const { INITIAL_PAGE, CAREER_PLANS_PAGE, LIFESTYLE_PLANS_PAGE } = CONSTANTS.IDs.PAGE_IDS
 const { QUESTION_IDS } = CONSTANTS.IDs
-const { OCCUPATIONAL_DATA, EDU_PUBLIC_PRIVATE_DATA } = CONSTANTS
+const { OCCUPATIONAL_DATA, EDU_PUBLIC_PRIVATE_DATA, HOUSING_OPTIONS_DATA } = CONSTANTS
 
 const initialInfoPage = {
 
@@ -56,6 +56,23 @@ const careerPlansPage = {
 	]
 }
 
+const lifestylePage = {
+	id: 'lifestylePage',
+	title: 'How do you want to live...',
+	show: false,
+	questions: [
+		{
+			id: QUESTION_IDS[LIFESTYLE_PLANS_PAGE].MORTGAGE_RENT_RADIO,
+			label: 'Mortgage / Rent',
+			show: true,
+			placeholder: 'Choose a type housing...',
+			type: 'radio',
+			changeEvent: changeEvents[QUESTION_IDS[LIFESTYLE_PLANS_PAGE].MORTGAGE_RENT_RADIO],
+			values: HOUSING_OPTIONS_DATA
+		}
+	]
+}
+
 const retirementPlansPage = {
 	id: 'retirementPlansPage',
 	title: 'What are your retirement plans...',
@@ -72,6 +89,7 @@ const retirementPlansPage = {
 const pages = [
 	initialInfoPage,
 	careerPlansPage,
+	lifestylePage,
 	retirementPlansPage
 ]
 
