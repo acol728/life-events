@@ -24,6 +24,7 @@ export default {
 		state.data = { ...state.data, financialData }
 	},
 	[QUESTION_IDS[CAREER_PLANS_PAGE].CAREER_DROPDOWN]: (careerId) => {
+		state.ui.values[QUESTION_IDS[CAREER_PLANS_PAGE].CAREER_DROPDOWN] = careerId
 		const financialData = state.calculateFunds()
 
 		const careerData = R.filter(career => career.id === careerId, OCCUPATIONAL_DATA)[0]
@@ -43,7 +44,6 @@ export default {
 			$(`#${QUESTION_IDS[CAREER_PLANS_PAGE].EDUCATION_PUBLIC_PRIVATE_RADIO}`).css('display', 'none')
 		}
 
-		state.ui.values[QUESTION_IDS[CAREER_PLANS_PAGE].CAREER_DROPDOWN] = careerId
 		state.data = { ...state.data, financialData }
 	},
 

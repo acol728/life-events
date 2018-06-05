@@ -8,7 +8,7 @@ const updatePages = (pages, pageIndex) => (pages || []).map((page, i) => {
 	return { ...page, show }
 })
 
-function navigateToAPage() {
+function navigateToAPage () {
 	const { pages } = state.ui
 	const checkID = page => page.id === $(this)[0].attributes.pageid.value
 	const index = pages.findIndex(checkID)

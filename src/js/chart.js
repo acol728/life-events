@@ -6,8 +6,9 @@ import d3 from 'd3'
 import CONSTANTS from './questions/constants'
 
 const {
-	OCCUPATIONAL_DATA, DEFAULT_AGE, DEFAULT_DEATH_AGE, DEFAULT_COLA_ADJ
+	OCCUPATIONAL_DATA, DEFAULT_AGE, DEFAULT_DEATH_AGE, DEFAULT_COLA_ADJ, TAX_INFO
 } = CONSTANTS
+const { TAX_BRACKETS } = TAX_INFO
 
 const createChart = () => {
 	const scale = d3.scaleLinear()
@@ -33,25 +34,32 @@ const calculateFunds = () => {
 
 	if (!R.isEmpty(careerId)) {
 		const careerObj = findCareer(OCCUPATIONAL_DATA)
-
 		startingSalary = careerObj ? careerObj.salary : 0
 	}
 
-	const calcMonthlyData = R.curry((lastYearNW, salary, month) => {
+	const calcMonthlyData = R.curry((lastYearNW, salary, federalTaxBracket, stateTaxBracket, month) => {
 		const currentMonthlySalary = salary / MONTHS
+		const netIncome = calcNetIncome({ federalTaxBracket, stateTaxBracket }, currentMonthlySalary)
 		return {
 			month: month + 1,
 			currentMonthlySalary,
-			totalNetworth: lastYearNW + (currentMonthlySalary * (month + 1))
+			netIncome,
+			totalNetworth: lastYearNW + (netIncome * (month + 1))
 		}
 	})
 
+	let federalTaxBracket = getFederalTaxBracket(TAX_INFO.INDV, startingSalary)
+	let stateTaxBracket = getStateTaxBracket(TAX_INFO.INDV, 'WI', startingSalary)
+
+	// const netIncome = startingSalary - (startingSalary * (1 - federalTaxBracket.percent)) - (startingSalary * (1 - stateTaxBracket))
+	const netIncome = calcNetIncome({ federalTaxBracket, stateTaxBracket }, startingSalary)
 	let money = [
 		{
 			age,
 			currentSalary: startingSalary,
-			monthly: R.times(calcMonthlyData(initialFunds, startingSalary), MONTHS),
-			totalNetworth: initialFunds + startingSalary
+			monthly: R.times(calcMonthlyData(initialFunds, startingSalary, federalTaxBracket, stateTaxBracket), MONTHS),
+			netAnnualIncome: netIncome,
+			totalNetworth: initialFunds + netIncome
 		}]
 
 	const years = R.takeLast(DEFAULT_DEATH_AGE - age, R.times(R.identity, DEFAULT_DEATH_AGE + 1))
@@ -60,11 +68,16 @@ const calculateFunds = () => {
 		const lastYear = R.last(accum) || {}
 		const currentAnnualSalary = (startingSalary * (1 + (DEFAULT_COLA_ADJ / 1)) ** year)
 
+		federalTaxBracket = getFederalTaxBracket(TAX_INFO.INDV, currentAnnualSalary)
+		stateTaxBracket = getStateTaxBracket(TAX_INFO.INDV, 'WI', currentAnnualSalary)
+		const netAnnualIncome = calcNetIncome({ federalTaxBracket, stateTaxBracket }, currentAnnualSalary)
+
 		return [...accum, {
 			age: currentAge,
 			currentAnnualSalary,
-			monthly: R.times(calcMonthlyData(lastYear.totalNetworth, currentAnnualSalary), MONTHS),
-			totalNetworth: lastYear.totalNetworth + currentAnnualSalary
+			netAnnualIncome,
+			monthly: R.times(calcMonthlyData(lastYear.totalNetworth, currentAnnualSalary, federalTaxBracket, stateTaxBracket), MONTHS),
+			totalNetworth: lastYear.totalNetworth + netAnnualIncome
 		}]
 	}, money)(years)
 
@@ -75,3 +88,23 @@ export default {
 	createChart,
 	calculateFunds
 }
+
+const getFederalTaxBracket = (indvOrJoint, taxibleEarnings) => {
+	const taxData = indvOrJoint === TAX_BRACKETS.JOINT ? TAX_BRACKETS.FEDERAL.JOINT : TAX_BRACKETS.FEDERAL.INDV
+	return R.reduce((accum, item) => {
+		if (taxibleEarnings >= item.maxEarnings) { return item }
+		return accum
+	}, {})(taxData)
+}
+
+const getStateTaxBracket = (indvOrJoint, stateCode = 'WI', taxibleIncome) => {
+	const taxData = indvOrJoint === TAX_BRACKETS.JOINT ? TAX_BRACKETS.STATE[stateCode].JOINT : TAX_BRACKETS.STATE[stateCode].INDV
+
+	return R.reduce((accum, item) => {
+
+		if (taxibleIncome >= item.maxEarnings) { return item }
+		return accum
+	}, {})(taxData)
+}
+
+const calcNetIncome = ({ federalTaxBracket, stateTaxBracket }, taxibleIncome) => taxibleIncome - (taxibleIncome * (federalTaxBracket.percent)) - (taxibleIncome * (stateTaxBracket.percent))
