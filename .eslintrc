@@ -15,6 +15,9 @@
 		"babel",
 		"import"
 	],
+	"globals": {
+		"state": true
+	},
 	"rules": {
 		"import/extensions": 0,
 		"indent": [
@@ -22,6 +25,7 @@
 			"tab"
 		],
 		"no-tabs": 0,
-		"semi": 0
+		"semi": 0,
+		"max-len": 0
 	}
 }

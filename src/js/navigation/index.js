@@ -11,7 +11,7 @@ const navigateForward = () => {
 	const { currentPage } = state.ui.navigation
 	const { pages } = state.ui
 	const nextPage = currentPage >= pages.length - 1 ? pages.length - 1 : currentPage + 1
-
+	console.log('NEXT PAGE: ', nextPage)
 	// const newPages = state.ui.pages.map((page, i) => {
 	//     let show = i === nextPage ? true : false
 	//     $(`#${page.id}`).css("display", show ? 'block' : 'none');

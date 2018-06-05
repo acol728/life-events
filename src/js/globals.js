@@ -1,5 +1,5 @@
 
-import pages, { setInputEvents } from './questions/pages'
+import pages, { setInputEvents, selectInputClickEvent } from './questions/pages'
 
 const state = {
 	ui: {
@@ -14,5 +14,5 @@ const state = {
 	}
 }
 
-export { setInputEvents }
+export { setInputEvents, selectInputClickEvent }
 export default state

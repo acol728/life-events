@@ -10,31 +10,36 @@
 		</div>
 		{{/compare}} {{#compare type "===" "select-dropdown"}}
 		<div class="uitk-select md-text-field with-floating-label" style="margin-top: 4rem; width: 24vw">
-			<input type="text" class="select-input" readonly="true" value="{{placeholder}}" required>
+			<input id="{{id}}" type="text" class="select-input" readonly="true" placeholder="{{placeholder}}" required>
 			<span class="select-arrow"></span>
 			<ul class="select-dropdown">
 				{{#each values}}
-				<li>{{text}}</li>
+				<li id="{{id}}">{{text}}</li>
 				{{/each}}
 			</ul>
 			<label>{{label}}</label>
 		</div>
-		{{/compare}} {{/each}}
-
-
+		{{/compare}} {{#compare type "===" "radio"}}
+		<div id="{{id}}" class="md-multi-ctrl-field " style="{{#unless show}}display: none;{{/unless}}">
+			{{#each values}}
+			<input name="{{../id}}" id="{{id}}" type="{{../type}}">
+			<label for="{{id}}">{{text}}</label>
+			{{/each}}
+		</div>
+		{{/compare}}{{/each}}
 	</div>
 	{{/each }}
 </div>
 
-<div id="navigation" style="padding-bottom: 4vh; position: absolute; bottom: 0px;">
+<div id="navigation " style="padding-bottom: 4vh; position: absolute; bottom: 0px; ">
 	<button id="navigate-back">
-		<div class="icon icon-util-left-back" style="font-size: 5rem"></div>
+		<div class="icon icon-util-left-back " style="font-size: 5rem "></div>
 	</button>
 	<button id="navigate-forward">
-		<div class="icon icon-util-right-forward" style="font-size: 5rem"></div>
+		<div class="icon icon-util-right-forward " style="font-size: 5rem "></div>
 	</button>
 </div>
 <div class="sg-illustrative-icon">
-	<span class="icon-illustrative icon-ill-coin"></span>
+	<span class="icon-illustrative icon-ill-coin "></span>
 </div>
 </div>

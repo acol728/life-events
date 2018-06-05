@@ -15,7 +15,8 @@ export const QUESTION_IDS = {
 		NETWORTH_TEXT: 'networthInput'
 	},
 	[CAREER_PLANS_PAGE]: {
-		CAREER_DROPDOWN: 'careerInput'
+		CAREER_DROPDOWN: 'careerInput',
+		EDUCATION_PUBLIC_PRIVATE_RADIO: 'eduPublicPrivateInput'
 	},
 	[RETIREMENT_PLANS_PAGE]: {
 		FOUR01K_TEXT: '401KInput'
