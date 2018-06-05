@@ -4,12 +4,11 @@ import $ from 'jquery'
 const updatePages = (pages, pageIndex) => (pages || []).map((page, i) => {
 	const show = i === pageIndex
 	$(`#${page.id}`).css('display', show ? 'block' : 'none');
-	console.log('hello', page.id)
 	show ? $(`#nav-${page.id}`).parent().addClass('active') : $(`#nav-${page.id}`).parent().removeClass('active')
 	return { ...page, show }
 })
 
-function navigateToAPage () {
+function navigateToAPage() {
 	const { pages } = state.ui
 	const checkID = page => page.id === $(this)[0].attributes.pageid.value
 	const index = pages.findIndex(checkID)
