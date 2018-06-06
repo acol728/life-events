@@ -16,7 +16,8 @@ export const QUESTION_IDS = {
 	[WELCOME_PAGE]: {},
 	[INITIAL_PAGE]: {
 		AGE_TEXT: 'ageInput',
-		NETWORTH_TEXT: 'networthInput'
+		NETWORTH_TEXT: 'networthInput',
+		CURRENT_ANNUAL_INCOME_TEXT: 'currentAnnualIncome'
 	},
 	[CAREER_PLANS_PAGE]: {
 		CAREER_DROPDOWN: 'careerInput',

@@ -37,12 +37,10 @@ const calculateFunds = () => {
 		const careerObj = findCareer(OCCUPATIONAL_DATA)
 		startingSalary = careerObj ? careerObj.salary : 0
 		educationLevel = R.find(edu => edu.id === careerObj.education, EDUCATIONAL_DATA)
-		console.log('​calculateFunds -> educationLevel', educationLevel);
 	}
 
 	const calcMonthlyData = R.curry((currentAge, eduLevel, lastYearNW, salary, federalTaxBracket, stateTaxBracket, month) => {
 		const currentMonthlySalary = isInCareer(currentAge, eduLevel) ? salary / MONTHS : 0
-		console.log('​calculateFunds -> currentMonthlySalary', currentMonthlySalary);
 		const netIncome = calcNetIncome({ federalTaxBracket, stateTaxBracket }, currentMonthlySalary)
 		return {
 			month: month + 1,
@@ -113,9 +111,6 @@ const getStateTaxBracket = (indvOrJoint, stateCode = 'WI', taxibleIncome) => {
 
 const isInCareer = (age, educationLevel) => {
 	const careerStartAge = (educationLevel.years || 0) + DEFAULT_COLLEGE_START_AGE
-	console.log('​isInCareer -> educationLevel', educationLevel);
-	console.log('​isInCareer -> careerStartAge', careerStartAge);
-	console.log('​isInCareer -> age', age);
 	return age >= careerStartAge
 }
 
