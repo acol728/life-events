@@ -101,7 +101,6 @@ const getStateTaxBracket = (indvOrJoint, stateCode = 'WI', taxibleIncome) => {
 	const taxData = indvOrJoint === TAX_BRACKETS.JOINT ? TAX_BRACKETS.STATE[stateCode].JOINT : TAX_BRACKETS.STATE[stateCode].INDV
 
 	return R.reduce((accum, item) => {
-
 		if (taxibleIncome >= item.maxEarnings) { return item }
 		return accum
 	}, {})(taxData)

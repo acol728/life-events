@@ -1,15 +1,16 @@
-<div id="side_navigation" class="small-2 columns" style="background-color: #ffffff; height: 100vh">
+<div id="side_navigation" class="small-2 columns" style="background-color: #ffffff; height: 100vh; padding-top: 2vh">
 	<h5>
 		Life Events Financial Calculator
 	</h5>
 	<ul class="filter-nav vertical">
-		{{#each (getPages)}}
+		{{#each (getPages)}}{{#if @index}}
 		<li class="filter-nav-entry ">
-			<button class="nav-button active" id="nav-{{id}}" pageid={{id}}>{{nav}}</button>
+			<button class="nav-button" id="nav-{{id}}" pageid={{id}}>{{nav}}</button>
 		</li>
-		{{/each}}
+		{{else}}
+		<li class="filter-nav-entry active">
+			<button class="nav-button" id="nav-{{id}}" pageid={{id}}>{{nav}}</button>
+		</li>
+		{{/if}} {{/each}}
 	</ul>
-	{{#with (getState)}}
-	<p>{{ui.navigation.currentPage}}</p>
-	{{/with}}
 </div>

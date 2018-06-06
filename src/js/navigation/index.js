@@ -1,10 +1,27 @@
 /* global state:true */
 import $ from 'jquery'
 
+const showPageAndTitle = (page, show) => {
+	$(`#${page.id}`).css('display', show ? 'block' : 'none');
+	$(`#title-${page.id}`).css('display', show ? 'block' : 'none');
+}
+
+const showAndHideLowerNav = (pageIndex, numberOfPages) => {
+	pageIndex === 0 ? $('#navigate-back').css('display', 'none') : $('#navigate-back').css('display', 'block')
+	pageIndex === numberOfPages ? $('#navigate-forward').css('display', 'none') : $('#navigate-forward').css('display', 'block')
+}
+
+const highlightSideNav = (page, show) => {
+	// show ? $(`#nav-${page.id}`).parent().addClass('active') : $(`#nav-${page.id}`).parent().removeClass('active')
+	show ? $(`#nav-${page.id}`).css({ 'background-color': '#16b161', color: 'white' }) : $(`#nav-${page.id}`).css({ 'background-color': 'transparent', color: '#9c9c9c' })
+}
+
 const updatePages = (pages, pageIndex) => (pages || []).map((page, i) => {
 	const show = i === pageIndex
-	$(`#${page.id}`).css('display', show ? 'block' : 'none');
-	show ? $(`#nav-${page.id}`).parent().addClass('active') : $(`#nav-${page.id}`).parent().removeClass('active')
+	const numberOfPages = pages.length - 1
+	showPageAndTitle(page, show)
+	showAndHideLowerNav(pageIndex, numberOfPages)
+	highlightSideNav(page, show)
 	return { ...page, show }
 })
 
@@ -28,7 +45,6 @@ const navigateForward = () => {
 	const { currentPage } = state.ui.navigation
 	const { pages } = state.ui
 	const nextPage = currentPage >= pages.length - 1 ? pages.length - 1 : currentPage + 1
-	console.log('NEXT PAGE: ', nextPage)
 	// const newPages = state.ui.pages.map((page, i) => {
 	//     let show = i === nextPage ? true : false
 	//     $(`#${page.id}`).css("display", show ? 'block' : 'none');
@@ -50,14 +66,12 @@ const navigateForward = () => {
 const navigateBackward = () => {
 	const { currentPage } = state.ui.navigation
 	const previousPage = currentPage <= 0 ? 0 : currentPage - 1
-
 	// const newPages = state.ui.pages.map((page, i) => {
 
 	//     let show = i === previousPage ? true : false
 	//     $(`#${page.id}`).css("display", show ? 'block' : 'none');
 	//     return { ...page, show }
 	// })
-
 	const newPages = updatePages(state.ui.pages, previousPage)
 	const newState = {
 		...state,
