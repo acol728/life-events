@@ -2,17 +2,24 @@
 	<div id="main_section" class="card" style="height: 70vh; margin-bottom: 2vh; margin-top: 2vh; position: relative">
 		<div class="row" style="height: 11vh;">
 			{{#each (getPages)}}
-			<div id="title-{{id}}" class="small-12 columns" style="text-align: center; border-bottom: 3px solid #16b161; {{#unless show}}display: none;{{/unless}}">
+			<div id="title-{{id}}" class="small-12 columns" style="text-align: center; border-bottom: 3px solid #eeeeee; {{#unless show}}display: none;{{/unless}}">
 				<h3 style="line-height: 6rem; font-size: 2rem; color: #16b161; font-weight: 500"> {{title}}</h3>
 			</div>
 			{{/each}}
 		</div>
-		<div class="row" style="height: 46vh;">
-			<div id="page" class="small-8 columns" style=" background-color: #ffffff;">
+		<div class="row" style="height: 51vh; ">
+			<div id="page" class="small-8 columns" style=" background-color: #ffffff; height: 90%; position: relative ">
 				{{#each (getPages)}}
-				<div id="{{id}}" style="{{#unless show}}display: none;{{/unless}}">
-					{{!--
-					<h3 style="font-size: 3rem; line-height: 3rem;">{{title}}</h3> --}} {{#each questions}} {{#compare type "===" "text"}}
+				<div id="{{id}}" style="{{#unless show}}display: none;{{/unless}} position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); ">
+					{{#if subtitle}}
+					<p style="text-align: center; font-size: 2rem; line-height: 2.5rem ">
+						{{subtitle}}
+					</p>
+					{{/if}}{{#if subtitle2}}
+					<p style="text-align: center; font-size: 2rem; line-height: 2.5rem; color:#16b161; ">
+						{{subtitle2}}
+					</p>
+					{{/if}} {{#each questions}} {{#compare type "===" "text"}}
 					<div class="md-text-field with-floating-label">
 						<input type="{{type}}" id="{{id}}" style="font-size: 3rem; height: 6rem; width: 24vw;" placeholder="{{placeholder}}"></input>
 					</div>
@@ -38,26 +45,13 @@
 				</div>
 				{{/each }}
 			</div>
-			<div id="info" class="small-4 columns" style="background-color: #ffffff; text-align: center;">
-				<div class="card" style="background-color: #fff; border: 2px solid #16b161; margin: 2vh;">
-					<h3>
-						Info goes over here
-					</h3>
-					<ul>
-						<li>chocolate</li>
-						<li>chocolate</li>
-						<li>chocolate</li>
-						<li>chocolate</li>
-						<li>chocolate</li>
-						<li>chocolate</li>
-						<li>chocolate</li>
-						<li>chocolate</li>
-						<li>chocolate</li>
-						<li>chocolate</li>
-						<li>chocolate</li>
-						<li>chocolate</li>
-						<li>chocolate</li>
-						<li>chocolate</li>
+			<div id="info" class="small-4 columns" style="background-color: #ffffff; text-align: center; height: 90%;">
+				<div class="" style="background-color: #fff; border-left: 3px solid #eeeeee; margin: 2vh; padding: 2vh; height: 100%;">
+					<ul class="keyval-chart key-columns-5 val-columns-7" id="info-table">
+						<li class="chart-head">
+							<span class="key">Selection</span>
+							<span class="val">Value</span>
+						</li>
 					</ul>
 				</div>
 			</div>

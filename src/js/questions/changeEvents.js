@@ -8,24 +8,47 @@ const { OCCUPATIONAL_DATA, EDUCATION_LEVELS } = CONSTANTS
 const { INITIAL_PAGE, CAREER_PLANS_PAGE } = CONSTANTS.IDs.PAGE_IDS
 const { QUESTION_IDS } = CONSTANTS.IDs
 
+const addOrUpdateInfo = (i) => {
+	i.map((item) => {
+		if ($(`#info-row-${item.key}`).length) {
+			$(`#info-row-${item.key} .val`).html(item.value)
+		} else {
+			$('#info-table').append(`<li id="info-row-${item.key}"><span class="key">${item.key}</span><span class="val" style="word-wrap: break-word; display: block;">${item.value}</span></li>`)
+		}
+		return item
+	})
+}
+
 export default {
 	[QUESTION_IDS[INITIAL_PAGE].AGE_TEXT]: (e) => {
 		const value = parseInt(e.target.value, 10)
-		state.ui.values[QUESTION_IDS[INITIAL_PAGE].AGE_TEXT] = Number.isNaN(value) ? 0 : value
+		const val = Number.isNaN(value) ? 0 : value
+		state.ui.values[QUESTION_IDS[INITIAL_PAGE].AGE_TEXT] = val
+		state.ui.values.info.Age = val
+		const i = [
+			{
+				key: QUESTION_IDS[INITIAL_PAGE].AGE_TEXT,
+				val
+			}
+		]
+
+		addOrUpdateInfo(i)
 	},
 	[QUESTION_IDS[INITIAL_PAGE].NETWORTH_TEXT]: (e) => {
 		const value = parseInt(e.target.value, 10)
-		state.ui.values[QUESTION_IDS[INITIAL_PAGE].NETWORTH_TEXT] = Number.isNaN(value) ? 0 : value
+		const val = Number.isNaN(value) ? 0 : value
+		state.ui.values[QUESTION_IDS[INITIAL_PAGE].NETWORTH_TEXT] = val
+		state.ui.values.info['Initial Net Worth'] = val
 
 		const financialData = state.calculateFunds()
-
-		// console.log('FUNDS: ', financialData)
+		addOrUpdateInfo(QUESTION_IDS[INITIAL_PAGE].NETWORTH_TEXT, val)
 
 		state.data = { ...state.data, financialData }
 	},
 	[QUESTION_IDS[CAREER_PLANS_PAGE].CAREER_DROPDOWN]: (careerId) => {
 		state.ui.values[QUESTION_IDS[CAREER_PLANS_PAGE].CAREER_DROPDOWN] = careerId
 		const financialData = state.calculateFunds()
+		addOrUpdateInfo(QUESTION_IDS[CAREER_PLANS_PAGE].CAREER_DROPDOWN, careerId)
 
 		const careerData = R.filter(career => career.id === careerId, OCCUPATIONAL_DATA)[0]
 

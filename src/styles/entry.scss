@@ -1,6 +1,9 @@
 
 @import './fonts.scss';
 @import './uitk.scss';
+@import './pages.scss';
+@import './data.scss';
+@import './navigation.scss';
 
 // Remove the outline around elements
 *:focus {
@@ -10,5 +13,4 @@
 body {
     margin: 0px;
     background-color: #FFFFFF;
-
 }
