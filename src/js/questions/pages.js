@@ -28,6 +28,7 @@ const initialInfoPage = {
 		{
 			id: QUESTION_IDS[INITIAL_PAGE].AGE_TEXT,
 			placeholder: 'Age',
+			info: 'Starting age',
 			type: 'text',
 			changeEvent: changeEvents[QUESTION_IDS[INITIAL_PAGE].AGE_TEXT]
 
@@ -35,6 +36,7 @@ const initialInfoPage = {
 		{
 			id: 'networkInput',
 			placeholder: 'Networth',
+			info: 'Initial Net Worth',
 			type: 'text',
 			changeEvent: changeEvents[QUESTION_IDS[INITIAL_PAGE].NETWORTH_TEXT]
 		}
@@ -52,6 +54,7 @@ const careerPlansPage = {
 			label: 'Career',
 			show: true,
 			placeholder: 'Choose a Career...',
+			info: 'Career',
 			type: 'select-dropdown',
 			changeEvent: changeEvents[QUESTION_IDS[CAREER_PLANS_PAGE].CAREER_DROPDOWN],
 			values: OCCUPATIONAL_DATA
@@ -61,6 +64,7 @@ const careerPlansPage = {
 			label: 'Education',
 			show: false,
 			placeholder: 'Choose a type of school...',
+			info: 'Public or Private',
 			type: 'radio',
 			changeEvent: changeEvents[QUESTION_IDS[CAREER_PLANS_PAGE].EDUCATION_PUBLIC_PRIVATE_RADIO],
 			values: EDU_PUBLIC_PRIVATE_DATA
@@ -79,6 +83,7 @@ const lifestylePage = {
 			label: 'Mortgage / Rent',
 			show: true,
 			placeholder: 'Choose a type housing...',
+			info: 'Housing',
 			type: 'radio',
 			changeEvent: changeEvents[QUESTION_IDS[LIFESTYLE_PLANS_PAGE].MORTGAGE_RENT_RADIO],
 			values: HOUSING_OPTIONS_DATA
@@ -95,6 +100,7 @@ const retirementPlansPage = {
 		{
 			id: '401KInput',
 			placeholder: '401K / Month',
+			info: '401K',
 			type: 'text'
 		}
 	]
