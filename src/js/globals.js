@@ -7,13 +7,15 @@ const state = {
 			currentPage: 0
 		},
 		pages,
-		values: {}
+		values: {
+			info: {
+
+			}
+		}
 	},
 	data: {
 
-	},
-	scott: 'testing'
-
+	}
 }
 
 export { setInputEvents, selectInputClickEvent }
