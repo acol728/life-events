@@ -30,15 +30,24 @@ const initialInfoPage = {
 			placeholder: 'Age',
 			info: 'Starting age',
 			type: 'text',
+			required: true,
 			changeEvent: changeEvents[QUESTION_IDS[INITIAL_PAGE].AGE_TEXT]
 
 		},
 		{
-			id: 'networkInput',
+			id: QUESTION_IDS[INITIAL_PAGE].NETWORTH_TEXT,
 			placeholder: 'Networth',
 			info: 'Initial Net Worth',
 			type: 'text',
+			required: true,
 			changeEvent: changeEvents[QUESTION_IDS[INITIAL_PAGE].NETWORTH_TEXT]
+		},
+		{
+			id: QUESTION_IDS[INITIAL_PAGE].CURRENT_ANNUAL_INCOME_TEXT,
+			placeholder: 'Annual Income',
+			type: 'text',
+			required: true,
+			changeEvent: changeEvents[QUESTION_IDS[INITIAL_PAGE].CURRENT_ANNUAL_INCOME_TEXT]
 		}
 	]
 }
@@ -56,6 +65,7 @@ const careerPlansPage = {
 			placeholder: 'Choose a Career...',
 			info: 'Career',
 			type: 'select-dropdown',
+			required: true,
 			changeEvent: changeEvents[QUESTION_IDS[CAREER_PLANS_PAGE].CAREER_DROPDOWN],
 			values: OCCUPATIONAL_DATA
 		},
@@ -66,6 +76,7 @@ const careerPlansPage = {
 			placeholder: 'Choose a type of school...',
 			info: 'Public or Private',
 			type: 'radio',
+			required: false,
 			changeEvent: changeEvents[QUESTION_IDS[CAREER_PLANS_PAGE].EDUCATION_PUBLIC_PRIVATE_RADIO],
 			values: EDU_PUBLIC_PRIVATE_DATA
 		}
@@ -77,6 +88,7 @@ const lifestylePage = {
 	nav: 'Lifestyle',
 	title: 'How do you want to live...',
 	show: false,
+	required: true,
 	questions: [
 		{
 			id: QUESTION_IDS[LIFESTYLE_PLANS_PAGE].MORTGAGE_RENT_RADIO,
@@ -96,6 +108,7 @@ const retirementPlansPage = {
 	nav: 'Retirement',
 	title: 'What are your retirement plans...',
 	show: false,
+	required: true,
 	questions: [
 		{
 			id: '401KInput',

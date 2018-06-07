@@ -37,7 +37,7 @@
 					{{/compare}}{{#compare type "===" "radio"}}
 					<div id="{{id}}" class="md-multi-ctrl-field " style="{{#unless show}}display: none;{{/unless}}">
 						{{#each values}}
-						<input name="{{../id}}" id="{{id}}" type="{{../type}}">
+						<input id="{{id}}" name="{{../id}}" type="{{../type}}">
 						<label for="{{id}}">{{text}}</label>
 						{{/each}}
 					</div>

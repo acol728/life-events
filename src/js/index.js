@@ -8,11 +8,11 @@ import chart from './chart'
 
 $(document).ready(() => {
 	chart.createChart()
-	$('#navigate-forward').click(navigateForward)
+	$('#navigate-forward').on('click', navigateForward)
 
 	$('.nav-button').on('click', navigateToAPage)
 
-	$('#navigate-back').click(navigateBackward)
+	$('#navigate-back').on('click', navigateBackward)
 
 	// If dropdown li not disabled set to active and add text to input
 	$('.select-dropdown > li:not(.disabled)').on('click', selectInputClickEvent);
