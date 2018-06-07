@@ -74,12 +74,12 @@ const calculateFunds = () => {
 		federalTaxBracket = getFederalTaxBracket(TAX_INFO.INDV, currentAnnualSalary)
 		stateTaxBracket = getStateTaxBracket(TAX_INFO.INDV, 'WI', currentAnnualSalary)
 		const netAnnualIncome = calcNetIncome({ federalTaxBracket, stateTaxBracket }, currentAnnualSalary)
-
+		const monthly = R.times(calcMonthlyData(currentAge, educationLevel, lastYear.totalNetworth, currentAnnualSalary, federalTaxBracket, stateTaxBracket), MONTHS)
 		return [...accum, {
 			age: currentAge,
 			currentAnnualSalary,
 			netAnnualIncome,
-			monthly: R.times(calcMonthlyData(currentAge, educationLevel, lastYear.totalNetworth, currentAnnualSalary, federalTaxBracket, stateTaxBracket), MONTHS),
+			monthly,
 			totalNetworth: lastYear.totalNetworth + netAnnualIncome
 		}]
 	}, money)(workingYears)

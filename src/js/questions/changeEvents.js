@@ -15,7 +15,6 @@ export default {
 		let isValid = !Number.isNaN(parsedValue)
 
 		isValid = !!(isValid && (parsedValue >= 18 && parsedValue <= 65))
-		console.log('​isValid', isValid);
 
 		if (isValid) {
 			state.ui.values[QUESTION_IDS[INITIAL_PAGE].AGE_TEXT] = parsedValue
@@ -30,9 +29,11 @@ export default {
 
 		const financialData = state.calculateFunds()
 
-		// console.log('FUNDS: ', financialData)
-
 		state.data = { ...state.data, financialData }
+	},
+	[QUESTION_IDS[INITIAL_PAGE].CURRENT_ANNUAL_INCOME_TEXT]: (e) => {
+		const value = parseInt(e.target.value, 10)
+		state.ui.values[QUESTION_IDS[INITIAL_PAGE].CURRENT_ANNUAL_INCOME_TEXT] = Number.isNaN(value) ? 0 : value
 	},
 	[QUESTION_IDS[CAREER_PLANS_PAGE].CAREER_DROPDOWN]: (careerId) => {
 		state.ui.values[QUESTION_IDS[CAREER_PLANS_PAGE].CAREER_DROPDOWN] = careerId
