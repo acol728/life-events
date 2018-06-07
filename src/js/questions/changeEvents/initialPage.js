@@ -6,7 +6,6 @@ const { INITIAL_PAGE } = PAGE_IDS
 
 export default {
 	[QUESTION_IDS[INITIAL_PAGE].AGE_TEXT]: (e) => {
-
 		const parsedValue = parseInt(e.target.value, 10)
 		let isValid = !Number.isNaN(parsedValue)
 
@@ -30,6 +29,10 @@ export default {
 	[QUESTION_IDS[INITIAL_PAGE].CURRENT_ANNUAL_INCOME_TEXT]: (e) => {
 		const value = parseInt(e.target.value, 10)
 		state.ui.values[QUESTION_IDS[INITIAL_PAGE].CURRENT_ANNUAL_INCOME_TEXT] = Number.isNaN(value) ? 0 : value
+
+		const financialData = state.calculateFunds()
+
+		state.data = { ...state.data, financialData }
 	}
 
 }
