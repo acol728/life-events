@@ -34,3 +34,15 @@ export const removeError = (id) => {
 
 	state.ui.hasPageError = false
 }
+
+export const addOrUpdateInfo = (i) => {
+	i.map((item) => {
+		const idKey = item.key.replace(/\s/g, '')
+		if ($(`#info-row-${idKey}`).length) {
+			$(`#info-row-${idKey} .val`).html(item.val)
+		} else {
+			$('#info-table').append(`<li id="info-row-${idKey}"><span class="key">${item.key}</span><span class="val" style="word-wrap: break-word; display: block;">${item.val}</span></li>`)
+		}
+		return item
+	})
+}
