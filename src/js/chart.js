@@ -9,6 +9,7 @@ const {
 	OCCUPATIONAL_DATA, EDUCATIONAL_DATA, DEFAULT_AGE, DEFAULT_COLLEGE_START_AGE, DEFAULT_RETIREMENT_AGE, DEFAULT_COLA_ADJ, TAX_INFO
 } = CONSTANTS
 const { TAX_BRACKETS } = TAX_INFO
+const MONTHS = 12
 
 const createChart = () => {
 	const scale = d3.scaleLinear()
@@ -25,35 +26,16 @@ const createChart = () => {
 }
 
 const calculateFunds = () => {
-	const MONTHS = 12
 	const age = state.ui.values.ageInput || DEFAULT_AGE
 	const initialFunds = state.ui.values.networthInput || 0
 	const currentAnnualIncome = state.ui.values.currentAnnualIncomeInput || 0
 	const careerId = state.ui.values.careerInput || ''
-	const findCareer = R.find(job => job.id === careerId)
-	let educationLevel
-	let startingCareerSalary = 0
 
-	if (!R.isEmpty(careerId)) {
-		const careerObj = findCareer(OCCUPATIONAL_DATA)
-		startingCareerSalary = careerObj ? careerObj.salary : 0
-		educationLevel = R.find(edu => edu.id === careerObj.education, EDUCATIONAL_DATA)
-	}
+	const careerData = createCareerData(careerId)
+	const currentSalary = isInCareer(age, careerData.educationLevel) ? careerData.startingCareerSalary : currentAnnualIncome
+	let federalTaxBracket = getFederalTaxBracket(TAX_INFO.INDV, careerData.startingCareerSalary)
+	let stateTaxBracket = getStateTaxBracket(TAX_INFO.INDV, 'WI', careerData.startingCareerSalary)
 
-	const calcMonthlyData = R.curry((lastYearNW, currentSalary, federalTaxBracket, stateTaxBracket, month) => {
-		const currentMonthlySalary = currentSalary / MONTHS
-		const netIncome = calcNetIncome({ federalTaxBracket, stateTaxBracket }, currentMonthlySalary)
-		return {
-			month: month + 1,
-			currentMonthlySalary,
-			netIncome,
-			totalNetworth: lastYearNW + (netIncome * (month + 1))
-		}
-	})
-
-	let federalTaxBracket = getFederalTaxBracket(TAX_INFO.INDV, startingCareerSalary)
-	let stateTaxBracket = getStateTaxBracket(TAX_INFO.INDV, 'WI', startingCareerSalary)
-	const currentSalary = isInCareer(age, educationLevel) ? startingCareerSalary : currentAnnualIncome
 	console.log('​calculateFunds -> currentSalary', currentSalary);
 
 	const netIncome = calcNetIncome({ federalTaxBracket, stateTaxBracket }, currentSalary)
@@ -72,9 +54,9 @@ const calculateFunds = () => {
 	money = R.reduce((accum, currentAge) => {
 		const year = currentAge - age
 		const lastYear = R.last(accum) || {}
-		const inCareer = isInCareer(currentAge, educationLevel)
+		const inCareer = isInCareer(currentAge, careerData.educationLevel)
 		// Currently still using 'year' as # years after the age entered. Not the # of years starting the career
-		const currentAnnualSalary = inCareer ? calcSalaryWithCOLA(startingCareerSalary, year) : calcSalaryWithCOLA(currentAnnualIncome, year)
+		const currentAnnualSalary = inCareer ? calcSalaryWithCOLA(careerData.startingCareerSalary, year) : calcSalaryWithCOLA(currentAnnualIncome, year)
 
 		federalTaxBracket = getFederalTaxBracket(TAX_INFO.INDV, currentAnnualSalary)
 		stateTaxBracket = getStateTaxBracket(TAX_INFO.INDV, 'WI', currentAnnualSalary)
@@ -95,6 +77,20 @@ const calculateFunds = () => {
 export default {
 	createChart,
 	calculateFunds
+}
+
+const createCareerData = (careerId) => {
+	const findCareer = R.find(job => job.id === careerId)
+	const result = {
+
+	}
+	if (!R.isEmpty(careerId)) {
+		const careerObj = findCareer(OCCUPATIONAL_DATA)
+		result.startingCareerSalary = careerObj ? careerObj.salary : 0
+		result.educationLevel = R.find(edu => edu.id === careerObj.education, EDUCATIONAL_DATA)
+	}
+
+	return result
 }
 
 const getFederalTaxBracket = (indvOrJoint, taxibleEarnings) => {
@@ -120,3 +116,14 @@ const calcNetIncome = ({ federalTaxBracket, stateTaxBracket }, taxibleIncome) =>
 	taxibleIncome - (taxibleIncome * (federalTaxBracket.percent)) - (taxibleIncome * (stateTaxBracket.percent))
 
 const calcSalaryWithCOLA = (startingSalary, currentYear) => startingSalary * (1 + (DEFAULT_COLA_ADJ / 1)) ** currentYear
+
+const calcMonthlyData = R.curry((lastYearNW, currentSalary, federalTaxBracket, stateTaxBracket, month) => {
+	const currentMonthlySalary = currentSalary / MONTHS
+	const netIncome = calcNetIncome({ federalTaxBracket, stateTaxBracket }, currentMonthlySalary)
+	return {
+		month: month + 1,
+		currentMonthlySalary,
+		netIncome,
+		totalNetworth: lastYearNW + (netIncome * (month + 1))
+	}
+})
