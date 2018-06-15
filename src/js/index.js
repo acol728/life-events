@@ -4,10 +4,11 @@ import $ from 'jquery'
 import '../styles/entry.scss'
 import globals, { setInputEvents, selectInputClickEvent } from './globals'
 import { navigateForward, navigateBackward, navigateToAPage } from './navigation'
-import chart from './chart'
+import calcs from './calcs'
 
 $(document).ready(() => {
-	chart.createChart()
+	// Stub to create chart. Not used initially. Feel free to create using D3!
+	calcs.createChart()
 	$('#navigate-forward').on('click', navigateForward)
 
 	$('.nav-button').on('click', navigateToAPage)
@@ -40,6 +41,6 @@ $(document).click((e) => {
 
 module.exports = {
 	...globals,
-	createChart: chart.createChart,
-	calculateFunds: chart.calculateFunds
+	createChart: calcs.createChart,
+	calculateFunds: calcs.calculateFunds
 }
