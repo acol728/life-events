@@ -9,8 +9,6 @@ const {
 const { QUESTION_IDS } = CONSTANTS.IDs;
 const { OCCUPATIONAL_DATA, EDU_PUBLIC_PRIVATE_DATA, HOUSING_OPTIONS_DATA } = CONSTANTS;
 
-console.table(OCCUPATIONAL_DATA);
-
 const welcomePage = {
   id: WELCOME_PAGE,
   nav: 'Welcome',

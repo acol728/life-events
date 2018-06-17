@@ -210,24 +210,6 @@ export default [
     salary: 64940
   },
   {
-    id: 'buyers_and_purchasing_agents_farm_products',
-    text: 'Buyers and purchasing agents, farm products',
-    education: 'bach_deg',
-    salary: '—'
-  },
-  {
-    id: 'wholesale_and_retail_buyers_except_farm_products',
-    text: 'Wholesale and retail buyers, except farm products',
-    education: 'bach_deg',
-    salary: '—'
-  },
-  {
-    id: 'purchasing_agents_except_wholesale_retail_and_farm_products',
-    text: 'Purchasing agents, except wholesale, retail, and farm products',
-    education: 'bach_deg',
-    salary: '—'
-  },
-  {
     id: 'claims_adjusters_examiners_and_investigators',
     text: 'Claims adjusters, examiners, and investigators',
     education: 'hs_or_eq',
@@ -496,18 +478,6 @@ export default [
     text: 'Statisticians',
     education: 'mast_deg',
     salary: 84060
-  },
-  {
-    id: 'mathematical_technicians',
-    text: 'Mathematical technicians',
-    education: 'bach_deg',
-    salary: '—'
-  },
-  {
-    id: 'mathematical_science_occupations_all_other',
-    text: 'Mathematical science occupations, all other',
-    education: 'bach_deg',
-    salary: '—'
   },
   {
     id: 'architects_except_landscape_and_naval',
@@ -978,12 +948,6 @@ export default [
     salary: 48090
   },
   {
-    id: 'substance_abuse_and_behavioral_disorder_counselors',
-    text: 'Substance abuse and behavioral disorder counselors',
-    education: 'bach_deg',
-    salary: '—'
-  },
-  {
     id: 'educational_guidance_school_and_vocational_counselors',
     text: 'Educational, guidance, school, and vocational counselors',
     education: 'mast_deg',
@@ -994,12 +958,6 @@ export default [
     text: 'Marriage and family therapists',
     education: 'mast_deg',
     salary: 48790
-  },
-  {
-    id: 'mental_health_counselors',
-    text: 'Mental health counselors',
-    education: 'mast_deg',
-    salary: '—'
   },
   {
     id: 'rehabilitation_counselors',
@@ -1596,12 +1554,6 @@ export default [
     salary: 55930
   },
   {
-    id: 'actors',
-    text: 'Actors',
-    education: 'some_col_no_deg',
-    salary: '—'
-  },
-  {
     id: 'producers_and_directors',
     text: 'Producers and directors',
     education: 'bach_deg',
@@ -1626,12 +1578,6 @@ export default [
     salary: 26800
   },
   {
-    id: 'dancers',
-    text: 'Dancers',
-    education: 'none',
-    salary: '—'
-  },
-  {
     id: 'choreographers',
     text: 'Choreographers',
     education: 'hs_or_eq',
@@ -1642,18 +1588,6 @@ export default [
     text: 'Music directors and composers',
     education: 'bach_deg',
     salary: 50590
-  },
-  {
-    id: 'musicians_and_singers',
-    text: 'Musicians and singers',
-    education: 'none',
-    salary: '—'
-  },
-  {
-    id: 'entertainers_and_performers_sports_and_related_workers_all_other',
-    text: 'Entertainers and performers, sports and related workers, all other',
-    education: 'none',
-    salary: '—'
   },
   {
     id: 'radio_and_television_announcers',
@@ -1776,18 +1710,6 @@ export default [
     salary: 151440
   },
   {
-    id: 'oral_and_maxillofacial_surgeons',
-    text: 'Oral and maxillofacial surgeons',
-    education: 'doc_or_prof_deg',
-    salary: '>=$208,000'
-  },
-  {
-    id: 'orthodontists',
-    text: 'Orthodontists',
-    education: 'doc_or_prof_deg',
-    salary: '>=$208,000'
-  },
-  {
     id: 'prosthodontists',
     text: 'Prosthodontists',
     education: 'doc_or_prof_deg',
@@ -1818,12 +1740,6 @@ export default [
     salary: 124170
   },
   {
-    id: 'anesthesiologists',
-    text: 'Anesthesiologists',
-    education: 'doc_or_prof_deg',
-    salary: '>=$208,000'
-  },
-  {
     id: 'family_and_general_practitioners',
     text: 'Family and general practitioners',
     education: 'doc_or_prof_deg',
@@ -1836,34 +1752,10 @@ export default [
     salary: 192930
   },
   {
-    id: 'obstetricians_and_gynecologists',
-    text: 'Obstetricians and gynecologists',
-    education: 'doc_or_prof_deg',
-    salary: '>=$208,000'
-  },
-  {
     id: 'pediatricians_general',
     text: 'Pediatricians, general',
     education: 'doc_or_prof_deg',
     salary: 172650
-  },
-  {
-    id: 'psychiatrists',
-    text: 'Psychiatrists',
-    education: 'doc_or_prof_deg',
-    salary: '>=$208,000'
-  },
-  {
-    id: 'surgeons',
-    text: 'Surgeons',
-    education: 'doc_or_prof_deg',
-    salary: '>=$208,000'
-  },
-  {
-    id: 'physicians_and_surgeons_all_other',
-    text: 'Physicians and surgeons, all other',
-    education: 'doc_or_prof_deg',
-    salary: '>=$208,000'
   },
   {
     id: 'physician_assistants',
@@ -1966,18 +1858,6 @@ export default [
     text: 'Health diagnosing and treating practitioners, all other',
     education: 'mast_deg',
     salary: 73830
-  },
-  {
-    id: 'medical_and_clinical_laboratory_technologists',
-    text: 'Medical and clinical laboratory technologists',
-    education: 'bach_deg',
-    salary: '—'
-  },
-  {
-    id: 'medical_and_clinical_laboratory_technicians',
-    text: 'Medical and clinical laboratory technicians',
-    education: 'assc_deg',
-    salary: '—'
   },
   {
     id: 'dental_hygienists',
@@ -2532,18 +2412,6 @@ export default [
     salary: 30060
   },
   {
-    id: 'gaming_supervisors',
-    text: 'Gaming supervisors',
-    education: 'hs_or_eq',
-    salary: '—'
-  },
-  {
-    id: 'slot_supervisors',
-    text: 'Slot supervisors',
-    education: 'hs_or_eq',
-    salary: '—'
-  },
-  {
     id: 'first-line_supervisors_of_personal_service_workers',
     text: 'First-line supervisors of personal service workers',
     education: 'hs_or_eq',
@@ -2680,18 +2548,6 @@ export default [
     text: 'Concierges',
     education: 'hs_or_eq',
     salary: 30150
-  },
-  {
-    id: 'tour_guides_and_escorts',
-    text: 'Tour guides and escorts',
-    education: 'hs_or_eq',
-    salary: '—'
-  },
-  {
-    id: 'travel_guides',
-    text: 'Travel guides',
-    education: 'hs_or_eq',
-    salary: '—'
   },
   {
     id: 'childcare_workers',
@@ -3552,18 +3408,6 @@ export default [
     salary: 37950
   },
   {
-    id: 'segmental_pavers',
-    text: 'Segmental pavers',
-    education: 'hs_or_eq',
-    salary: '—'
-  },
-  {
-    id: 'construction_and_related_workers_all_other',
-    text: 'Construction and related workers, all other',
-    education: 'hs_or_eq',
-    salary: '—'
-  },
-  {
     id: 'derrick_operators_oil_and_gas',
     text: 'Derrick operators, oil and gas',
     education: 'none',
@@ -3972,18 +3816,6 @@ export default [
     salary: 33310
   },
   {
-    id: 'electrical_and_electronic_equipment_assemblers',
-    text: 'Electrical and electronic equipment assemblers',
-    education: 'hs_or_eq',
-    salary: '—'
-  },
-  {
-    id: 'electromechanical_equipment_assemblers',
-    text: 'Electromechanical equipment assemblers',
-    education: 'hs_or_eq',
-    salary: '—'
-  },
-  {
     id: 'engine_and_other_machine_assemblers',
     text: 'Engine and other machine assemblers',
     education: 'hs_or_eq',
@@ -4002,22 +3834,10 @@ export default [
     salary: 32290
   },
   {
-    id: 'team_assemblers',
-    text: 'Team assemblers',
-    education: 'hs_or_eq',
-    salary: '—'
-  },
-  {
     id: 'timing_device_assemblers_and_adjusters',
     text: 'Timing device assemblers and adjusters',
     education: 'hs_or_eq',
     salary: 34800
-  },
-  {
-    id: 'assemblers_and_fabricators_all_other',
-    text: 'Assemblers and fabricators, all other',
-    education: 'hs_or_eq',
-    salary: '—'
   },
   {
     id: 'bakers',
@@ -4606,18 +4426,6 @@ export default [
     text: 'Aircraft cargo handling supervisors',
     education: 'hs_or_eq',
     salary: 48150
-  },
-  {
-    id: 'first-line_supervisors_of_helpers_laborers_and_material_movers_hand',
-    text: 'First-line supervisors of helpers, laborers, and material movers, hand',
-    education: 'hs_or_eq',
-    salary: '—'
-  },
-  {
-    id: 'first-line_supervisors_of_transportation_and_material-moving_machine_and_vehicle_operators',
-    text: 'First-line supervisors of transportation and material-moving machine and vehicle operators',
-    education: 'hs_or_eq',
-    salary: '—'
   },
   {
     id: 'airline_pilots_copilots_and_flight_engineers',

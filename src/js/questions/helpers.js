@@ -13,7 +13,7 @@ export const setInputEvents = () => {
   });
 };
 
-export const selectInputClickEvent = () => {
+export function selectInputClickEvent () {
   const $selectParent = ($(this).parents('.uitk-select') || {});
   const getQuestion = question => question.id === $selectParent.find('input')[0].id;
 
@@ -36,7 +36,7 @@ export const selectInputClickEvent = () => {
     $(this).siblings().removeClass('active');
     $selectParent.removeClass('is-open');
   }
-};
+}
 
 const helpers = {
   setInputEvents,

@@ -15,16 +15,19 @@ $(document).ready(() => {
 
   $('#navigate-back').on('click', navigateBackward);
 
+  console.log(selectInputClickEvent);
   // If dropdown li not disabled set to active and add text to input
   $('.select-dropdown > li:not(.disabled)').on('click', selectInputClickEvent);
 
   setInputEvents();
 });
 
-// Open dropdown when input clicked
-$('.select-input').click(() => {
+function drowdownClickHandler () {
   $(this).parents('.uitk-select').toggleClass('is-open');
-});
+}
+
+// Open dropdown when input clicked
+$('.select-input').click(drowdownClickHandler);
 
 // Checkbox in multiple selects will be checked by clicking on the li
 $('.select-dropdown > li input[type="checkbox"]').click((e) => {
