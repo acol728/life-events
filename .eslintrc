@@ -1,7 +1,6 @@
 {
 	"extends": [
-		"airbnb-base",
-		"standard"
+		"airbnb-standard"
 	],
 	"env": {
 		"es6": true,
@@ -11,7 +10,6 @@
 		"jest": true
 	},
 	"plugins": [
-		"standard",
 		"babel",
 		"import"
 	],
@@ -19,13 +17,6 @@
 		"state": true
 	},
 	"rules": {
-		"import/extensions": 0,
-		"indent": [
-			2,
-			"tab"
-		],
-		"no-tabs": 0,
-		"semi": 0,
 		"max-len": 0
 	}
 }
