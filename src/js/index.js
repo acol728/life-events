@@ -1,5 +1,3 @@
-/* global state:true */
-/* eslint no-console: "off" */
 import $ from 'jquery';
 import '../styles/entry.scss';
 import globals, { setInputEvents, selectInputClickEvent } from './globals';
@@ -15,14 +13,13 @@ $(document).ready(() => {
 
   $('#navigate-back').on('click', navigateBackward);
 
-  console.log(selectInputClickEvent);
   // If dropdown li not disabled set to active and add text to input
   $('.select-dropdown > li:not(.disabled)').on('click', selectInputClickEvent);
 
   setInputEvents();
 });
 
-function drowdownClickHandler () {
+function drowdownClickHandler() {
   $(this).parents('.uitk-select').toggleClass('is-open');
 }
 
