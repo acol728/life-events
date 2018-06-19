@@ -1,6 +1,7 @@
 export const INITIAL_PAGE = 'initialPage';
 export const CAREER_PLANS_PAGE = 'careerPlansPage';
 export const LIFESTYLE_PLANS_PAGE = 'lifestylePlansPage';
+export const LEISURE_PAGE = 'leisurePage';
 export const RETIREMENT_PLANS_PAGE = 'retirementPlansPage';
 export const WELCOME_PAGE = 'welcomePage';
 
@@ -9,6 +10,7 @@ export const PAGE_IDS = {
   INITIAL_PAGE,
   CAREER_PLANS_PAGE,
   LIFESTYLE_PLANS_PAGE,
+  LEISURE_PAGE,
   RETIREMENT_PLANS_PAGE
 };
 
@@ -25,6 +27,9 @@ export const QUESTION_IDS = {
   },
   [LIFESTYLE_PLANS_PAGE]: {
     MORTGAGE_RENT_RADIO: 'mortgageRentInput'
+  },
+  [LEISURE_PAGE]: {
+    NUMBER_OF_CARS_TEXT: 'numberOfCarsInput'
   },
   [RETIREMENT_PLANS_PAGE]: {
     FOUR01K_TEXT: '401KInput'

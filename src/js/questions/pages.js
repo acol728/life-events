@@ -4,11 +4,12 @@ import { setInputEvents, selectInputClickEvent } from './helpers';
 import changeEvents from './changeEvents';
 
 const {
-  WELCOME_PAGE, INITIAL_PAGE, CAREER_PLANS_PAGE, LIFESTYLE_PLANS_PAGE, RETIREMENT_PLANS_PAGE
+  WELCOME_PAGE, INITIAL_PAGE, CAREER_PLANS_PAGE, LIFESTYLE_PLANS_PAGE, LEISURE_PAGE, RETIREMENT_PLANS_PAGE
 } = CONSTANTS.IDs.PAGE_IDS;
 const { QUESTION_IDS } = CONSTANTS.IDs;
 const { OCCUPATIONAL_DATA, EDU_PUBLIC_PRIVATE_DATA, HOUSING_OPTIONS_DATA } = CONSTANTS;
 
+console.log('LEISURE PAGE: ', LEISURE_PAGE);
 const welcomePage = {
   id: WELCOME_PAGE,
   nav: 'Welcome',
@@ -103,6 +104,26 @@ const lifestylePage = {
   ]
 };
 
+const leisurePage = {
+  id: 'leisurePage',
+  nav: 'Leisure',
+  title: 'What do you do for fun...',
+  show: false,
+  required: true,
+  questions: [
+    {
+      id: QUESTION_IDS[LEISURE_PAGE].NUMBER_OF_CARS_TEXT,
+      label: 'Number of Cars',
+      show: true,
+      placeholder: '# of cars',
+      info: 'Vehicles',
+      type: 'text'
+      // changeEvent: changeEvents[QUESTION_IDS[LEISURE_PAGE].NUMBER_OF_CARS_TEXT],
+      // values: HOUSING_OPTIONS_DATA
+    }
+  ]
+};
+
 const retirementPlansPage = {
   id: RETIREMENT_PLANS_PAGE,
   nav: 'Retirement',
@@ -124,6 +145,7 @@ const pages = [
   initialInfoPage,
   careerPlansPage,
   lifestylePage,
+  leisurePage,
   retirementPlansPage
 ];
 
