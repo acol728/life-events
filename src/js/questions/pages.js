@@ -8,10 +8,9 @@ const {
 } = CONSTANTS.IDs.PAGE_IDS;
 const { QUESTION_IDS } = CONSTANTS.IDs;
 const {
-  OCCUPATIONAL_DATA, EDU_PUBLIC_PRIVATE_DATA, HOUSING_OPTIONS_DATA, SUBSCRIPTION_DATA
+  OCCUPATIONAL_DATA, EDU_PUBLIC_PRIVATE_DATA, HOUSING_OPTIONS_DATA, NUMBER_OF_VACATIONS_DATA, LENGTH_OF_VACATIONS_DATA, SUBSCRIPTION_DATA
 } = CONSTANTS;
 
-console.log('LEISURE PAGE: ', LEISURE_PAGE);
 const welcomePage = {
   id: WELCOME_PAGE,
   nav: 'Welcome',
@@ -131,6 +130,28 @@ const leisurePage = {
       info: 'Subscriptions',
       type: 'select-dropdown',
       values: SUBSCRIPTION_DATA
+    },
+    {
+      id: QUESTION_IDS[LEISURE_PAGE].NUMBER_OF_VACATIONS_DROPDOWN,
+      label: 'Number of Vacations Per Year',
+      show: true,
+      placeholder: 'Select number of years...',
+      info: 'Vacation Frequency',
+      type: 'select-dropdown',
+      required: true,
+      changeEvent: changeEvents[QUESTION_IDS[LEISURE_PAGE].NUMBER_OF_VACATIONS_DROPDOWN],
+      values: NUMBER_OF_VACATIONS_DATA
+    },
+    {
+      id: QUESTION_IDS[LEISURE_PAGE].LENGTH_OF_VACATIONS_DROPDOWN,
+      label: 'Average Vacation Length',
+      show: true,
+      placeholder: 'Select length...',
+      info: 'Vacation Length',
+      type: 'select-dropdown',
+      required: true,
+      changeEvent: changeEvents[QUESTION_IDS[LEISURE_PAGE].LENGTH_OF_VACATIONS_DROPDOWN],
+      values: LENGTH_OF_VACATIONS_DATA
     }
   ]
 };
