@@ -1,5 +1,5 @@
 import CONSTANTS from '../constants';
-import { showError, removeError, addOrUpdateInfo, updateHero1, updateHero2 } from './util';
+import { showError, removeError, addOrUpdateInfo, updateHeroes } from './util';
 import pages from '../pages';
 
 const { PAGE_IDS, QUESTION_IDS } = CONSTANTS.IDs;
@@ -45,7 +45,7 @@ export default {
       updateHeroes(financialData);
 
       state.data = { ...state.data, financialData };
-      updateHero2(financialData);
+      updateHeroes(financialData);
     } else {
       state.ui.values[QUESTION_IDS[INITIAL_PAGE].NETWORTH_TEXT] = undefined;
     }
@@ -55,7 +55,7 @@ export default {
     state.ui.values[QUESTION_IDS[INITIAL_PAGE].CURRENT_ANNUAL_INCOME_TEXT] = Number.isNaN(value) ? 0 : value;
 
     const financialData = state.calculateFunds();
-    updateHero1(financialData);
+    updateHeroes(financialData);
     state.data = { ...state.data, financialData };
   }
 };
