@@ -14,9 +14,6 @@ const getPages = () =>
 const getHeroes = () =>
   CONSTANTS.HEROES_DATA;
 
-const getHeroes = () =>
-  CONSTANTS.HEROES_DATA;
-
 const getState = () => state;
 
 const debug = (optionalValue) => {
@@ -40,8 +37,7 @@ const register = (Handlebars) => {
     getPage,
     getHeroes,
     getPages,
-    debug,
-    getHeroes
+    debug
   };
 
   if (Handlebars && typeof Handlebars.registerHelper === 'function') {
