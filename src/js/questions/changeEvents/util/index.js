@@ -1,15 +1,7 @@
 import $ from 'jquery';
 import { navigateForward, navigateBackward, navigateToAPage } from '../../../navigation';
 
-export const updateHero1 = (financialData) => {
-  // const currentData = financialData.find(item => item.age === item.currentAge);
-  // const annualSal = currentData.currentAnnualSalary;
-  // $('#hero_1 h1').html(`$${Math.round(annualSal / 12).toLocaleString()}`);
-  $('#hero_1 h1').html('this is a change');
-  console.log(financialData);
-};
-
-export const updateHero2 = (financialData) => {
+export const updateHero = (financialData) => {
   const dataAt65 = financialData.find(item => item.age === 65);
   const netWorthAt65 = dataAt65.totalNetworth;
   $('#hero_2 h1').html(`$${Math.round(netWorthAt65).toLocaleString()}`);
