@@ -29,7 +29,9 @@ export const QUESTION_IDS = {
     MORTGAGE_RENT_RADIO: 'mortgageRentInput'
   },
   [LEISURE_PAGE]: {
-    NUMBER_OF_CARS_TEXT: 'numberOfCarsInput'
+    NUMBER_OF_CARS_TEXT: 'numberOfCarsInput',
+    NUMBER_OF_VACATIONS_DROPDOWN: 'numberOfVacationsInput',
+    LENGTH_OF_VACATIONS_DROPDOWN: 'lengthOfVacationsInput'
   },
   [RETIREMENT_PLANS_PAGE]: {
     FOUR01K_TEXT: '401KInput'
