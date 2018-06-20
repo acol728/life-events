@@ -1,4 +1,4 @@
-export default [
+export const SUBSCRIPTION_DATA = [
   {
     id: 'zero',
     text: 'Nothing',
@@ -40,3 +40,7 @@ export default [
     amount: 100
   }
 ];
+
+export default {
+  SUBSCRIPTION_DATA
+};

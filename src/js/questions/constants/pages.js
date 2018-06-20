@@ -30,9 +30,10 @@ export const QUESTION_IDS = {
   },
   [LEISURE_PAGE]: {
     NUMBER_OF_CARS_TEXT: 'numberOfCarsInput',
-    SUBSCRIPTIONS_DROPDOWN: 'subscriptionInput',
     NUMBER_OF_VACATIONS_DROPDOWN: 'numberOfVacationsInput',
-    LENGTH_OF_VACATIONS_DROPDOWN: 'lengthOfVacationsInput'
+    LENGTH_OF_VACATIONS_DROPDOWN: 'lengthOfVacationsInput',
+    SUBSCRIPTION_DROPDOWN: 'subscriptionInput',
+    COFFEE_RADIO: 'coffeeInput'
   },
   [RETIREMENT_PLANS_PAGE]: {
     FOUR01K_TEXT: '401KInput'
