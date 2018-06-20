@@ -1,7 +1,7 @@
 import $ from 'jquery';
 import { navigateForward, navigateBackward, navigateToAPage } from '../../../navigation';
 
-export const updateHero = (financialData) => {
+export const updateHeroes = (financialData) => {
   const dataAt65 = financialData.find(item => item.age === 65);
   const netWorthAt65 = dataAt65.totalNetworth;
   $('#hero_2 h1').html(`$${Math.round(netWorthAt65).toLocaleString()}`);
