@@ -2,6 +2,7 @@
 import helpersModule from 'handlebars-helpers';
 import pages from '../questions/pages';
 import state from '../globals';
+import CONSTANTS from '../questions/constants';
 
 const getPage = i =>
   // return true
@@ -10,6 +11,8 @@ const getPage = i =>
 const getPages = () =>
   // return true
   pages;
+const getHeroes = () =>
+  CONSTANTS.HEROES_DATA;
 
 const getState = () => state;
 
@@ -32,6 +35,7 @@ const register = (Handlebars) => {
     ...externalHelpers,
     getState,
     getPage,
+    getHeroes,
     getPages,
     debug
   };

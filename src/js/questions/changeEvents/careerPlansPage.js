@@ -3,7 +3,7 @@ import R from 'ramda';
 import $ from 'jquery';
 import CONSTANTS from '../constants';
 import pages from '../pages';
-import { addOrUpdateInfo } from './util';
+import { addOrUpdateInfo, updateHeroes } from './util';
 
 const { OCCUPATIONAL_DATA, EDUCATION_LEVELS } = CONSTANTS;
 const { CAREER_PLANS_PAGE } = CONSTANTS.IDs.PAGE_IDS;
@@ -32,6 +32,7 @@ export default {
     addOrUpdateInfo(infoItems);
 
     const financialData = state.calculateFunds();
+    updateHeroes(financialData);
 
     const careerData = R.filter(career => career.id === careerId, OCCUPATIONAL_DATA)[0];
 

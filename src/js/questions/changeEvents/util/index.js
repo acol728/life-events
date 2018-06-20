@@ -1,6 +1,14 @@
 import $ from 'jquery';
 import { navigateForward, navigateBackward, navigateToAPage } from '../../../navigation';
 
+export const updateHeroes = (financialData) => {
+  console.log('financialData', financialData);
+  const dataAt65 = financialData.find(item => item.age === 65);
+  console.log('dataAt65', dataAt65);
+  // const netWorthAt65 = dataAt65.totalNetWorth;
+  console.log(dataAt65.monthly);
+};
+
 export const showError = (id, msg) => {
   const $currentElement = $(`#${id}`);
   $currentElement.addClass('has-error');
