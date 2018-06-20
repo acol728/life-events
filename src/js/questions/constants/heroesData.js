@@ -11,7 +11,7 @@ export const HEROES_DATA = [
   },
   {
     id: 'hero_3',
-    title: 'Monthly allowance At Retirement',
+    title: 'Monthly Allowance At Retirement',
     defaultValue: 'N/A'
   }
 ];
