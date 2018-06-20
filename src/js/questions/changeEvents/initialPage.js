@@ -57,5 +57,4 @@ export default {
     updateHero1(financialData);
     state.data = { ...state.data, financialData };
   }
-
 };
