@@ -7,7 +7,9 @@ const {
   WELCOME_PAGE, INITIAL_PAGE, CAREER_PLANS_PAGE, LIFESTYLE_PLANS_PAGE, LEISURE_PAGE, RETIREMENT_PLANS_PAGE
 } = CONSTANTS.IDs.PAGE_IDS;
 const { QUESTION_IDS } = CONSTANTS.IDs;
-const { OCCUPATIONAL_DATA, EDU_PUBLIC_PRIVATE_DATA, HOUSING_OPTIONS_DATA } = CONSTANTS;
+const {
+  OCCUPATIONAL_DATA, EDU_PUBLIC_PRIVATE_DATA, HOUSING_OPTIONS_DATA, SUBSCRIPTION_DATA
+} = CONSTANTS;
 
 console.log('LEISURE PAGE: ', LEISURE_PAGE);
 const welcomePage = {
@@ -120,6 +122,15 @@ const leisurePage = {
       type: 'text'
       // changeEvent: changeEvents[QUESTION_IDS[LEISURE_PAGE].NUMBER_OF_CARS_TEXT],
       // values: HOUSING_OPTIONS_DATA
+    },
+    {
+      id: QUESTION_IDS[LEISURE_PAGE].AMOUNT_TO_SUBSCRIPTIONS,
+      label: 'Amount paid to subscriptions/month',
+      show: true,
+      placeholder: 'Choose amount',
+      info: 'Subscriptions',
+      type: 'select-dropdown',
+      values: SUBSCRIPTION_DATA
     }
   ]
 };

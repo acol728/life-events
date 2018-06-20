@@ -5,11 +5,9 @@ export const updateHeroes = (financialData) => {
   const dataAt65 = financialData.find(item => item.age === 65);
   const netWorthAt65 = dataAt65.totalNetworth;
   $('#hero_2 h1').html(`$${Math.round(netWorthAt65).toLocaleString()}`);
-  console.log(dataAt65);
   const monthlyIncomeAt65 = dataAt65.monthly[11].currentMonthlySalary;
   $('#hero_1 h1').html(`$${Math.round(monthlyIncomeAt65).toLocaleString()}`);
   const monthlyRetirementAllowance = (netWorthAt65 / 15) / 12;
-  console.log(monthlyRetirementAllowance);
   $('#hero_3 h1').html(`$${Math.round(monthlyRetirementAllowance).toLocaleString()}`);
 };
 
