@@ -8,7 +8,7 @@ const {
 } = CONSTANTS.IDs.PAGE_IDS;
 const { QUESTION_IDS } = CONSTANTS.IDs;
 const {
-  OCCUPATIONAL_DATA, EDU_PUBLIC_PRIVATE_DATA, HOUSING_OPTIONS_DATA, NUMBER_OF_VACATIONS_DATA, LENGTH_OF_VACATIONS_DATA
+  OCCUPATIONAL_DATA, EDU_PUBLIC_PRIVATE_DATA, HOUSING_OPTIONS_DATA, NUMBER_OF_VACATIONS_DATA, LENGTH_OF_VACATIONS_DATA, SUBSCRIPTION_DATA
 } = CONSTANTS;
 
 const welcomePage = {
@@ -121,6 +121,15 @@ const leisurePage = {
       type: 'text'
       // changeEvent: changeEvents[QUESTION_IDS[LEISURE_PAGE].NUMBER_OF_CARS_TEXT],
       // values: HOUSING_OPTIONS_DATA
+    },
+    {
+      id: QUESTION_IDS[LEISURE_PAGE].AMOUNT_TO_SUBSCRIPTIONS,
+      label: 'Amount paid to subscriptions/month',
+      show: true,
+      placeholder: 'Choose amount',
+      info: 'Subscriptions',
+      type: 'select-dropdown',
+      values: SUBSCRIPTION_DATA
     },
     {
       id: QUESTION_IDS[LEISURE_PAGE].NUMBER_OF_VACATIONS_DROPDOWN,

@@ -1,5 +1,6 @@
 import IDs from './pages';
 import OCCUPATIONAL_DATA from './occupationData';
+import SUBSCRIPTION_DATA from './subscriptionData';
 import EDUCATIONAL_DATA, { EDU_PUBLIC_PRIVATE_DATA, EDUCATION_LEVELS } from './educationData';
 import { HOUSING_OPTIONS_DATA } from './lifestyleData';
 import TAX_INFO from './taxInfo';
@@ -27,6 +28,7 @@ export default {
   DEFAULT_COLA_ADJ,
   TAX_INFO,
   HEROES_DATA,
+  SUBSCRIPTION_DATA,
   NUMBER_OF_VACATIONS_DATA,
   LENGTH_OF_VACATIONS_DATA
 };
