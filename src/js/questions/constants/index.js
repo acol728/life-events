@@ -9,6 +9,7 @@ import { HEROES_DATA } from './heroesData';
 import { NUMBER_OF_VACATIONS_DATA } from './numberOfVacationsData';
 import { LENGTH_OF_VACATIONS_DATA } from './lengthOfVacationsData';
 import { COFFEE_DATA } from './coffeeData';
+import { NUMBER_OF_DEPENDENCIES_DATA } from './numberOfDependenciesData';
 
 const DEFAULT_AGE = 18;
 const DEFAULT_COLLEGE_START_AGE = 18;
@@ -36,5 +37,6 @@ export default {
   SUBSCRIPTION_DATA,
   NUMBER_OF_VACATIONS_DATA,
   LENGTH_OF_VACATIONS_DATA,
-  COFFEE_DATA
+  COFFEE_DATA,
+  NUMBER_OF_DEPENDENCIES_DATA
 };

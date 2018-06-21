@@ -28,9 +28,10 @@ export const QUESTION_IDS = {
   [LIFESTYLE_PLANS_PAGE]: {
     MORTGAGE_RENT_RADIO: 'mortgageRentInput',
     REGION_OF_LIVING_RADIO: 'regionInput'
+    NUMBER_OF_CARS_TEXT: 'numberOfCarsInput',
+    NUMBER_OF_DEPENDENCIES_TEXT: 'numberOfDependenciesInput'
   },
   [LEISURE_PAGE]: {
-    NUMBER_OF_CARS_TEXT: 'numberOfCarsInput',
     NUMBER_OF_VACATIONS_DROPDOWN: 'numberOfVacationsInput',
     LENGTH_OF_VACATIONS_DROPDOWN: 'lengthOfVacationsInput',
     SUBSCRIPTION_DROPDOWN: 'subscriptionInput',
