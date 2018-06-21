@@ -116,7 +116,7 @@ const leisurePage = {
       id: QUESTION_IDS[LEISURE_PAGE].NUMBER_OF_CARS_TEXT,
       label: 'Number of Cars',
       show: true,
-      placeholder: '# of cars',
+      placeholder: 'Enter number...',
       info: 'Vehicles',
       type: 'text'
       // changeEvent: changeEvents[QUESTION_IDS[LEISURE_PAGE].NUMBER_OF_CARS_TEXT],
@@ -126,7 +126,7 @@ const leisurePage = {
       id: QUESTION_IDS[LEISURE_PAGE].AMOUNT_TO_SUBSCRIPTIONS,
       label: 'Amount paid to subscriptions/month',
       show: true,
-      placeholder: 'Choose amount',
+      placeholder: 'Choose amount...',
       info: 'Subscriptions',
       type: 'select-dropdown',
       values: SUBSCRIPTION_DATA
