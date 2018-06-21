@@ -8,7 +8,7 @@ const {
 } = CONSTANTS.IDs.PAGE_IDS;
 const { QUESTION_IDS } = CONSTANTS.IDs;
 const {
-  OCCUPATIONAL_DATA, EDU_PUBLIC_PRIVATE_DATA, HOUSING_OPTIONS_DATA, NUMBER_OF_VACATIONS_DATA, LENGTH_OF_VACATIONS_DATA, SUBSCRIPTION_DATA
+  OCCUPATIONAL_DATA, EDU_PUBLIC_PRIVATE_DATA, HOUSING_OPTIONS_DATA, NUMBER_OF_VACATIONS_DATA, LENGTH_OF_VACATIONS_DATA, SUBSCRIPTION_DATA, COFFEE_DATA
 } = CONSTANTS;
 
 const welcomePage = {
@@ -101,6 +101,15 @@ const lifestylePage = {
       type: 'radio',
       changeEvent: changeEvents[QUESTION_IDS[LIFESTYLE_PLANS_PAGE].MORTGAGE_RENT_RADIO],
       values: HOUSING_OPTIONS_DATA
+    },
+    {
+      id: QUESTION_IDS[LIFESTYLE_PLANS_PAGE].NUMBER_OF_CARS_TEXT,
+      label: 'Number of Cars',
+      show: true,
+      placeholder: '# of cars',
+      info: 'Vehicles',
+      type: 'text',
+      changeEvent: changeEvents[QUESTION_IDS[LIFESTYLE_PLANS_PAGE].NUMBER_OF_CARS_TEXT]
     }
   ]
 };
@@ -112,25 +121,6 @@ const leisurePage = {
   show: false,
   required: true,
   questions: [
-    {
-      id: QUESTION_IDS[LEISURE_PAGE].NUMBER_OF_CARS_TEXT,
-      label: 'Number of Cars',
-      show: true,
-      placeholder: 'Enter number...',
-      info: 'Vehicles',
-      type: 'text'
-      // changeEvent: changeEvents[QUESTION_IDS[LEISURE_PAGE].NUMBER_OF_CARS_TEXT],
-      // values: HOUSING_OPTIONS_DATA
-    },
-    {
-      id: QUESTION_IDS[LEISURE_PAGE].AMOUNT_TO_SUBSCRIPTIONS,
-      label: 'Amount paid to subscriptions/month',
-      show: true,
-      placeholder: 'Choose amount...',
-      info: 'Subscriptions',
-      type: 'select-dropdown',
-      values: SUBSCRIPTION_DATA
-    },
     {
       id: QUESTION_IDS[LEISURE_PAGE].NUMBER_OF_VACATIONS_DROPDOWN,
       label: 'Number of Vacations Per Year',
@@ -152,6 +142,25 @@ const leisurePage = {
       required: true,
       changeEvent: changeEvents[QUESTION_IDS[LEISURE_PAGE].LENGTH_OF_VACATIONS_DROPDOWN],
       values: LENGTH_OF_VACATIONS_DATA
+    },
+    {
+      id: QUESTION_IDS[LEISURE_PAGE].SUBSCRIPTION_DROPDOWN,
+      label: 'Amount paid to subscriptions/month',
+      show: true,
+      placeholder: 'Choose amount',
+      info: 'Subscriptions',
+      type: 'select-dropdown',
+      changeEvent: changeEvents[QUESTION_IDS[LEISURE_PAGE].SUBSCRIPTION_DROPDOWN],
+      values: SUBSCRIPTION_DATA
+    },
+    {
+      id: QUESTION_IDS[LEISURE_PAGE].COFFEE_RADIO,
+      label: 'Daily coffee?',
+      show: true,
+      info: 'Daily Coffee',
+      type: 'radio',
+      changeEvent: changeEvents[QUESTION_IDS[LEISURE_PAGE].COFFEE_RADIO],
+      values: COFFEE_DATA
     }
   ]
 };
