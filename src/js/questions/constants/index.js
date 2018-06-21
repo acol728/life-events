@@ -3,6 +3,7 @@ import OCCUPATIONAL_DATA from './occupationData';
 import { SUBSCRIPTION_DATA } from './subscriptionData';
 import EDUCATIONAL_DATA, { EDU_PUBLIC_PRIVATE_DATA, EDUCATION_LEVELS } from './educationData';
 import { HOUSING_OPTIONS_DATA } from './lifestyleData';
+import { REGION_DATA } from './regionData';
 import TAX_INFO from './taxInfo';
 import { HEROES_DATA } from './heroesData';
 import { NUMBER_OF_VACATIONS_DATA } from './numberOfVacationsData';
@@ -24,6 +25,7 @@ export default {
   EDUCATION_LEVELS,
   EDU_PUBLIC_PRIVATE_DATA,
   HOUSING_OPTIONS_DATA,
+  REGION_DATA,
   DEFAULT_AGE,
   DEFAULT_COLLEGE_START_AGE,
   DEFAULT_RETIREMENT_AGE,

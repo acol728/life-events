@@ -8,7 +8,7 @@ const {
 } = CONSTANTS.IDs.PAGE_IDS;
 const { QUESTION_IDS } = CONSTANTS.IDs;
 const {
-  OCCUPATIONAL_DATA, EDU_PUBLIC_PRIVATE_DATA, HOUSING_OPTIONS_DATA, NUMBER_OF_VACATIONS_DATA, LENGTH_OF_VACATIONS_DATA, SUBSCRIPTION_DATA, COFFEE_DATA
+  OCCUPATIONAL_DATA, EDU_PUBLIC_PRIVATE_DATA, HOUSING_OPTIONS_DATA, NUMBER_OF_VACATIONS_DATA, LENGTH_OF_VACATIONS_DATA, REGION_DATA, SUBSCRIPTION_DATA, COFFEE_DATA
 } = CONSTANTS;
 
 const welcomePage = {
@@ -110,6 +110,16 @@ const lifestylePage = {
       info: 'Vehicles',
       type: 'text',
       changeEvent: changeEvents[QUESTION_IDS[LIFESTYLE_PLANS_PAGE].NUMBER_OF_CARS_TEXT]
+    },
+    {
+      id: QUESTION_IDS[LIFESTYLE_PLANS_PAGE].REGION_OF_LIVING_RADIO,
+      label: 'Region you live in',
+      show: true,
+      placeholder: 'Enter region',
+      info: 'Region',
+      type: 'radio',
+      values: REGION_DATA,
+      changeEvent: changeEvents[QUESTION_IDS[LIFESTYLE_PLANS_PAGE].REGION_OF_LIVING_RADIO]
     }
   ]
 };

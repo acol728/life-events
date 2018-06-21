@@ -26,7 +26,8 @@ export const QUESTION_IDS = {
     EDUCATION_PUBLIC_PRIVATE_RADIO: 'eduPublicPrivateInput'
   },
   [LIFESTYLE_PLANS_PAGE]: {
-    MORTGAGE_RENT_RADIO: 'mortgageRentInput'
+    MORTGAGE_RENT_RADIO: 'mortgageRentInput',
+    REGION_OF_LIVING_RADIO: 'regionInput'
   },
   [LEISURE_PAGE]: {
     NUMBER_OF_CARS_TEXT: 'numberOfCarsInput',

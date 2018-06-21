@@ -1,4 +1,3 @@
-
 import R from 'ramda';
 import $ from 'jquery';
 import CONSTANTS from '../constants';
