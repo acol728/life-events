@@ -13,6 +13,8 @@ const DEFAULT_COLLEGE_START_AGE = 18;
 const DEFAULT_RETIREMENT_AGE = 65;
 const DEFAULT_DEATH_AGE = 80;
 const DEFAULT_COLA_ADJ = 0.02;
+// const AVERAGE_VACATION_COST = 200;
+// const
 
 export default {
   IDs,
