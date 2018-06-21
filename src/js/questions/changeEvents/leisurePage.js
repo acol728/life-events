@@ -6,11 +6,11 @@ const { LEISURE_PAGE } = PAGE_IDS;
 export default {
   [QUESTION_IDS[LEISURE_PAGE].NUMBER_OF_VACATIONS_DROPDOWN]: (e) => {
     // const numOfVacations = e.target.value;
-    //console.log(e);
+    // console.log(e);
   },
   [QUESTION_IDS[LEISURE_PAGE].LENGTH_OF_VACATIONS_DROPDOWN]: (e) => {
     // const lengthOfVacations = e.target.value;
-    //console.log(e);
+    // console.log(e);
   },
   [QUESTION_IDS[LEISURE_PAGE].SUBSCRIPTION_DROPDOWN]: (e) => {
 
