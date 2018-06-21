@@ -106,10 +106,19 @@ const lifestylePage = {
       id: QUESTION_IDS[LIFESTYLE_PLANS_PAGE].NUMBER_OF_CARS_TEXT,
       label: 'Number of Cars',
       show: true,
-      placeholder: '# of cars',
+      placeholder: 'Number of cars',
       info: 'Vehicles',
       type: 'text',
       changeEvent: changeEvents[QUESTION_IDS[LIFESTYLE_PLANS_PAGE].NUMBER_OF_CARS_TEXT]
+    },
+    {
+      id: QUESTION_IDS[LIFESTYLE_PLANS_PAGE].NUMBER_OF_DEPENDENCIES_TEXT,
+      label: 'Number of Dependencies',
+      show: true,
+      placeholder: 'Number of dependencies',
+      info: 'Dependencies',
+      type: 'text',
+      changeEvent: changeEvents[QUESTION_IDS[LIFESTYLE_PLANS_PAGE].NUMBER_OF_DEPENDENCIES_TEXT]
     }
   ]
 };

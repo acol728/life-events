@@ -26,10 +26,11 @@ export const QUESTION_IDS = {
     EDUCATION_PUBLIC_PRIVATE_RADIO: 'eduPublicPrivateInput'
   },
   [LIFESTYLE_PLANS_PAGE]: {
-    MORTGAGE_RENT_RADIO: 'mortgageRentInput'
+    MORTGAGE_RENT_RADIO: 'mortgageRentInput',
+    NUMBER_OF_CARS_TEXT: 'numberOfCarsInput',
+    NUMBER_OF_DEPENDENCIES_TEXT: 'numberOfDependenciesInput'
   },
   [LEISURE_PAGE]: {
-    NUMBER_OF_CARS_TEXT: 'numberOfCarsInput',
     NUMBER_OF_VACATIONS_DROPDOWN: 'numberOfVacationsInput',
     LENGTH_OF_VACATIONS_DROPDOWN: 'lengthOfVacationsInput',
     SUBSCRIPTION_DROPDOWN: 'subscriptionInput',
