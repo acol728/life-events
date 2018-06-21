@@ -27,6 +27,7 @@ export const QUESTION_IDS = {
   },
   [LIFESTYLE_PLANS_PAGE]: {
     MORTGAGE_RENT_RADIO: 'mortgageRentInput',
+    REGION_OF_LIVING_RADIO: 'regionInput'
     NUMBER_OF_CARS_TEXT: 'numberOfCarsInput',
     NUMBER_OF_DEPENDENCIES_TEXT: 'numberOfDependenciesInput'
   },

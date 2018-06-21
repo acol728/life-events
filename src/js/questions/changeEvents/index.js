@@ -1,9 +1,13 @@
 
 /* eslint no-console: "off" */
 import careerPlansPage from './careerPlansPage';
-import initialPlage from './initialPage';
+import initialPage from './initialPage';
+import leisurePage from './leisurePage';
+import lifestylePage from './lifestylePage';
 
 export default {
-  ...initialPlage,
-  ...careerPlansPage
+  ...initialPage,
+  ...careerPlansPage,
+  ...leisurePage,
+  ...lifestylePage
 };
