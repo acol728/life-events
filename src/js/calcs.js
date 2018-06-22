@@ -25,13 +25,43 @@ const createChart = () => {
     .call(axis);
 };
 
+const calculateCoffee = (dailyCoffee) => {
+  const age = state.ui.values.ageInput || DEFAULT_AGE;
+  const inflation = 1.03;
+  let coffeePerYear = 1460;
+  let result = 0;
+  if (dailyCoffee) {
+    for (let i = 0; i <= DEFAULT_RETIREMENT_AGE - age; i += 1) {
+      result += coffeePerYear;
+      coffeePerYear *= inflation;
+    }
+  }
+  coffeePerYear = 1460;
+  return result;
+};
+
+const calculateVacation = (lengthOfVacations, numberOfVacations) => {
+  const age = state.ui.values.ageInput || DEFAULT_AGE;
+  const inflation = 1.03;
+  let vacationCost = 200;
+  let result = 0;
+  for (let i = 0; i <= DEFAULT_RETIREMENT_AGE - age; i += 1) {
+    result += vacationCost * numberOfVacations * lengthOfVacations;
+    vacationCost *= inflation;
+  }
+  vacationCost = 200;
+  return result;
+};
+
 const calculateFunds = () => {
   const age = state.ui.values.ageInput || DEFAULT_AGE;
   const initialFunds = state.ui.values.networthInput || 0;
   const currentAnnualIncome = state.ui.values.currentAnnualIncomeInput || 0;
   const careerId = state.ui.values.careerInput || '';
 
-  // const numOfVacations = state.ui.values.numberOfVacations || 0;
+  const dailyCoffee = state.ui.values.dailyCoffee || false;
+  const numOfVacations = state.ui.values.numberOfVacations || 0;
+  const lengthOfVacations = state.ui.values.lengthOfVacations || 0;
 
   const careerData = createCareerData(careerId);
   const currentSalary = isInCareer(age, careerData.educationLevel) ? careerData.startingCareerSalary : currentAnnualIncome;
@@ -51,6 +81,9 @@ const calculateFunds = () => {
 
   const workingYears = R.takeLast(DEFAULT_RETIREMENT_AGE - age, R.times(R.identity, DEFAULT_RETIREMENT_AGE + 1));
 
+  const coffeeCost = calculateCoffee(dailyCoffee);
+  const vacationCost = calculateVacation(lengthOfVacations, numOfVacations);
+
   money = R.reduce((accum, currentAge) => {
     const year = currentAge - age;
     const lastYear = R.last(accum) || {};
@@ -62,16 +95,19 @@ const calculateFunds = () => {
     stateTaxBracket = getStateTaxBracket(TAX_INFO.INDV, 'WI', currentAnnualSalary);
     const netAnnualIncome = calcNetIncome({ federalTaxBracket, stateTaxBracket }, currentAnnualSalary);
     monthly = R.times(calcMonthlyData(lastYear.totalNetworth, currentAnnualSalary, federalTaxBracket, stateTaxBracket), MONTHS);
+
     return [...accum, {
       age: currentAge,
       currentAnnualSalary,
       netAnnualIncome,
       monthly,
-      totalNetworth: lastYear.totalNetworth + netAnnualIncome
+      totalNetworth: lastYear.totalNetworth + netAnnualIncome,
+      coffeeCost,
+      vacationCost
     }];
   }, money)(workingYears);
 
-  return money;
+  return (money);
 };
 
 export default {

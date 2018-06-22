@@ -1,6 +1,6 @@
 import CONSTANTS from '../constants';
 import pages from '../pages';
-// import { updateHeroes, addOrUpdateInfo } from './util';
+// import { addOrUpdateInfo } from './util';
 
 const { PAGE_IDS, QUESTION_IDS } = CONSTANTS.IDs;
 const { LEISURE_PAGE } = PAGE_IDS;
