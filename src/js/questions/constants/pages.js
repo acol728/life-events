@@ -1,6 +1,6 @@
 export const INITIAL_PAGE = 'initialPage';
 export const CAREER_PLANS_PAGE = 'careerPlansPage';
-export const LIFESTYLE_PLANS_PAGE = 'lifestylePlansPage';
+export const LIFESTYLE_PAGE = 'lifestylePage';
 export const LEISURE_PAGE = 'leisurePage';
 export const RETIREMENT_PLANS_PAGE = 'retirementPlansPage';
 export const WELCOME_PAGE = 'welcomePage';
@@ -9,7 +9,7 @@ export const PAGE_IDS = {
   WELCOME_PAGE,
   INITIAL_PAGE,
   CAREER_PLANS_PAGE,
-  LIFESTYLE_PLANS_PAGE,
+  LIFESTYLE_PAGE,
   LEISURE_PAGE,
   RETIREMENT_PLANS_PAGE
 };
@@ -25,9 +25,9 @@ export const QUESTION_IDS = {
     CAREER_DROPDOWN: 'careerInput',
     EDUCATION_PUBLIC_PRIVATE_RADIO: 'eduPublicPrivateInput'
   },
-  [LIFESTYLE_PLANS_PAGE]: {
+  [LIFESTYLE_PAGE]: {
     MORTGAGE_RENT_RADIO: 'mortgageRentInput',
-    REGION_OF_LIVING_RADIO: 'regionInput'
+    REGION_OF_LIVING_RADIO: 'regionInput',
     NUMBER_OF_CARS_TEXT: 'numberOfCarsInput',
     NUMBER_OF_DEPENDENCIES_TEXT: 'numberOfDependenciesInput'
   },
