@@ -31,6 +31,8 @@ const calculateFunds = () => {
   const currentAnnualIncome = state.ui.values.currentAnnualIncomeInput || 0;
   const careerId = state.ui.values.careerInput || '';
 
+  // const numOfVacations = state.ui.values.numberOfVacations || 0;
+
   const careerData = createCareerData(careerId);
   const currentSalary = isInCareer(age, careerData.educationLevel) ? careerData.startingCareerSalary : currentAnnualIncome;
   let federalTaxBracket = getFederalTaxBracket(TAX_INFO.INDV, careerData.startingCareerSalary);
