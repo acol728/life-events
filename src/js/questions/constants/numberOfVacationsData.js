@@ -20,9 +20,14 @@ export const NUMBER_OF_VACATIONS_DATA = [
     value: 4
   },
   {
-    id: 'fiveplus',
-    text: '5+',
+    id: 'five',
+    text: '5',
     value: 5
+  },
+  {
+    id: 'ten',
+    text: '10',
+    value: 10
   }
 ];
 

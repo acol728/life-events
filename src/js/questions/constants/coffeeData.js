@@ -1,11 +1,13 @@
 export const COFFEE_DATA = [
   {
     id: 'yes',
-    text: 'Yes'
+    text: 'Yes',
+    value: true
   },
   {
     id: 'no',
-    text: 'No'
+    text: 'No',
+    value: false
   }
 ];
 
