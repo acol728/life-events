@@ -32,5 +32,13 @@ export default {
     const dailyCoffee = COFFEE_DATA[index].value;
 
     state.ui.values[pages[4].questions[3].info] = dailyCoffee;
+  // [QUESTION_IDS[LEISURE_PAGE].NUMBER_OF_CARS_TEXT]: (e) => {
+    // const infoItems = [
+    // {
+    // key: pages[3].questions[2].info,
+    // val: parsedValue
+    // }
+    // ];
+    // addOrUpdateInfo(infoItems);
   }
 };

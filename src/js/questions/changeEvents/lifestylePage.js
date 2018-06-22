@@ -27,14 +27,14 @@ export default {
       showError(QUESTION_IDS[LIFESTYLE_PAGE].NUMBER_OF_CARS_TEXT, 'Invalid Amount');
     }
   },
-  [QUESTION_IDS[LIFESTYLE_PAGE].NUMBER_OF_DEPENDENCIES_TEXT]: (e) => {
+  [QUESTION_IDS[LIFESTYLE_PAGE].NUMBER_OF_DEPENDENTS_TEXT]: (e) => {
     const parsedValue = parseInt(e.target.value, 10);
     let isValid = !Number.isNaN(parsedValue);
 
     isValid = !!(isValid && (parsedValue >= 0 && parsedValue <= 100));
 
     if (isValid) {
-      state.ui.values[QUESTION_IDS[LIFESTYLE_PAGE].NUMBER_OF_DEPENDENCIES_TEXT] = parsedValue;
+      state.ui.values[QUESTION_IDS[LIFESTYLE_PAGE].NUMBER_OF_DEPENDENTS_TEXT] = parsedValue;
       state.ui.values.info[pages[1].questions[0].info] = parsedValue;
       const infoItems = [
         {
@@ -43,9 +43,9 @@ export default {
         }
       ];
       addOrUpdateInfo(infoItems);
-      removeError(QUESTION_IDS[LIFESTYLE_PAGE].NUMBER_OF_DEPENDENCIES_TEXT);
+      removeError(QUESTION_IDS[LIFESTYLE_PAGE].NUMBER_OF_DEPENDENTS_TEXT);
     } else {
-      showError(QUESTION_IDS[LIFESTYLE_PAGE].NUMBER_OF_DEPENDENCIES_TEXT, 'Invalid Amount');
+      showError(QUESTION_IDS[LIFESTYLE_PAGE].NUMBER_OF_DEPENDENTS_TEXT, 'Invalid Amount');
     }
   }
 };
