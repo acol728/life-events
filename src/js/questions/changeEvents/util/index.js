@@ -16,6 +16,9 @@ export const showError = (id, msg) => {
   $currentElement.addClass('has-error');
   $(`<span id="error-${id}" class="error">${msg}</span>`).insertAfter($currentElement);
 
+  $('#navigate-initial').addClass('disabled');
+  $('#navigate-initial').off('click', navigateForward);
+
   $('#navigate-forward').addClass('disabled');
   $('#navigate-forward').off('click', navigateForward);
 
@@ -32,6 +35,9 @@ export const removeError = (id) => {
   const $currentElement = $(`#${id}`);
   $currentElement.removeClass('has-error');
   $(`#error-${id}`).remove();
+
+  $('#navigate-initial').removeClass('disabled');
+  $('#navigate-initial').off('click', navigateForward).on('click', navigateForward);
 
   $('#navigate-forward').removeClass('disabled');
   $('#navigate-forward').off('click', navigateForward).on('click', navigateForward);
