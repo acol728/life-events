@@ -4,7 +4,7 @@ import { setInputEvents, selectInputClickEvent } from './helpers';
 import changeEvents from './changeEvents';
 
 const {
-  WELCOME_PAGE, INITIAL_PAGE, CAREER_PLANS_PAGE, LIFESTYLE_PLANS_PAGE, LEISURE_PAGE, RETIREMENT_PLANS_PAGE
+  WELCOME_PAGE, INITIAL_PAGE, CAREER_PLANS_PAGE, LIFESTYLE_PAGE, LEISURE_PAGE, RETIREMENT_PLANS_PAGE
 } = CONSTANTS.IDs.PAGE_IDS;
 const { QUESTION_IDS } = CONSTANTS.IDs;
 const {
@@ -93,42 +93,42 @@ const lifestylePage = {
   required: true,
   questions: [
     {
-      id: QUESTION_IDS[LIFESTYLE_PLANS_PAGE].MORTGAGE_RENT_RADIO,
-      label: 'Mortgage / Rent',
-      show: true,
-      placeholder: 'Choose a type housing...',
-      info: 'Housing',
-      type: 'radio',
-      changeEvent: changeEvents[QUESTION_IDS[LIFESTYLE_PLANS_PAGE].MORTGAGE_RENT_RADIO],
-      values: HOUSING_OPTIONS_DATA
-    },
-    {
-      id: QUESTION_IDS[LIFESTYLE_PLANS_PAGE].NUMBER_OF_CARS_TEXT,
-      label: 'Number of Cars',
-      show: true,
-      placeholder: 'Number of cars',
-      info: 'Vehicles',
-      type: 'text',
-      changeEvent: changeEvents[QUESTION_IDS[LIFESTYLE_PLANS_PAGE].NUMBER_OF_CARS_TEXT]
-    },
-    {
-      id: QUESTION_IDS[LIFESTYLE_PLANS_PAGE].REGION_OF_LIVING_RADIO,
-      label: 'Region you live in',
+      id: QUESTION_IDS[LIFESTYLE_PAGE].REGION_OF_LIVING_RADIO,
+      label: 'Do you live in a:',
       show: true,
       placeholder: 'Enter region',
       info: 'Region',
       type: 'radio',
       values: REGION_DATA,
-      changeEvent: changeEvents[QUESTION_IDS[LIFESTYLE_PLANS_PAGE].REGION_OF_LIVING_RADIO]
+      changeEvent: changeEvents[QUESTION_IDS[LIFESTYLE_PAGE].REGION_OF_LIVING_RADIO]
     },
     {
-      id: QUESTION_IDS[LIFESTYLE_PLANS_PAGE].NUMBER_OF_DEPENDENCIES_TEXT,
+      id: QUESTION_IDS[LIFESTYLE_PAGE].MORTGAGE_RENT_RADIO,
+      label: 'Rent / Mortgage',
+      show: true,
+      placeholder: 'Choose a type housing...',
+      info: 'Housing',
+      type: 'radio',
+      changeEvent: changeEvents[QUESTION_IDS[LIFESTYLE_PAGE].MORTGAGE_RENT_RADIO],
+      values: HOUSING_OPTIONS_DATA
+    },
+    {
+      id: QUESTION_IDS[LIFESTYLE_PAGE].NUMBER_OF_CARS_TEXT,
+      label: 'Number of Cars',
+      show: true,
+      placeholder: 'Number of cars',
+      info: 'Number of Cars',
+      type: 'text',
+      changeEvent: changeEvents[QUESTION_IDS[LIFESTYLE_PAGE].NUMBER_OF_CARS_TEXT]
+    },
+    {
+      id: QUESTION_IDS[LIFESTYLE_PAGE].NUMBER_OF_DEPENDENCIES_TEXT,
       label: 'Number of Dependencies',
       show: true,
       placeholder: 'Number of dependencies',
-      info: 'Dependencies',
+      info: 'Number of Dependencies',
       type: 'text',
-      changeEvent: changeEvents[QUESTION_IDS[LIFESTYLE_PLANS_PAGE].NUMBER_OF_DEPENDENCIES_TEXT]
+      changeEvent: changeEvents[QUESTION_IDS[LIFESTYLE_PAGE].NUMBER_OF_DEPENDENCIES_TEXT]
     }
   ]
 };
