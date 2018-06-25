@@ -14,6 +14,7 @@ const {
 const welcomePage = {
   id: WELCOME_PAGE,
   nav: 'Welcome',
+  icon: 'icon-sysicon-paperless',
   title: 'Welcome',
   subtitle: 'The Life Events Financial Calculator will help you see how the big decisions that you make throughout your life will effect your financial well-being.',
   subtitle2: 'Let\'s get started!',
@@ -21,9 +22,9 @@ const welcomePage = {
 };
 
 const initialInfoPage = {
-
   id: INITIAL_PAGE,
   nav: 'Get Started',
+  icon: 'icon-sysicon-edit',
   title: "Let's start with where you are at...",
   show: false,
   questions: [
@@ -40,6 +41,7 @@ const initialInfoPage = {
       placeholder: 'Planned Retirement Age',
       info: 'Planned Retirement age',
       type: 'text',
+      icon2: 'success',
       required: true,
       changeEvent: changeEvents[QUESTION_IDS[INITIAL_PAGE].RETIREMENT_AGE_TEXT]
     },
@@ -64,6 +66,7 @@ const initialInfoPage = {
 const educationPage = {
   id: EDUCATION_PAGE,
   nav: 'Education',
+  icon: 'icon-sysicon-bookmark',
   title: 'What is your level of education...',
   show: false,
   questions: [
@@ -105,6 +108,7 @@ const careerPlansPage = {
 const lifestylePage = {
   id: 'lifestylePage',
   nav: 'Lifestyle',
+  icon: 'icon-sysicon-home',
   title: 'How do you want to live...',
   show: false,
   required: true,
@@ -152,6 +156,7 @@ const lifestylePage = {
 const leisurePage = {
   id: 'leisurePage',
   nav: 'Leisure',
+  icon: 'icon-sysicon-diningout',
   title: 'What do you do for fun...',
   show: false,
   required: true,
@@ -204,6 +209,7 @@ const leisurePage = {
 const retirementPlansPage = {
   id: RETIREMENT_PLANS_PAGE,
   nav: 'Retirement',
+  icon: 'icon-sysicon-retirement',
   title: 'What are your retirement plans...',
   subtitle3: 'I\'m done!',
   show: false,
@@ -221,6 +227,7 @@ const retirementPlansPage = {
 const submitPage = {
   id: SUBMIT_PAGE,
   nav: 'Submit',
+  icon: 'icon-util-down-alt',
   title: 'View your results...',
   show: false
 };

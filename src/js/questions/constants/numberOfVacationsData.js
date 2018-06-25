@@ -1,5 +1,10 @@
 export const NUMBER_OF_VACATIONS_DATA = [
   {
+    id: 'zero',
+    text: '0',
+    value: 0
+  },
+  {
     id: 'one',
     text: '1',
     value: 1

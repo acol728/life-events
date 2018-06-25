@@ -15,6 +15,7 @@ export default {
     const numOfVacations = NUMBER_OF_VACATIONS_DATA[index].value;
 
     state.ui.values[pages[4].questions[0].info] = numOfVacations;
+
     const financialData = state.calculateFunds();
     state.data = { ...state.data, financialData };
     updateHeroes(financialData);
@@ -24,6 +25,7 @@ export default {
     const lengthOfVacations = LENGTH_OF_VACATIONS_DATA[index].value;
 
     state.ui.values[pages[4].questions[1].info] = lengthOfVacations;
+
     const financialData = state.calculateFunds();
     state.data = { ...state.data, financialData };
     updateHeroes(financialData);
@@ -43,6 +45,7 @@ export default {
     const subscriptionAmount = SUBSCRIPTION_DATA[index].value;
 
     state.ui.values[pages[4].questions[2].info] = subscriptionAmount;
+
     const financialData = state.calculateFunds();
     state.data = { ...state.data, financialData };
     updateHeroes(financialData);
@@ -52,6 +55,7 @@ export default {
     const dailyCoffee = COFFEE_DATA[index].value;
 
     state.ui.values[pages[4].questions[3].info] = dailyCoffee;
+
     const financialData = state.calculateFunds();
     state.data = { ...state.data, financialData };
     updateHeroes(financialData);
