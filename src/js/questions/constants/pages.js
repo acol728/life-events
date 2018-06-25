@@ -1,4 +1,5 @@
 export const INITIAL_PAGE = 'initialPage';
+export const EDUCATION_PAGE = 'educationPage';
 export const CAREER_PLANS_PAGE = 'careerPlansPage';
 export const LIFESTYLE_PAGE = 'lifestylePage';
 export const LEISURE_PAGE = 'leisurePage';
@@ -9,6 +10,7 @@ export const SUBMIT_PAGE = 'submitPage';
 export const PAGE_IDS = {
   WELCOME_PAGE,
   INITIAL_PAGE,
+  EDUCATION_PAGE,
   CAREER_PLANS_PAGE,
   LIFESTYLE_PAGE,
   LEISURE_PAGE,
@@ -24,10 +26,11 @@ export const QUESTION_IDS = {
     NETWORTH_TEXT: 'networthInput',
     CURRENT_ANNUAL_INCOME_TEXT: 'currentAnnualIncomeInput'
   },
-  [CAREER_PLANS_PAGE]: {
+  [EDUCATION_PAGE]: {
     YEARS_ENROLLED_TEXT: 'yearsEnrolledInput',
     TUITION_COST_TEXT: 'tuitionCostInput'
   },
+  [CAREER_PLANS_PAGE]: {},
   [LIFESTYLE_PAGE]: {
     HOUSING_COSTS_TEXT: 'housingCostsInput',
     NUMBER_OF_CARS_TEXT: 'numberOfCarsInput',
