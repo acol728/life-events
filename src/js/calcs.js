@@ -27,7 +27,6 @@ const createChart = () => {
 
 const getTotalExpenses = (lengthOfVacations, numberOfVacations, dailyCoffee) => { //, otherExpenses) => {
   const age = state.ui.values.currentAgeInput || DEFAULT_AGE;
-  console.log(state.ui.values.currentAgeInput);
   const inflation = 1.03;
   let coffeePerYear = 1460;
   let vacationCost = 200;
