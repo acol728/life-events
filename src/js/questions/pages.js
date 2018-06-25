@@ -8,7 +8,7 @@ const {
 } = CONSTANTS.IDs.PAGE_IDS;
 const { QUESTION_IDS } = CONSTANTS.IDs;
 const {
-  OCCUPATIONAL_DATA, EDU_PUBLIC_PRIVATE_DATA, HOUSING_OPTIONS_DATA, NUMBER_OF_VACATIONS_DATA, LENGTH_OF_VACATIONS_DATA, REGION_DATA, SUBSCRIPTION_DATA, COFFEE_DATA
+  HOUSING_COSTS_DATA, NUMBER_OF_VACATIONS_DATA, LENGTH_OF_VACATIONS_DATA, SUBSCRIPTION_DATA, COFFEE_DATA, COLLEGE_DATA, YEARS_ENROLLED_DATA, TUITION_COST_DATA
 } = CONSTANTS;
 
 const welcomePage = {
@@ -28,13 +28,20 @@ const initialInfoPage = {
   show: false,
   questions: [
     {
-      id: QUESTION_IDS[INITIAL_PAGE].AGE_TEXT,
-      placeholder: 'Age',
-      info: 'Starting age',
+      id: QUESTION_IDS[INITIAL_PAGE].CURRENT_AGE_TEXT,
+      placeholder: 'Current Age',
+      info: 'Current age',
       type: 'text',
       required: true,
-      changeEvent: changeEvents[QUESTION_IDS[INITIAL_PAGE].AGE_TEXT]
-
+      changeEvent: changeEvents[QUESTION_IDS[INITIAL_PAGE].CURRENT_AGE_TEXT]
+    },
+    {
+      id: QUESTION_IDS[INITIAL_PAGE].RETIREMENT_AGE_TEXT,
+      placeholder: 'Retirement Age',
+      info: 'Retirement age',
+      type: 'text',
+      required: true,
+      changeEvent: changeEvents[QUESTION_IDS[INITIAL_PAGE].RETIREMENT_AGE_TEXT]
     },
     {
       id: QUESTION_IDS[INITIAL_PAGE].NETWORTH_TEXT,
@@ -56,31 +63,42 @@ const initialInfoPage = {
 
 const careerPlansPage = {
   id: CAREER_PLANS_PAGE,
-  nav: 'Career',
-  title: 'What are your aspirations...',
+  nav: 'Education',
+  title: 'What is your level of education...',
   show: false,
   questions: [
     {
-      id: QUESTION_IDS[CAREER_PLANS_PAGE].CAREER_DROPDOWN,
-      label: 'Career',
+      id: QUESTION_IDS[CAREER_PLANS_PAGE].COLLEGE_RADIO,
+      label: 'Did you go to college?',
       show: true,
-      placeholder: 'Choose a Career...',
-      info: 'Career',
-      type: 'select-dropdown',
+      placeholder: 'Did you go to college?',
+      info: 'College',
+      type: 'radio',
       required: true,
-      changeEvent: changeEvents[QUESTION_IDS[CAREER_PLANS_PAGE].CAREER_DROPDOWN],
-      values: OCCUPATIONAL_DATA
+      changeEvent: changeEvents[QUESTION_IDS[CAREER_PLANS_PAGE].COLLEGE_RADIO],
+      values: COLLEGE_DATA
     },
     {
-      id: QUESTION_IDS[CAREER_PLANS_PAGE].EDUCATION_PUBLIC_PRIVATE_RADIO,
-      label: 'Education',
-      show: false,
-      placeholder: 'Choose a type of school...',
-      info: 'Public or Private',
-      type: 'radio',
-      required: false,
-      changeEvent: changeEvents[QUESTION_IDS[CAREER_PLANS_PAGE].EDUCATION_PUBLIC_PRIVATE_RADIO],
-      values: EDU_PUBLIC_PRIVATE_DATA
+      id: QUESTION_IDS[CAREER_PLANS_PAGE].YEARS_ENROLLED_TEXT,
+      label: 'Years enrolled',
+      show: true,
+      placeholder: 'Years enrolled',
+      info: 'Years Enrolled',
+      type: 'text',
+      required: true,
+      changeEvent: changeEvents[QUESTION_IDS[CAREER_PLANS_PAGE].YEARS_ENROLLED_TEXT],
+      values: YEARS_ENROLLED_DATA
+    },
+    {
+      id: QUESTION_IDS[CAREER_PLANS_PAGE].TUITION_COST_TEXT,
+      label: 'Cost per year',
+      show: true,
+      placeholder: 'Cost per year',
+      info: 'Tuition',
+      type: 'text',
+      required: true,
+      changeEvent: changeEvents[QUESTION_IDS[CAREER_PLANS_PAGE].TUITION_COST_TEXT],
+      values: TUITION_COST_DATA
     }
   ]
 };
@@ -93,42 +111,41 @@ const lifestylePage = {
   required: true,
   questions: [
     {
-      id: QUESTION_IDS[LIFESTYLE_PAGE].REGION_OF_LIVING_RADIO,
-      label: 'Do you live in a:',
+      id: QUESTION_IDS[LIFESTYLE_PAGE].HOUSING_COSTS_TEXT,
+      label: 'Housing costs per month',
       show: true,
-      placeholder: 'Enter region',
-      info: 'Region',
-      type: 'radio',
-      values: REGION_DATA,
-      changeEvent: changeEvents[QUESTION_IDS[LIFESTYLE_PAGE].REGION_OF_LIVING_RADIO]
-    },
-    {
-      id: QUESTION_IDS[LIFESTYLE_PAGE].MORTGAGE_RENT_RADIO,
-      label: 'Rent / Mortgage',
-      show: true,
-      placeholder: 'Choose a type housing...',
+      placeholder: 'Housing costs per month',
       info: 'Housing',
-      type: 'radio',
-      changeEvent: changeEvents[QUESTION_IDS[LIFESTYLE_PAGE].MORTGAGE_RENT_RADIO],
-      values: HOUSING_OPTIONS_DATA
+      type: 'text',
+      changeEvent: changeEvents[QUESTION_IDS[LIFESTYLE_PAGE].HOUSING_COSTS_TEXT],
+      values: HOUSING_COSTS_DATA
     },
     {
       id: QUESTION_IDS[LIFESTYLE_PAGE].NUMBER_OF_CARS_TEXT,
-      label: 'Number of Cars',
+      label: 'Transportation costs per month',
       show: true,
-      placeholder: 'Number of cars',
-      info: 'Number of Cars',
+      placeholder: 'Transportation costs per month',
+      info: 'Transportation costs per month',
       type: 'text',
       changeEvent: changeEvents[QUESTION_IDS[LIFESTYLE_PAGE].NUMBER_OF_CARS_TEXT]
     },
     {
-      id: QUESTION_IDS[LIFESTYLE_PAGE].NUMBER_OF_DEPENDENCIES_TEXT,
-      label: 'Number of Dependencies',
+      id: QUESTION_IDS[LIFESTYLE_PAGE].NUMBER_OF_DEPENDENTS_TEXT,
+      label: 'Number of Dependents',
       show: true,
-      placeholder: 'Number of dependencies',
-      info: 'Number of Dependencies',
+      placeholder: 'Number of dependents',
+      info: 'Number of Dependents',
       type: 'text',
-      changeEvent: changeEvents[QUESTION_IDS[LIFESTYLE_PAGE].NUMBER_OF_DEPENDENCIES_TEXT]
+      changeEvent: changeEvents[QUESTION_IDS[LIFESTYLE_PAGE].NUMBER_OF_DEPENDENTS_TEXT]
+    },
+    {
+      id: QUESTION_IDS[LIFESTYLE_PAGE].NUMBER_OF_PETS_TEXT,
+      label: 'Number of Pets',
+      show: true,
+      placeholder: 'Number of pets',
+      info: 'Number of Pets',
+      type: 'text',
+      changeEvent: changeEvents[QUESTION_IDS[LIFESTYLE_PAGE].NUMBER_OF_PETS_TEXT]
     }
   ]
 };
@@ -164,7 +181,7 @@ const leisurePage = {
     },
     {
       id: QUESTION_IDS[LEISURE_PAGE].SUBSCRIPTION_DROPDOWN,
-      label: 'Amount paid to subscriptions/month',
+      label: 'Amount paid to subscriptions each month',
       show: true,
       placeholder: 'Choose amount',
       info: 'subscriptions',
