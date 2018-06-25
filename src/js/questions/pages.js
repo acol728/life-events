@@ -4,7 +4,7 @@ import { setInputEvents, selectInputClickEvent } from './helpers';
 import changeEvents from './changeEvents';
 
 const {
-  WELCOME_PAGE, INITIAL_PAGE, CAREER_PLANS_PAGE, LIFESTYLE_PAGE, LEISURE_PAGE, RETIREMENT_PLANS_PAGE, SUBMIT_PAGE
+  WELCOME_PAGE, INITIAL_PAGE, EDUCATION_PAGE, CAREER_PLANS_PAGE, LIFESTYLE_PAGE, LEISURE_PAGE, RETIREMENT_PLANS_PAGE, SUBMIT_PAGE
 } = CONSTANTS.IDs.PAGE_IDS;
 const { QUESTION_IDS } = CONSTANTS.IDs;
 const {
@@ -45,7 +45,7 @@ const initialInfoPage = {
     },
     {
       id: QUESTION_IDS[INITIAL_PAGE].NETWORTH_TEXT,
-      placeholder: 'Networth',
+      placeholder: 'Current Networth',
       info: 'Initial Net Worth',
       type: 'text',
       required: true,
@@ -61,14 +61,14 @@ const initialInfoPage = {
   ]
 };
 
-const careerPlansPage = {
-  id: CAREER_PLANS_PAGE,
+const educationPage = {
+  id: EDUCATION_PAGE,
   nav: 'Education',
   title: 'What is your level of education...',
   show: false,
   questions: [
     {
-      id: QUESTION_IDS[CAREER_PLANS_PAGE].YEARS_ENROLLED_TEXT,
+      id: QUESTION_IDS[EDUCATION_PAGE].YEARS_ENROLLED_TEXT,
       label: 'Years enrolled',
       show: true,
       placeholder: 'Years enrolled',
@@ -76,11 +76,11 @@ const careerPlansPage = {
       value: '0',
       type: 'text',
       required: true,
-      changeEvent: changeEvents[QUESTION_IDS[CAREER_PLANS_PAGE].YEARS_ENROLLED_TEXT],
+      changeEvent: changeEvents[QUESTION_IDS[EDUCATION_PAGE].YEARS_ENROLLED_TEXT],
       values: YEARS_ENROLLED_DATA
     },
     {
-      id: QUESTION_IDS[CAREER_PLANS_PAGE].TUITION_COST_TEXT,
+      id: QUESTION_IDS[EDUCATION_PAGE].TUITION_COST_TEXT,
       label: 'Cost per year',
       show: true,
       placeholder: 'Cost per year',
@@ -88,10 +88,18 @@ const careerPlansPage = {
       value: '0',
       type: 'text',
       required: true,
-      changeEvent: changeEvents[QUESTION_IDS[CAREER_PLANS_PAGE].TUITION_COST_TEXT],
+      changeEvent: changeEvents[QUESTION_IDS[EDUCATION_PAGE].TUITION_COST_TEXT],
       values: TUITION_COST_DATA
     }
   ]
+};
+
+const careerPlansPage = {
+  id: CAREER_PLANS_PAGE,
+  nav: 'Income',
+  title: 'How much are you earning...',
+  show: false,
+  required: true
 };
 
 const lifestylePage = {
@@ -157,7 +165,8 @@ const leisurePage = {
       type: 'select-dropdown',
       required: true,
       changeEvent: changeEvents[QUESTION_IDS[LEISURE_PAGE].NUMBER_OF_VACATIONS_DROPDOWN],
-      values: NUMBER_OF_VACATIONS_DATA
+      values: NUMBER_OF_VACATIONS_DATA,
+      hoverText: 'How many vacations do you take per year on average?'
     },
     {
       id: QUESTION_IDS[LEISURE_PAGE].LENGTH_OF_VACATIONS_DROPDOWN,
@@ -219,6 +228,7 @@ const submitPage = {
 const pages = [
   welcomePage,
   initialInfoPage,
+  educationPage,
   careerPlansPage,
   lifestylePage,
   leisurePage,
