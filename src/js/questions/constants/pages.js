@@ -4,6 +4,7 @@ export const LIFESTYLE_PAGE = 'lifestylePage';
 export const LEISURE_PAGE = 'leisurePage';
 export const RETIREMENT_PLANS_PAGE = 'retirementPlansPage';
 export const WELCOME_PAGE = 'welcomePage';
+export const SUBMIT_PAGE = 'submitPage';
 
 export const PAGE_IDS = {
   WELCOME_PAGE,
@@ -11,7 +12,8 @@ export const PAGE_IDS = {
   CAREER_PLANS_PAGE,
   LIFESTYLE_PAGE,
   LEISURE_PAGE,
-  RETIREMENT_PLANS_PAGE
+  RETIREMENT_PLANS_PAGE,
+  SUBMIT_PAGE
 };
 
 export const QUESTION_IDS = {
@@ -41,7 +43,8 @@ export const QUESTION_IDS = {
   },
   [RETIREMENT_PLANS_PAGE]: {
     FOUR01K_TEXT: '401KInput'
-  }
+  },
+  [SUBMIT_PAGE]: {}
 };
 
 const IDs = {
