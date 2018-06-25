@@ -53,6 +53,12 @@ const calculateVacation = (lengthOfVacations, numberOfVacations) => {
   return result;
 };
 
+const getTotalExpenses = (lengthOfVacations, numberOfVacations, dailyCoffee) => {
+  const vacationCost = calculateVacation(lengthOfVacations, numberOfVacations);
+  const coffeeCost = calculateCoffee(dailyCoffee);
+  return vacationCost + coffeeCost;
+};
+
 const calculateFunds = () => {
   const age = state.ui.values.ageInput || DEFAULT_AGE;
   const initialFunds = state.ui.values.networthInput || 0;
@@ -60,8 +66,8 @@ const calculateFunds = () => {
   const careerId = state.ui.values.careerInput || '';
 
   const dailyCoffee = state.ui.values.dailyCoffee || false;
-  const numOfVacations = state.ui.values.numberOfVacations || 0;
-  const lengthOfVacations = state.ui.values.lengthOfVacations || 0;
+  const numOfVacations = parseInt(state.ui.values.numberOfVacations, 10) || 0;
+  const lengthOfVacations = parseInt(state.ui.values.lengthOfVacations, 10) || 0;
 
   const careerData = createCareerData(careerId);
   const currentSalary = isInCareer(age, careerData.educationLevel) ? careerData.startingCareerSalary : currentAnnualIncome;
@@ -81,8 +87,7 @@ const calculateFunds = () => {
 
   const workingYears = R.takeLast(DEFAULT_RETIREMENT_AGE - age, R.times(R.identity, DEFAULT_RETIREMENT_AGE + 1));
 
-  const coffeeCost = calculateCoffee(dailyCoffee);
-  const vacationCost = calculateVacation(lengthOfVacations, numOfVacations);
+  const expenses = getTotalExpenses(lengthOfVacations, numOfVacations, dailyCoffee);
 
   money = R.reduce((accum, currentAge) => {
     const year = currentAge - age;
@@ -102,8 +107,7 @@ const calculateFunds = () => {
       netAnnualIncome,
       monthly,
       totalNetworth: lastYear.totalNetworth + netAnnualIncome,
-      coffeeCost,
-      vacationCost
+      expenses
     }];
   }, money)(workingYears);
 

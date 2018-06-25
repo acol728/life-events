@@ -1,15 +1,11 @@
 import $ from 'jquery';
 import { navigateForward, navigateBackward, navigateToAPage } from '../../../navigation';
 
-// const getTotalExpenses = (financialData) => {
-// const { vacationCost, coffeeCost } = financialData;
-// return vacationCost + coffeeCost;
-// };
-
 export const updateHeroes = (financialData) => {
   // const totalExpenses = getTotalExpenses(financialData);
   const dataAt65 = financialData.find(item => item.age === 65);
-  const netWorthAt65 = dataAt65.totalNetworth;
+  const netWorthAt65 = dataAt65.totalNetworth - dataAt65.expenses;
+
   $('#hero_2 h1').html(`$${Math.round(netWorthAt65).toLocaleString()}`);
   const monthlyIncome = dataAt65.monthly[11].currentMonthlySalary;
   $('#hero_1 h1').html(`$${Math.round(monthlyIncome).toLocaleString()}`);
