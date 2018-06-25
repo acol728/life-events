@@ -11,6 +11,10 @@ $(document).ready(() => {
 
   $('.nav-button').on('click', navigateToAPage);
 
+  $('#buttonInitial').on('click', navigateForward);
+
+  $('#buttonSubmit').on('click', navigateForward);
+
   $('#navigate-back').on('click', navigateBackward);
 
   // If dropdown li not disabled set to active and add text to input

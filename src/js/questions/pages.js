@@ -4,7 +4,7 @@ import { setInputEvents, selectInputClickEvent } from './helpers';
 import changeEvents from './changeEvents';
 
 const {
-  WELCOME_PAGE, INITIAL_PAGE, CAREER_PLANS_PAGE, LIFESTYLE_PAGE, LEISURE_PAGE, RETIREMENT_PLANS_PAGE
+  WELCOME_PAGE, INITIAL_PAGE, CAREER_PLANS_PAGE, LIFESTYLE_PAGE, LEISURE_PAGE, RETIREMENT_PLANS_PAGE, SUBMIT_PAGE
 } = CONSTANTS.IDs.PAGE_IDS;
 const { QUESTION_IDS } = CONSTANTS.IDs;
 const {
@@ -16,7 +16,7 @@ const welcomePage = {
   nav: 'Welcome',
   title: 'Welcome',
   subtitle: 'The Life Events Financial Calculator will help you see how the big decisions that you make throughout your life will effect your financial well-being.',
-  subtitle2: 'Lets get started!',
+  subtitle2: 'Let\'s get started!',
   show: true
 };
 
@@ -37,8 +37,8 @@ const initialInfoPage = {
     },
     {
       id: QUESTION_IDS[INITIAL_PAGE].RETIREMENT_AGE_TEXT,
-      placeholder: 'Retirement Age',
-      info: 'Retirement age',
+      placeholder: 'Planned Retirement Age',
+      info: 'Planned Retirement age',
       type: 'text',
       required: true,
       changeEvent: changeEvents[QUESTION_IDS[INITIAL_PAGE].RETIREMENT_AGE_TEXT]
@@ -205,6 +205,7 @@ const retirementPlansPage = {
   id: RETIREMENT_PLANS_PAGE,
   nav: 'Retirement',
   title: 'What are your retirement plans...',
+  subtitle3: 'I\'m done!',
   show: false,
   required: true,
   questions: [
@@ -217,13 +218,21 @@ const retirementPlansPage = {
   ]
 };
 
+const submitPage = {
+  id: SUBMIT_PAGE,
+  nav: 'Submit',
+  title: 'View your results...',
+  show: false
+};
+
 const pages = [
   welcomePage,
   initialInfoPage,
   careerPlansPage,
   lifestylePage,
   leisurePage,
-  retirementPlansPage
+  retirementPlansPage,
+  submitPage
 ];
 
 export { setInputEvents, selectInputClickEvent };
