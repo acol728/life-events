@@ -2,7 +2,6 @@ import $ from 'jquery';
 import { navigateForward, navigateBackward, navigateToAPage } from '../../../navigation';
 
 export const updateHeroes = (financialData) => {
-  // const totalExpenses = getTotalExpenses(financialData);
   const dataAt65 = financialData.find(item => item.age === 65);
   const netWorthAt65 = dataAt65.totalNetworth - dataAt65.expenses;
 

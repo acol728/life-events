@@ -24,14 +24,14 @@ export default {
       addOrUpdateInfo(infoItems);
       removeError(QUESTION_IDS[LIFESTYLE_PAGE].NUMBER_OF_CARS_TEXT);
     } else {
-      showError(QUESTION_IDS[LIFESTYLE_PAGE].NUMBER_OF_CARS_TEXT, 'Invalid Amount');
+      showError(QUESTION_IDS[LIFESTYLE_PAGE].NUMBER_OF_CARS_TEXT, 'Please enter a number from 0 to 100.');
     }
   },
   [QUESTION_IDS[LIFESTYLE_PAGE].NUMBER_OF_DEPENDENTS_TEXT]: (e) => {
     const parsedValue = parseInt(e.target.value, 10);
     let isValid = !Number.isNaN(parsedValue);
 
-    isValid = !!(isValid && (parsedValue >= 0 && parsedValue <= 100));
+    isValid = !!(isValid && (parsedValue >= 0 && parsedValue <= 10000));
 
     if (isValid) {
       state.ui.values[QUESTION_IDS[LIFESTYLE_PAGE].NUMBER_OF_DEPENDENTS_TEXT] = parsedValue;
@@ -45,7 +45,7 @@ export default {
       addOrUpdateInfo(infoItems);
       removeError(QUESTION_IDS[LIFESTYLE_PAGE].NUMBER_OF_DEPENDENTS_TEXT);
     } else {
-      showError(QUESTION_IDS[LIFESTYLE_PAGE].NUMBER_OF_DEPENDENTS_TEXT, 'Invalid Amount');
+      showError(QUESTION_IDS[LIFESTYLE_PAGE].NUMBER_OF_DEPENDENTS_TEXT, 'Please enter a number from 0 to 10,000.');
     }
   }
 };
