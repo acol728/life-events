@@ -21,9 +21,11 @@
 						{{subtitle2}}
 					</p>
 					{{/if}} {{#each questions}} {{#compare type "===" "text"}}
-					<div class="md-text-field with-floating-label">
-						<input type="{{type}}" id="{{id}}" required style="font-size: 1.5rem; height: 3rem; width: 24vw;" placeholder=""></input>
-						<label for={{id}}>{{placeholder}}</label>
+					<div class="md-text-field with-floating-label icon-left">
+						<div class="md-text-field with-floating-label">
+							<input type="{{type}}" id="{{id}}" required style="font-size: 1.5rem; height: 3rem; width: 24vw;" placeholder=""><label class="icon icon-sysicon-{{icon2}}" for={{id}}>{{placeholder}}</label></input>
+						
+						</div>
 					</div>
 					{{/compare}} {{#compare type "===" "select-dropdown"}}
 					<div class="uitk-select md-text-field with-floating-label" style="margin-top: 4rem; width: 24vw">

@@ -5,13 +5,18 @@
 	<ul class="filter-nav vertical">
 		{{#each (getPages)}}{{#if @index}}
 		<li class="filter-nav-entry ">
-			<button class="nav-button" id="nav-{{id}}" pageid={{id}} style="color: black">{{nav}}</button>
-			<!--<span class="icon icon-util-success"></span>-->
-		</li>
+			<div class="md-text-field with-floating-label">
+				<button class="nav-button" id="nav-{{id}}" pageid={{id}} style="color: black;"><span style="padding: 10px; position: middle;" class="icon {{icon}} icon-left-text"></span>{{nav}}</button>
+			</div>
+		</li>			
 		{{else}}
-		<li class="filter-nav-entry ">
-			<button class="nav-button" id="nav-{{id}}" style="background-color: #29488E; color: white;" pageid={{id}}>{{nav}}</button>
+		<li class="filter-nav-entry">
+			 <div class="md-text-field with-floating-label">
+				<button class="nav-button" id="nav-{{id}}" style="background-color: #29488E; color: white;" pageid={{id}}><span style="padding: 10px; position: middle;" class="icon {{icon}} icon-left-text"></span> {{nav}}</button> 
+			</div>
 		</li>
+			
 		{{/if}} {{/each}}
 	</ul>
+						
 </div>
