@@ -4,7 +4,7 @@ import { setInputEvents, selectInputClickEvent } from './helpers';
 import changeEvents from './changeEvents';
 
 const {
-  WELCOME_PAGE, INITIAL_PAGE, CAREER_PLANS_PAGE, LIFESTYLE_PAGE, LEISURE_PAGE, RETIREMENT_PLANS_PAGE
+  WELCOME_PAGE, INITIAL_PAGE, CAREER_PLANS_PAGE, LIFESTYLE_PAGE, LEISURE_PAGE, RETIREMENT_PLANS_PAGE, SUBMIT_PAGE
 } = CONSTANTS.IDs.PAGE_IDS;
 const { QUESTION_IDS } = CONSTANTS.IDs;
 const {
@@ -37,8 +37,8 @@ const initialInfoPage = {
     },
     {
       id: QUESTION_IDS[INITIAL_PAGE].RETIREMENT_AGE_TEXT,
-      placeholder: 'Retirement Age',
-      info: 'Retirement age',
+      placeholder: 'Planned Retirement Age',
+      info: 'Planned Retirement age',
       type: 'text',
       required: true,
       changeEvent: changeEvents[QUESTION_IDS[INITIAL_PAGE].RETIREMENT_AGE_TEXT]
@@ -217,13 +217,23 @@ const retirementPlansPage = {
   ]
 };
 
+const submitPage = {
+  id: SUBMIT_PAGE,
+  nav: 'Submit',
+  title: 'Find your results...',
+  subtitle: 'All of your answers to the questions will be compiled and your results will be calculated.',
+  subtitle2: 'I\'m done!',
+  show: true
+};
+
 const pages = [
   welcomePage,
   initialInfoPage,
   careerPlansPage,
   lifestylePage,
   leisurePage,
-  retirementPlansPage
+  retirementPlansPage,
+  submitPage
 ];
 
 export { setInputEvents, selectInputClickEvent };
