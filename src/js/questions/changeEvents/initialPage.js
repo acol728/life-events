@@ -10,7 +10,7 @@ export default {
     const parsedValue = parseInt(e.target.value, 10);
     let isValid = !Number.isNaN(parsedValue);
 
-    isValid = !!(isValid && (parsedValue >= 18));
+    isValid = !!(isValid && ((parsedValue >= 18) && (parsedValue <= 130)));
 
     if (isValid) {
       state.ui.values[QUESTION_IDS[INITIAL_PAGE].CURRENT_AGE_TEXT] = parsedValue;
@@ -26,6 +26,10 @@ export default {
     } else {
       showError(QUESTION_IDS[INITIAL_PAGE].CURRENT_AGE_TEXT, 'Invalid Age');
     }
+
+    const financialData = state.calculateFunds();
+    state.data = { ...state.data, financialData };
+    updateHeroes(financialData);
   },
   [QUESTION_IDS[INITIAL_PAGE].RETIREMENT_AGE_TEXT]: (e) => {
     const parsedValue = parseInt(e.target.value, 10);
@@ -39,6 +43,10 @@ export default {
       }
     ];
     addOrUpdateInfo(infoItems);
+
+    const financialData = state.calculateFunds();
+    state.data = { ...state.data, financialData };
+    updateHeroes(financialData);
   },
   [QUESTION_IDS[INITIAL_PAGE].NETWORTH_TEXT]: (e) => {
     const parsedValue = parseInt(e.target.value, 10);
@@ -55,7 +63,6 @@ export default {
       addOrUpdateInfo(infoItems);
 
       const financialData = state.calculateFunds();
-
       state.data = { ...state.data, financialData };
       updateHeroes(financialData);
     } else {
