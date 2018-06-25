@@ -16,11 +16,13 @@
 						{{subtitle}}
 					</p>
 					{{/if}}{{#if subtitle2}}
-							<button class="button btn-cta expand" id="buttonInitial" style=" align: center; text-align: center; font-size: 2rem; line-height: 3rem; color: white; padding:10px;">
+					<div>
+							<button class="button btn-cta expand" id="buttonInitial" style=" align: center; text-align: center; font-size: 2rem; color: white; padding:10px;">
 							<span class=".icon-util-right-forward"></span>
 						{{subtitle2}}
-					</p>
-					{{/if}} {{#each questions}} {{#compare type "===" "text"}}
+					</div>
+					{{/if}}
+					{{#each questions}} {{#compare type "===" "text"}}
 					<div class="md-text-field with-floating-label">
 						<input type="{{type}}" id="{{id}}" required style="font-size: 1.5rem; height: 3rem; width: 24vw;" placeholder=""></input>
 						<label for={{id}}>{{placeholder}}</label>
@@ -44,7 +46,16 @@
 						<label for="{{id}}">{{text}}</label>
 						{{/each}}
 					</div>
-					{{/compare}} {{/each}}
+					{{/compare}}
+					
+					{{/each}}
+					{{#if subtitle3}}
+						<div style="padding-top:5rem; text-align:center">
+								<button class="button btn-cta success" id="buttonSubmit" style="align: center; text-align: center; font-size: 2rem; color: white; padding:10px; position:relative;">
+								<span class=".icon-util-right-forward"></span>
+							{{subtitle3}}
+						</div>
+					{{/if}}
 				</div>
 				{{/each }}
 			</div>

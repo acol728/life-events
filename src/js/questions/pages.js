@@ -16,7 +16,7 @@ const welcomePage = {
   nav: 'Welcome',
   title: 'Welcome',
   subtitle: 'The Life Events Financial Calculator will help you see how the big decisions that you make throughout your life will effect your financial well-being.',
-  subtitle2: 'Lets get started!',
+  subtitle2: 'Let\'s get started!',
   show: true
 };
 
@@ -205,6 +205,7 @@ const retirementPlansPage = {
   id: RETIREMENT_PLANS_PAGE,
   nav: 'Retirement',
   title: 'What are your retirement plans...',
+  subtitle3: 'I\'m done!',
   show: false,
   required: true,
   questions: [
@@ -220,10 +221,8 @@ const retirementPlansPage = {
 const submitPage = {
   id: SUBMIT_PAGE,
   nav: 'Submit',
-  title: 'Find your results...',
-  subtitle: 'All of your answers to the questions will be compiled and your results will be calculated.',
-  subtitle2: 'I\'m done!',
-  show: true
+  title: 'View your results...',
+  show: false
 };
 
 const pages = [
