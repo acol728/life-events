@@ -1,12 +1,18 @@
 import $ from 'jquery';
 import { navigateForward, navigateBackward, navigateToAPage } from '../../../navigation';
 
+// const getTotalExpenses = (financialData) => {
+// const { vacationCost, coffeeCost } = financialData;
+// return vacationCost + coffeeCost;
+// };
+
 export const updateHeroes = (financialData) => {
+  // const totalExpenses = getTotalExpenses(financialData);
   const dataAt65 = financialData.find(item => item.age === 65);
   const netWorthAt65 = dataAt65.totalNetworth;
   $('#hero_2 h1').html(`$${Math.round(netWorthAt65).toLocaleString()}`);
-  const monthlyIncomeAt65 = dataAt65.monthly[11].currentMonthlySalary;
-  $('#hero_1 h1').html(`$${Math.round(monthlyIncomeAt65).toLocaleString()}`);
+  const monthlyIncome = dataAt65.monthly[11].currentMonthlySalary;
+  $('#hero_1 h1').html(`$${Math.round(monthlyIncome).toLocaleString()}`);
   const monthlyRetirementAllowance = (netWorthAt65 / 15) / 12;
   $('#hero_3 h1').html(`$${Math.round(monthlyRetirementAllowance).toLocaleString()}`);
 };

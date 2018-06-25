@@ -17,19 +17,21 @@ export const PAGE_IDS = {
 export const QUESTION_IDS = {
   [WELCOME_PAGE]: {},
   [INITIAL_PAGE]: {
-    AGE_TEXT: 'ageInput',
+    CURRENT_AGE_TEXT: 'currentAgeInput',
+    RETIREMENT_AGE_TEXT: 'retirementAgeInput',
     NETWORTH_TEXT: 'networthInput',
     CURRENT_ANNUAL_INCOME_TEXT: 'currentAnnualIncomeInput'
   },
   [CAREER_PLANS_PAGE]: {
-    CAREER_DROPDOWN: 'careerInput',
-    EDUCATION_PUBLIC_PRIVATE_RADIO: 'eduPublicPrivateInput'
+    COLLEGE_RADIO: 'collegeInput',
+    YEARS_ENROLLED_TEXT: 'yearsEnrolledInput',
+    TUITION_COST_TEXT: 'tuitionCostInput'
   },
   [LIFESTYLE_PAGE]: {
-    MORTGAGE_RENT_RADIO: 'mortgageRentInput',
-    REGION_OF_LIVING_RADIO: 'regionInput',
+    HOUSING_COSTS_TEXT: 'housingCostsInput',
     NUMBER_OF_CARS_TEXT: 'numberOfCarsInput',
-    NUMBER_OF_DEPENDENCIES_TEXT: 'numberOfDependenciesInput'
+    NUMBER_OF_DEPENDENTS_TEXT: 'numberOfDependentsInput',
+    NUMBER_OF_PETS_TEXT: 'numberOfPetsInput'
   },
   [LEISURE_PAGE]: {
     NUMBER_OF_VACATIONS_DROPDOWN: 'numberOfVacationsInput',

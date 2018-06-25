@@ -6,14 +6,14 @@ const { PAGE_IDS, QUESTION_IDS } = CONSTANTS.IDs;
 const { INITIAL_PAGE } = PAGE_IDS;
 
 export default {
-  [QUESTION_IDS[INITIAL_PAGE].AGE_TEXT]: (e) => {
+  [QUESTION_IDS[INITIAL_PAGE].CURRENT_AGE_TEXT]: (e) => {
     const parsedValue = parseInt(e.target.value, 10);
     let isValid = !Number.isNaN(parsedValue);
 
-    isValid = !!(isValid && (parsedValue >= 18 && parsedValue <= 65));
+    isValid = !!(isValid && (parsedValue >= 18));
 
     if (isValid) {
-      state.ui.values[QUESTION_IDS[INITIAL_PAGE].AGE_TEXT] = parsedValue;
+      state.ui.values[QUESTION_IDS[INITIAL_PAGE].CURRENT_AGE_TEXT] = parsedValue;
       state.ui.values.info[pages[1].questions[0].info] = parsedValue;
       const infoItems = [
         {
@@ -22,10 +22,23 @@ export default {
         }
       ];
       addOrUpdateInfo(infoItems);
-      removeError(QUESTION_IDS[INITIAL_PAGE].AGE_TEXT);
+      removeError(QUESTION_IDS[INITIAL_PAGE].CURRENT_AGE_TEXT);
     } else {
-      showError(QUESTION_IDS[INITIAL_PAGE].AGE_TEXT, 'Invalid Age');
+      showError(QUESTION_IDS[INITIAL_PAGE].CURRENT_AGE_TEXT, 'Invalid Age');
     }
+  },
+  [QUESTION_IDS[INITIAL_PAGE].RETIREMENT_AGE_TEXT]: (e) => {
+    const parsedValue = parseInt(e.target.value, 10);
+
+    state.ui.values[QUESTION_IDS[INITIAL_PAGE].RETIREMENT_AGE_TEXT] = parsedValue;
+    state.ui.values.info[pages[1].questions[1].info] = parsedValue;
+    const infoItems = [
+      {
+        key: pages[1].questions[1].info,
+        val: parsedValue
+      }
+    ];
+    addOrUpdateInfo(infoItems);
   },
   [QUESTION_IDS[INITIAL_PAGE].NETWORTH_TEXT]: (e) => {
     const parsedValue = parseInt(e.target.value, 10);
@@ -35,7 +48,7 @@ export default {
 
       const infoItems = [
         {
-          key: pages[1].questions[1].info,
+          key: pages[1].questions[2].info,
           val: parsedValue
         }
       ];
