@@ -25,42 +25,29 @@ const createChart = () => {
     .call(axis);
 };
 
-const calculateCoffee = (dailyCoffee) => {
-  const age = state.ui.values.ageInput || DEFAULT_AGE;
+const getTotalExpenses = (lengthOfVacations, numberOfVacations, dailyCoffee) => { //, otherExpenses) => {
+  const age = state.ui.values.currentAgeInput || DEFAULT_AGE;
   const inflation = 1.03;
   let coffeePerYear = 1460;
+  let vacationCost = 200;
   let result = 0;
-  if (dailyCoffee) {
-    for (let i = 0; i <= DEFAULT_RETIREMENT_AGE - age; i += 1) {
+  for (let i = 0; i <= DEFAULT_RETIREMENT_AGE - age; i += 1) {
+    result += vacationCost * numberOfVacations * lengthOfVacations;
+    // result += otherExpenses;
+    // otherExpenses *= inflation;
+    vacationCost *= inflation;
+    if (dailyCoffee) {
       result += coffeePerYear;
       coffeePerYear *= inflation;
     }
   }
   coffeePerYear = 1460;
-  return result;
-};
-
-const calculateVacation = (lengthOfVacations, numberOfVacations) => {
-  const age = state.ui.values.ageInput || DEFAULT_AGE;
-  const inflation = 1.03;
-  let vacationCost = 200;
-  let result = 0;
-  for (let i = 0; i <= DEFAULT_RETIREMENT_AGE - age; i += 1) {
-    result += vacationCost * numberOfVacations * lengthOfVacations;
-    vacationCost *= inflation;
-  }
   vacationCost = 200;
   return result;
 };
 
-const getTotalExpenses = (lengthOfVacations, numberOfVacations, dailyCoffee) => {
-  const vacationCost = calculateVacation(lengthOfVacations, numberOfVacations);
-  const coffeeCost = calculateCoffee(dailyCoffee);
-  return vacationCost + coffeeCost;
-};
-
 const calculateFunds = () => {
-  const age = state.ui.values.ageInput || DEFAULT_AGE;
+  const age = state.ui.values.currentAgeInput || DEFAULT_AGE;
   const initialFunds = state.ui.values.networthInput || 0;
   const currentAnnualIncome = state.ui.values.currentAnnualIncomeInput || 0;
   const careerId = state.ui.values.careerInput || '';
