@@ -55,7 +55,6 @@ export default {
       addOrUpdateInfo(infoItems);
 
       const financialData = state.calculateFunds();
-      updateHeroes(financialData);
 
       state.data = { ...state.data, financialData };
       updateHeroes(financialData);

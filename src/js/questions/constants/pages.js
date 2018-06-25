@@ -25,7 +25,6 @@ export const QUESTION_IDS = {
     CURRENT_ANNUAL_INCOME_TEXT: 'currentAnnualIncomeInput'
   },
   [CAREER_PLANS_PAGE]: {
-    COLLEGE_RADIO: 'collegeInput',
     YEARS_ENROLLED_TEXT: 'yearsEnrolledInput',
     TUITION_COST_TEXT: 'tuitionCostInput'
   },

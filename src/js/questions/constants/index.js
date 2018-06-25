@@ -10,7 +10,6 @@ import { LENGTH_OF_VACATIONS_DATA } from './lengthOfVacationsData';
 import { COFFEE_DATA } from './coffeeData';
 import { NUMBER_OF_DEPENDENTS_DATA } from './numberOfDependentsData';
 import { NUMBER_OF_PETS_DATA } from './numberOfPets';
-import { COLLEGE_DATA } from './collegeData';
 import { YEARS_ENROLLED_DATA } from './yearsEnrolledData';
 import { TUITION_COST_DATA } from './tuitionCostData';
 
@@ -40,7 +39,6 @@ export default {
   COFFEE_DATA,
   NUMBER_OF_DEPENDENTS_DATA,
   NUMBER_OF_PETS_DATA,
-  COLLEGE_DATA,
   YEARS_ENROLLED_DATA,
   TUITION_COST_DATA
 };
