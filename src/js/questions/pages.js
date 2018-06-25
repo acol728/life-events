@@ -8,7 +8,7 @@ const {
 } = CONSTANTS.IDs.PAGE_IDS;
 const { QUESTION_IDS } = CONSTANTS.IDs;
 const {
-  HOUSING_COSTS_DATA, NUMBER_OF_VACATIONS_DATA, LENGTH_OF_VACATIONS_DATA, SUBSCRIPTION_DATA, COFFEE_DATA, COLLEGE_DATA, YEARS_ENROLLED_DATA, TUITION_COST_DATA
+  HOUSING_COSTS_DATA, NUMBER_OF_VACATIONS_DATA, LENGTH_OF_VACATIONS_DATA, SUBSCRIPTION_DATA, COFFEE_DATA, YEARS_ENROLLED_DATA, TUITION_COST_DATA
 } = CONSTANTS;
 
 const welcomePage = {
@@ -68,22 +68,12 @@ const careerPlansPage = {
   show: false,
   questions: [
     {
-      id: QUESTION_IDS[CAREER_PLANS_PAGE].COLLEGE_RADIO,
-      label: 'Did you go to college?',
-      show: true,
-      placeholder: 'Did you go to college?',
-      info: 'College',
-      type: 'radio',
-      required: true,
-      changeEvent: changeEvents[QUESTION_IDS[CAREER_PLANS_PAGE].COLLEGE_RADIO],
-      values: COLLEGE_DATA
-    },
-    {
       id: QUESTION_IDS[CAREER_PLANS_PAGE].YEARS_ENROLLED_TEXT,
       label: 'Years enrolled',
       show: true,
       placeholder: 'Years enrolled',
       info: 'Years Enrolled',
+      value: '0',
       type: 'text',
       required: true,
       changeEvent: changeEvents[QUESTION_IDS[CAREER_PLANS_PAGE].YEARS_ENROLLED_TEXT],
@@ -95,6 +85,7 @@ const careerPlansPage = {
       show: true,
       placeholder: 'Cost per year',
       info: 'Tuition',
+      value: '0',
       type: 'text',
       required: true,
       changeEvent: changeEvents[QUESTION_IDS[CAREER_PLANS_PAGE].TUITION_COST_TEXT],
@@ -181,11 +172,11 @@ const leisurePage = {
     },
     {
       id: QUESTION_IDS[LEISURE_PAGE].SUBSCRIPTION_DROPDOWN,
-      label: 'Amount paid to subscriptions each month',
+      label: 'Amount paid to entertainment each month (TV, media subscriptions, nights out, etc.)',
       show: true,
       placeholder: 'Choose amount',
       info: 'subscriptions',
-      type: 'select-dropdown',
+      type: 'slider-bar',
       changeEvent: changeEvents[QUESTION_IDS[LEISURE_PAGE].SUBSCRIPTION_DROPDOWN],
       values: SUBSCRIPTION_DATA
     },
