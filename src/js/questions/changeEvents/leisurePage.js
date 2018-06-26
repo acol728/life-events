@@ -1,3 +1,4 @@
+// import $ from 'jquery';
 import CONSTANTS from '../constants';
 import pages from '../pages';
 import { updateHeroes } from './util';
@@ -30,6 +31,16 @@ export default {
     updateHeroes(financialData);
   },
   [QUESTION_IDS[LEISURE_PAGE].SUBSCRIPTION_DROPDOWN]: (subId) => {
+    // const slider = $('#myRange');
+    // const output = $('#sliderOutput');
+    const slider = document.getElementById('myRange');
+    const output = document.getElementById('demo');
+    output.innerHTML = slider.value;
+
+    slider.oninput = function () {
+      output.innerHTML = this.value;
+    };
+
     const index = SUBSCRIPTION_DATA.findIndex(element => element.id === subId);
     const subscriptionAmount = SUBSCRIPTION_DATA[index].value;
 

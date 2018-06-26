@@ -23,13 +23,13 @@
 					</div>
 					{{/if}} {{#each questions}} {{#compare type "===" "text"}}
 
-					<div class="md-text-field with-floating-label">
+					<div class="md-text-field with-floating-label" title="{{hoverText}}">
 						<input type="{{type}}" id="{{id}}" required value="{{value}}" style="font-size: 1.5rem; height: 3rem; width: 24vw;" placeholder=""></input>
 						<label for={{id}}>{{placeholder}}</label>
 
 					</div>
 					{{/compare}} {{#compare type "===" "select-dropdown"}}
-					<div class="uitk-select md-text-field with-floating-label" style="margin-top: 4rem; width: 24vw">
+					<div class="uitk-select md-text-field with-floating-label" style="margin-top: 4rem; width: 24vw" title="{{hoverText}}">
 						<input id="{{id}}" type="text" class="select-input" readonly="true" placeholder="{{placeholder}}" required>
 						<span class="select-arrow"></span>
 						<ul class="select-dropdown">
@@ -40,7 +40,7 @@
 						<label>{{label}}</label>
 					</div>
 					{{/compare}}{{#compare type "===" "radio"}}
-					<div id="{{id}}" class="md-multi-ctrl-field " style="{{#unless show}}display: none;{{/unless}}" title="Please select the best option.">
+					<div id="{{id}}" class="md-multi-ctrl-field " style="{{#unless show}}display: none;{{/unless}}" title="{{hoverText}}">
 						<label>{{label}}</label>
 						{{#each values}}
 						<input id="{{id}}" name="{{../id}}" type="{{../type}}">
@@ -48,9 +48,10 @@
 						{{/each}}
 					</div>
 					{{/compare}} {{#compare type "===" "slider-bar"}}
-					<div class="slidecontainer" style="width:100%;">
-						<input type="range" min="1" max="500" value="50" class="slider" id="myRange" style="-webkit-appearance:none; width:100%; height:15px; border-radius:5px; background:#d3d3d3; outline:none; opacity:0.7; -webkit-transition:.2s; transition:opacity .2s;">
-						<input class="slider::-webkit-slider-thumb" style="-webkit-appearance:none; appearance:none; width:25px; height:25px; border-radius:50%; background:#4CAF50; cursor:pointer;">
+					<div class="slidecontainer" style="width:100%;" title="{{hoverText}}">
+						<label>{{label}}</label>
+						<input type="range" min="1" max="500" value="50" class="slider" id="myRange" >
+						<span id="sliderOutput"></span>
 					</div>
 					{{/compare}} {{/each}} {{#if subtitle3}}
 					<div style="padding-top:5rem; text-align:center">
