@@ -27,12 +27,9 @@ function drowdownClickHandler () {
   $(this).parents('.uitk-select').toggleClass('is-open');
 }
 
-// $('#myRange').change(setInputEvents);
-// $('#myRange').on('change', setInputEvents);
-
 $('#myRange').change((e) => {
   const output = document.getElementById('sliderOutput');
-  output.innerHTML = e.currentTarget.value;
+  output.innerHTML = `$${e.currentTarget.value}`;
 });
 
 // Open dropdown when input clicked

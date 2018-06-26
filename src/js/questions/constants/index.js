@@ -12,6 +12,7 @@ import { NUMBER_OF_DEPENDENTS_DATA } from './numberOfDependentsData';
 import { NUMBER_OF_PETS_DATA } from './numberOfPets';
 import { YEARS_ENROLLED_DATA } from './yearsEnrolledData';
 import { TUITION_COST_DATA } from './tuitionCostData';
+import { INCOME_OR_CAREER_DATA } from './incomeOrCareer';
 
 const DEFAULT_AGE = 18;
 const DEFAULT_COLLEGE_START_AGE = 18;
@@ -40,5 +41,6 @@ export default {
   NUMBER_OF_DEPENDENTS_DATA,
   NUMBER_OF_PETS_DATA,
   YEARS_ENROLLED_DATA,
-  TUITION_COST_DATA
+  TUITION_COST_DATA,
+  INCOME_OR_CAREER_DATA
 };
