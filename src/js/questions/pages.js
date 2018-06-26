@@ -100,6 +100,7 @@ const educationPage = {
 const careerPlansPage = {
   id: CAREER_PLANS_PAGE,
   nav: 'Income',
+  icon: 'icon-sysicon-coin',
   title: 'How much are you earning...',
   show: false,
   required: true
@@ -229,7 +230,8 @@ const submitPage = {
   nav: 'Submit',
   icon: 'icon-util-down-alt',
   title: 'View your results...',
-  show: false
+  show: false,
+  type: 'table'
 };
 
 const pages = [
