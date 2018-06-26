@@ -230,7 +230,8 @@ const submitPage = {
   nav: 'Submit',
   icon: 'icon-util-down-alt',
   title: 'View your results...',
-  show: false
+  show: false,
+  type: 'table'
 };
 
 const pages = [
