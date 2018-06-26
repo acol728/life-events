@@ -14,7 +14,7 @@ export default {
     const index = NUMBER_OF_VACATIONS_DATA.findIndex(element => element.id === numberId);
     const numOfVacations = NUMBER_OF_VACATIONS_DATA[index].value;
 
-    state.ui.values[pages[4].questions[0].info] = numOfVacations;
+    state.ui.values[pages[5].questions[0].info] = numOfVacations;
 
     const financialData = state.calculateFunds();
     state.data = { ...state.data, financialData };
@@ -24,7 +24,7 @@ export default {
     const index = LENGTH_OF_VACATIONS_DATA.findIndex(element => element.id === lengthId);
     const lengthOfVacations = LENGTH_OF_VACATIONS_DATA[index].value;
 
-    state.ui.values[pages[4].questions[1].info] = lengthOfVacations;
+    state.ui.values[pages[5].questions[1].info] = lengthOfVacations;
 
     const financialData = state.calculateFunds();
     state.data = { ...state.data, financialData };
@@ -43,7 +43,7 @@ export default {
     const index = SUBSCRIPTION_DATA.findIndex(element => element.id === subId);
     const subscriptionAmount = SUBSCRIPTION_DATA[index].value;
 
-    state.ui.values[pages[4].questions[2].info] = subscriptionAmount;
+    state.ui.values[pages[5].questions[2].info] = subscriptionAmount;
 
     const financialData = state.calculateFunds();
     state.data = { ...state.data, financialData };
@@ -53,18 +53,10 @@ export default {
     const index = COFFEE_DATA.findIndex(element => element.id === coffeeId.target.id);
     const dailyCoffee = COFFEE_DATA[index].value;
 
-    state.ui.values[pages[4].questions[3].info] = dailyCoffee;
+    state.ui.values[pages[5].questions[3].info] = dailyCoffee;
 
     const financialData = state.calculateFunds();
     state.data = { ...state.data, financialData };
     updateHeroes(financialData);
-  // [QUESTION_IDS[LEISURE_PAGE].NUMBER_OF_CARS_TEXT]: (e) => {
-    // const infoItems = [
-    // {
-    // key: pages[3].questions[2].info,
-    // val: parsedValue
-    // }
-    // ];
-    // addOrUpdateInfo(infoItems);
   }
 };

@@ -10,8 +10,6 @@ import { LENGTH_OF_VACATIONS_DATA } from './lengthOfVacationsData';
 import { COFFEE_DATA } from './coffeeData';
 import { NUMBER_OF_DEPENDENTS_DATA } from './numberOfDependentsData';
 import { NUMBER_OF_PETS_DATA } from './numberOfPets';
-import { YEARS_ENROLLED_DATA } from './yearsEnrolledData';
-import { TUITION_COST_DATA } from './tuitionCostData';
 
 const DEFAULT_AGE = 18;
 const DEFAULT_COLLEGE_START_AGE = 18;
@@ -38,7 +36,5 @@ export default {
   LENGTH_OF_VACATIONS_DATA,
   COFFEE_DATA,
   NUMBER_OF_DEPENDENTS_DATA,
-  NUMBER_OF_PETS_DATA,
-  YEARS_ENROLLED_DATA,
-  TUITION_COST_DATA
+  NUMBER_OF_PETS_DATA
 };
