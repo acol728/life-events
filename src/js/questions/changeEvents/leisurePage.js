@@ -49,13 +49,5 @@ export default {
     const financialData = state.calculateFunds();
     state.data = { ...state.data, financialData };
     updateHeroes(financialData);
-  // [QUESTION_IDS[LEISURE_PAGE].NUMBER_OF_CARS_TEXT]: (e) => {
-    // const infoItems = [
-    // {
-    // key: pages[3].questions[2].info,
-    // val: parsedValue
-    // }
-    // ];
-    // addOrUpdateInfo(infoItems);
   }
 };

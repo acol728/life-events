@@ -8,7 +8,7 @@ const {
 } = CONSTANTS.IDs.PAGE_IDS;
 const { QUESTION_IDS } = CONSTANTS.IDs;
 const {
-  HOUSING_COSTS_DATA, NUMBER_OF_VACATIONS_DATA, LENGTH_OF_VACATIONS_DATA, COFFEE_DATA, YEARS_ENROLLED_DATA, TUITION_COST_DATA, INCOME_OR_CAREER_DATA
+  HOUSING_COSTS_DATA, NUMBER_OF_VACATIONS_DATA, LENGTH_OF_VACATIONS_DATA, COFFEE_DATA, INCOME_OR_CAREER_DATA
 } = CONSTANTS;
 
 const welcomePage = {
@@ -79,8 +79,7 @@ const educationPage = {
       value: '0',
       type: 'text',
       required: true,
-      changeEvent: changeEvents[QUESTION_IDS[EDUCATION_PAGE].YEARS_ENROLLED_TEXT],
-      values: YEARS_ENROLLED_DATA
+      changeEvent: changeEvents[QUESTION_IDS[EDUCATION_PAGE].YEARS_ENROLLED_TEXT]
     },
     {
       id: QUESTION_IDS[EDUCATION_PAGE].TUITION_COST_TEXT,
@@ -91,8 +90,7 @@ const educationPage = {
       value: '0',
       type: 'text',
       required: true,
-      changeEvent: changeEvents[QUESTION_IDS[EDUCATION_PAGE].TUITION_COST_TEXT],
-      values: TUITION_COST_DATA
+      changeEvent: changeEvents[QUESTION_IDS[EDUCATION_PAGE].TUITION_COST_TEXT]
     }
   ]
 };
@@ -223,7 +221,10 @@ const submitPage = {
   icon: 'icon-util-down-alt',
   title: 'View your results...',
   show: false,
-  type: 'table'
+  type: 'table',
+  amount1: '',
+  amount2: '',
+  amount3: ''
 };
 
 const pages = [

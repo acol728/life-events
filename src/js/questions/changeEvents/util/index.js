@@ -3,7 +3,7 @@ import { navigateForward, navigateBackward, navigateToAPage } from '../../../nav
 
 export const updateHeroes = (financialData) => {
   const dataAt65 = financialData.find(item => item.age === 65);
-  const netWorthAt65 = dataAt65.totalNetworth - dataAt65.expenses;
+  const netWorthAt65 = dataAt65.totalNetworth - dataAt65.expenses - dataAt65.educationCost;
 
   $('#hero_2 h1').html(`$${Math.round(netWorthAt65).toLocaleString()}`);
   const monthlyIncome = dataAt65.monthly[11].currentMonthlySalary;
