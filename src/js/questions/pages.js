@@ -46,14 +46,6 @@ const initialInfoPage = {
       changeEvent: changeEvents[QUESTION_IDS[INITIAL_PAGE].RETIREMENT_AGE_TEXT]
     },
     {
-      id: QUESTION_IDS[INITIAL_PAGE].NETWORTH_TEXT,
-      placeholder: 'Current Networth',
-      info: 'Initial Net Worth',
-      type: 'text',
-      required: true,
-      changeEvent: changeEvents[QUESTION_IDS[INITIAL_PAGE].NETWORTH_TEXT]
-    },
-    {
       id: QUESTION_IDS[INITIAL_PAGE].CURRENT_ANNUAL_INCOME_TEXT,
       placeholder: 'Annual Income',
       type: 'text',
@@ -103,6 +95,14 @@ const careerPlansPage = {
   show: false,
   required: true,
   questions: [
+    {
+      id: QUESTION_IDS[INITIAL_PAGE].NETWORTH_TEXT,
+      placeholder: 'Current Networth',
+      info: 'Initial Net Worth',
+      type: 'text',
+      required: true,
+      changeEvent: changeEvents[QUESTION_IDS[INITIAL_PAGE].NETWORTH_TEXT]
+    },
     {
       id: 'selectIncome',
       label: 'Would you like to enter an annual income, or select a prospective career?',
