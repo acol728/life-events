@@ -100,6 +100,7 @@ const educationPage = {
 const careerPlansPage = {
   id: CAREER_PLANS_PAGE,
   nav: 'Income',
+  icon: 'icon-sysicon-coin',
   title: 'How much are you earning...',
   show: false,
   required: true
