@@ -22,11 +22,9 @@
 							{{subtitle2}}
 					</div>
 					{{/if}} {{#each questions}} {{#compare type "===" "text"}}
-
 					<div class="md-text-field with-floating-label" title="{{hoverText}}">
 						<input type="{{type}}" id="{{id}}" required value="{{value}}" style="font-size: 1.5rem; height: 3rem; width: 24vw;" placeholder=""></input>
 						<label for={{id}}>{{placeholder}}</label>
-
 					</div>
 					{{/compare}} {{#compare type "===" "select-dropdown"}}
 					<div class="uitk-select md-text-field with-floating-label" style="margin-top: 4rem; width: 24vw" title="{{hoverText}}">
@@ -50,8 +48,10 @@
 					{{/compare}} {{#compare type "===" "slider-bar"}}
 					<div class="slidecontainer" style="width:100%;" title="{{hoverText}}">
 						<label>{{label}}</label>
-						<input type="range" min="1" max="500" value="50" class="slider" id="myRange" >
-						<span id="sliderOutput"></span>
+						<input type="range" min="0" max="1000" class="slider" id="myRange">
+						<center>
+							<span id="sliderOutput">500</span>
+						</center>
 					</div>
 					{{/compare}} {{/each}} {{#if subtitle3}}
 					<div style="padding-top:5rem; text-align:center">
@@ -60,6 +60,42 @@
 							{{subtitle3}}
 					</div>
 					{{/if}}
+					{{#compare type "===" "table"}}
+									<div>
+										<table class="table side-borders-none" summary="summary of table" style="background: white; "> 
+											<caption class="show-for-sr"> I will take some magic white, and a little bit of Vandyke brown and a little touch of yellow. As trees get older they lose their chlorophyll.
+ </caption>
+												<thread>
+													<tr class="info">
+														<th width="500"> Expense </th>
+														<th width="100" class="text-right">Amount</th>
+														<th width="400">Frequency</th>
+													</tr>
+												</thread>
+												<tbody>
+													<tr>
+														<td>You want your tree to have some character. Make it special.
+</td>
+														<td class="text-right">$$$</td>
+														<td>x</td>
+													</tr>
+													<tr>
+														<td>I guess I'm a little weird. I like to talk to trees and animals. That's okay though; I have more fun than most people.
+</td>
+														<td class="text-right">$$$</td>
+														<td>x</td>
+													</tr>
+													<tr>
+														<td>We're trying to teach you a technique here and how to use it.
+</td>
+														<td class="text-right">$$$</td>
+														<td>x</td>
+													</tr>
+												</tbody>
+										</table>
+									</div>
+									{{/compare}}
+					
 				</div>
 				{{/each }}
 			</div>

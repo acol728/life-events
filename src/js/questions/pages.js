@@ -7,8 +7,7 @@ const {
   WELCOME_PAGE, INITIAL_PAGE, EDUCATION_PAGE, CAREER_PLANS_PAGE, LIFESTYLE_PAGE, LEISURE_PAGE, RETIREMENT_PLANS_PAGE, SUBMIT_PAGE
 } = CONSTANTS.IDs.PAGE_IDS;
 const { QUESTION_IDS } = CONSTANTS.IDs;
-const {
-  HOUSING_COSTS_DATA, NUMBER_OF_VACATIONS_DATA, LENGTH_OF_VACATIONS_DATA, SUBSCRIPTION_DATA, COFFEE_DATA
+const { HOUSING_COSTS_DATA, NUMBER_OF_VACATIONS_DATA, LENGTH_OF_VACATIONS_DATA, SUBSCRIPTION_DATA, COFFEE_DATA
 } = CONSTANTS;
 
 const welcomePage = {
@@ -98,6 +97,7 @@ const educationPage = {
 const careerPlansPage = {
   id: CAREER_PLANS_PAGE,
   nav: 'Income',
+  icon: 'icon-sysicon-coin',
   title: 'How much are you earning...',
   show: false,
   required: true
@@ -189,8 +189,7 @@ const leisurePage = {
       placeholder: 'Choose amount',
       info: 'subscriptions',
       type: 'slider-bar',
-      changeEvent: changeEvents[QUESTION_IDS[LEISURE_PAGE].SUBSCRIPTION_DROPDOWN],
-      values: SUBSCRIPTION_DATA
+      changeEvent: changeEvents[QUESTION_IDS[LEISURE_PAGE].SUBSCRIPTION_DROPDOWN]
     },
     {
       id: QUESTION_IDS[LEISURE_PAGE].COFFEE_RADIO,
@@ -227,7 +226,8 @@ const submitPage = {
   nav: 'Submit',
   icon: 'icon-util-down-alt',
   title: 'View your results...',
-  show: false
+  show: false,
+  type: 'table'
 };
 
 const pages = [

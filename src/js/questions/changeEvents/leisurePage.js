@@ -31,13 +31,12 @@ export default {
     updateHeroes(financialData);
   },
   [QUESTION_IDS[LEISURE_PAGE].SUBSCRIPTION_DROPDOWN]: (subId) => {
-    // const slider = $('#myRange');
-    // const output = $('#sliderOutput');
     const slider = document.getElementById('myRange');
-    const output = document.getElementById('demo');
+    const output = document.getElementById('sliderOutput');
     output.innerHTML = slider.value;
+    console.log('hello');
 
-    slider.oninput = function () {
+    slider.oninput = function outputSliderValue () {
       output.innerHTML = this.value;
     };
 
