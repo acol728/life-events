@@ -7,7 +7,8 @@ export const HEROES_DATA = [
   {
     id: 'hero_2',
     title: 'Net-Worth At Retirement',
-    defaultValue: 'N/A'
+    defaultValue: 'N/A',
+    noShow: true
   },
   {
     id: 'hero_3',
