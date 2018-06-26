@@ -31,15 +31,6 @@ export default {
     updateHeroes(financialData);
   },
   [QUESTION_IDS[LEISURE_PAGE].SUBSCRIPTION_DROPDOWN]: (subId) => {
-    const slider = document.getElementById('myRange');
-    const output = document.getElementById('sliderOutput');
-    output.innerHTML = slider.value;
-    console.log('hello');
-
-    slider.oninput = function outputSliderValue () {
-      output.innerHTML = this.value;
-    };
-
     const index = SUBSCRIPTION_DATA.findIndex(element => element.id === subId);
     const subscriptionAmount = SUBSCRIPTION_DATA[index].value;
 

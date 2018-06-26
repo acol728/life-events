@@ -3,7 +3,6 @@ export const EDUCATION_PAGE = 'educationPage';
 export const CAREER_PLANS_PAGE = 'careerPlansPage';
 export const LIFESTYLE_PAGE = 'lifestylePage';
 export const LEISURE_PAGE = 'leisurePage';
-export const RETIREMENT_PLANS_PAGE = 'retirementPlansPage';
 export const WELCOME_PAGE = 'welcomePage';
 export const SUBMIT_PAGE = 'submitPage';
 
@@ -14,7 +13,6 @@ export const PAGE_IDS = {
   CAREER_PLANS_PAGE,
   LIFESTYLE_PAGE,
   LEISURE_PAGE,
-  RETIREMENT_PLANS_PAGE,
   SUBMIT_PAGE
 };
 
@@ -30,7 +28,9 @@ export const QUESTION_IDS = {
     YEARS_ENROLLED_TEXT: 'yearsEnrolledInput',
     TUITION_COST_TEXT: 'tuitionCostInput'
   },
-  [CAREER_PLANS_PAGE]: {},
+  [CAREER_PLANS_PAGE]: {
+    INCOME_OR_CAREER_RADIO: 'incomeOrCareerInput'
+  },
   [LIFESTYLE_PAGE]: {
     HOUSING_COSTS_TEXT: 'housingCostsInput',
     NUMBER_OF_CARS_TEXT: 'numberOfCarsInput',
@@ -42,9 +42,6 @@ export const QUESTION_IDS = {
     LENGTH_OF_VACATIONS_DROPDOWN: 'lengthOfVacationsInput',
     SUBSCRIPTION_DROPDOWN: 'subscriptionInput',
     COFFEE_RADIO: 'coffeeInput'
-  },
-  [RETIREMENT_PLANS_PAGE]: {
-    FOUR01K_TEXT: '401KInput'
   },
   [SUBMIT_PAGE]: {}
 };
