@@ -22,11 +22,9 @@
 							{{subtitle2}}
 					</div>
 					{{/if}} {{#each questions}} {{#compare type "===" "text"}}
-
 					<div class="md-text-field with-floating-label" title="{{hoverText}}">
 						<input type="{{type}}" id="{{id}}" required value="{{value}}" style="font-size: 1.5rem; height: 3rem; width: 24vw;" placeholder=""></input>
 						<label for={{id}}>{{placeholder}}</label>
-
 					</div>
 					{{/compare}} {{#compare type "===" "select-dropdown"}}
 					<div class="uitk-select md-text-field with-floating-label" style="margin-top: 4rem; width: 24vw" title="{{hoverText}}">
@@ -50,8 +48,10 @@
 					{{/compare}} {{#compare type "===" "slider-bar"}}
 					<div class="slidecontainer" style="width:100%;" title="{{hoverText}}">
 						<label>{{label}}</label>
-						<input type="range" min="1" max="500" value="50" class="slider" id="myRange" >
-						<span id="sliderOutput"></span>
+						<input type="range" min="0" max="1000" class="slider" id="myRange">
+						<center>
+							<span id="sliderOutput">500</span>
+						</center>
 					</div>
 					{{/compare}} {{/each}} {{#if subtitle3}}
 					<div style="padding-top:5rem; text-align:center">
