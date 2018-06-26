@@ -228,7 +228,10 @@ const submitPage = {
   icon: 'icon-util-down-alt',
   title: 'View your results...',
   show: false,
-  type: 'table'
+  type: 'table',
+  amount1: '',
+  amount2: '',
+  amount3: ''
 };
 
 const pages = [
