@@ -64,5 +64,8 @@ export default {
     ];
 
     addOrUpdateInfo(infoItems);
+  },
+
+  [QUESTION_IDS[CAREER_PLANS_PAGE].INCOME_OR_CAREER]: (e) => {
   }
 };

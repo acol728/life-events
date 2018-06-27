@@ -45,12 +45,12 @@
 						<label for="{{id}}">{{text}}</label>
 						{{/each}}
 					</div>
-					{{/compare}} {{#compare type "===" "slider-bar"}}
+					{{/compare}}{{#compare type "===" "slider-bar"}}
 					<div class="slidecontainer" style="width:100%;" title="{{hoverText}}">
 						<label>{{label}}</label>
 						<input type="range" min="0" max="1000" class="slider" id="myRange">
 						<center>
-							<span id="sliderOutput">500</span>
+							<span id="sliderOutput">$500</span>
 						</center>
 					</div>
 					{{/compare}} {{/each}} {{#if subtitle3}}
@@ -76,19 +76,19 @@
 													<tr>
 														<td>You want your tree to have some character. Make it special.
 </td>
-														<td class="text-right">$$$</td>
+														<td class="text-right">{{amount1}}</td>
 														<td>x</td>
 													</tr>
 													<tr>
 														<td>I guess I'm a little weird. I like to talk to trees and animals. That's okay though; I have more fun than most people.
 </td>
-														<td class="text-right">$$$</td>
+														<td class="text-right">{{amount2}}</td>
 														<td>x</td>
 													</tr>
 													<tr>
 														<td>We're trying to teach you a technique here and how to use it.
 </td>
-														<td class="text-right">$$$</td>
+														<td class="text-right">{{amount3}}</td>
 														<td>x</td>
 													</tr>
 												</tbody>

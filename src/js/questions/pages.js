@@ -4,11 +4,10 @@ import { setInputEvents, selectInputClickEvent } from './helpers';
 import changeEvents from './changeEvents';
 
 const {
-  WELCOME_PAGE, INITIAL_PAGE, EDUCATION_PAGE, CAREER_PLANS_PAGE, LIFESTYLE_PAGE, LEISURE_PAGE, RETIREMENT_PLANS_PAGE, SUBMIT_PAGE
+  WELCOME_PAGE, INITIAL_PAGE, EDUCATION_PAGE, CAREER_PLANS_PAGE, LIFESTYLE_PAGE, LEISURE_PAGE, SUBMIT_PAGE
 } = CONSTANTS.IDs.PAGE_IDS;
 const { QUESTION_IDS } = CONSTANTS.IDs;
-const {
-  HOUSING_COSTS_DATA, NUMBER_OF_VACATIONS_DATA, LENGTH_OF_VACATIONS_DATA, COFFEE_DATA
+const { HOUSING_COSTS_DATA, NUMBER_OF_VACATIONS_DATA, LENGTH_OF_VACATIONS_DATA, COFFEE_DATA, INCOME_OR_CAREER_DATA
 } = CONSTANTS;
 
 const welcomePage = {
@@ -44,14 +43,6 @@ const initialInfoPage = {
       icon2: 'success',
       required: true,
       changeEvent: changeEvents[QUESTION_IDS[INITIAL_PAGE].RETIREMENT_AGE_TEXT]
-    },
-    {
-      id: QUESTION_IDS[INITIAL_PAGE].NETWORTH_TEXT,
-      placeholder: 'Current Networth',
-      info: 'Initial Net Worth',
-      type: 'text',
-      required: true,
-      changeEvent: changeEvents[QUESTION_IDS[INITIAL_PAGE].NETWORTH_TEXT]
     },
     {
       id: QUESTION_IDS[INITIAL_PAGE].CURRENT_ANNUAL_INCOME_TEXT,
@@ -101,7 +92,26 @@ const careerPlansPage = {
   icon: 'icon-sysicon-coin',
   title: 'How much are you earning...',
   show: false,
-  required: true
+  required: true,
+  questions: [
+    {
+      id: QUESTION_IDS[INITIAL_PAGE].NETWORTH_TEXT,
+      placeholder: 'Current Networth',
+      info: 'Initial Net Worth',
+      type: 'text',
+      required: true,
+      changeEvent: changeEvents[QUESTION_IDS[INITIAL_PAGE].NETWORTH_TEXT]
+    },
+    {
+      id: 'selectIncome',
+      label: 'Would you like to enter an annual income, or select a prospective career?',
+      show: true,
+      info: 'Income Type Selection',
+      type: 'radio',
+      changeEvent: changeEvents[QUESTION_IDS[CAREER_PLANS_PAGE].INCOME_OR_CAREER],
+      values: INCOME_OR_CAREER_DATA
+    }
+  ]
 };
 
 const lifestylePage = {
@@ -162,7 +172,7 @@ const leisurePage = {
   questions: [
     {
       id: QUESTION_IDS[LEISURE_PAGE].NUMBER_OF_VACATIONS_DROPDOWN,
-      label: 'Number of Vacations Per Year',
+      label: 'Average Number of Vacations Per Year',
       show: true,
       placeholder: 'Select number of years...',
       info: 'numberOfVacations',
@@ -194,30 +204,12 @@ const leisurePage = {
     },
     {
       id: QUESTION_IDS[LEISURE_PAGE].COFFEE_RADIO,
-      label: 'Daily coffee?',
+      label: 'Do you purchase coffee every day?',
       show: true,
       info: 'dailyCoffee',
       type: 'radio',
       changeEvent: changeEvents[QUESTION_IDS[LEISURE_PAGE].COFFEE_RADIO],
       values: COFFEE_DATA
-    }
-  ]
-};
-
-const retirementPlansPage = {
-  id: RETIREMENT_PLANS_PAGE,
-  nav: 'Retirement',
-  icon: 'icon-sysicon-retirement',
-  title: 'What are your retirement plans...',
-  subtitle3: 'I\'m done!',
-  show: false,
-  required: true,
-  questions: [
-    {
-      id: '401KInput',
-      placeholder: '401K / Month',
-      info: '401K',
-      type: 'text'
     }
   ]
 };
@@ -228,7 +220,10 @@ const submitPage = {
   icon: 'icon-util-down-alt',
   title: 'View your results...',
   show: false,
-  type: 'table'
+  type: 'table',
+  amount1: '',
+  amount2: '',
+  amount3: ''
 };
 
 const pages = [
@@ -238,7 +233,6 @@ const pages = [
   careerPlansPage,
   lifestylePage,
   leisurePage,
-  retirementPlansPage,
   submitPage
 ];
 
