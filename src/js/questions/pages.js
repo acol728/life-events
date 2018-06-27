@@ -52,7 +52,7 @@ const educationPage = {
   id: EDUCATION_PAGE,
   nav: 'Education',
   icon: 'icon-sysicon-bookmark',
-  title: 'What is your level of education...',
+  title: 'What is your cost of education...',
   show: false,
   questions: [
     {
@@ -208,6 +208,21 @@ const leisurePage = {
   ]
 };
 
+<<<<<<< HEAD
+=======
+const submitPage = {
+  id: SUBMIT_PAGE,
+  nav: 'Summary',
+  icon: 'icon-util-down-alt',
+  title: 'View your results...',
+  show: false,
+  type: 'table',
+  amount1: '',
+  amount2: '',
+  amount3: ''
+};
+
+>>>>>>> 52284e5771520261889ffc2a98d59a911f7b098f
 const pages = [
   welcomePage,
   initialInfoPage,
