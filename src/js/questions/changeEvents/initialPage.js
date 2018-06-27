@@ -84,6 +84,14 @@ export default {
     const value = parseInt(e.target.value, 10);
     state.ui.values[QUESTION_IDS[INITIAL_PAGE].CURRENT_ANNUAL_INCOME_TEXT] = Number.isNaN(value) ? 0 : value;
 
+    const infoItems = [
+      {
+        key: pages[1].questions[3].info,
+        val: value
+      }
+    ];
+    addOrUpdateInfo(infoItems);
+
     const financialData = state.calculateFunds();
     updateHeroes(financialData);
     state.data = { ...state.data, financialData };

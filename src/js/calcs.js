@@ -25,14 +25,15 @@ const createChart = () => {
     .call(axis);
 };
 
-const getTotalExpenses = (lengthOfVacations, numberOfVacations, dailyCoffee) => { //, otherExpenses) => {
+const getTotalExpenses = (lengthOfVacations, numberOfVacations, dailyCoffee, numOfDependents) => { //, otherExpenses) => {
   const age = state.ui.values.currentAgeInput || DEFAULT_AGE;
   const inflation = 1.03;
   let coffeePerYear = 1460;
   let vacationCost = 200;
+  const numOfDependent = numOfDependents || 1;
   let result = 0;
   for (let i = 0; i <= DEFAULT_RETIREMENT_AGE - age; i += 1) {
-    result += vacationCost * numberOfVacations * lengthOfVacations;
+    result += vacationCost * numberOfVacations * lengthOfVacations * numOfDependent;
     // result += otherExpenses;
     // otherExpenses *= inflation;
     vacationCost *= inflation;
@@ -48,6 +49,23 @@ const getTotalExpenses = (lengthOfVacations, numberOfVacations, dailyCoffee) => 
 
 const calculateCollege = (numOfYears, costPerYear) => numOfYears * costPerYear;
 
+const calculateLifestyle = (housingCosts, transportationCosts, numOfPets) => {
+  const age = state.ui.values.currentAgeInput || DEFAULT_AGE;
+  const inflation = 1.03;
+  let avgPetCost = 500;
+  let housingCost = housingCosts || 0;
+  let transportationCost = transportationCosts || 0;
+  const numOfPet = numOfPets || 0;
+  let result = 0;
+  for (let i = 0; i <= DEFAULT_RETIREMENT_AGE - age; i += 1) {
+    result += housingCost + transportationCost + (numOfPet * avgPetCost);
+    housingCost *= inflation;
+    transportationCost *= inflation;
+    avgPetCost *= inflation;
+  }
+  return result;
+};
+
 const calculateFunds = () => {
   const age = state.ui.values.currentAgeInput || DEFAULT_AGE;
   const initialFunds = state.ui.values.networthInput || 0;
@@ -57,6 +75,11 @@ const calculateFunds = () => {
   const dailyCoffee = state.ui.values.dailyCoffee || false;
   const numOfVacations = parseInt(state.ui.values.numberOfVacations, 10) || 0;
   const lengthOfVacations = parseInt(state.ui.values.lengthOfVacations, 10) || 0;
+  const numOfDependents = parseInt(state.ui.values.numberOfDependentsInput, 10) + 1;
+
+  const housingCosts = parseInt(state.ui.values.housingCostsInput, 10) || 0;
+  const transportationCosts = parseInt(state.ui.values.numberOfCarsInput, 10) || 0;
+  const numberOfPets = parseInt(state.ui.values.numberOfPetsInput, 10) || 0;
 
   const numberOfYearsCollege = parseInt(state.ui.values.yearsEnrolledInput, 10) || 0;
   const costOfCollegePerYear = parseInt(state.ui.values.tuitionCostInput, 10) || 0;
@@ -79,8 +102,9 @@ const calculateFunds = () => {
 
   const workingYears = R.takeLast(DEFAULT_RETIREMENT_AGE - age, R.times(R.identity, DEFAULT_RETIREMENT_AGE + 1));
 
-  const expenses = getTotalExpenses(lengthOfVacations, numOfVacations, dailyCoffee);
+  const expenses = getTotalExpenses(lengthOfVacations, numOfVacations, dailyCoffee, numOfDependents);
   const educationCost = calculateCollege(numberOfYearsCollege, costOfCollegePerYear);
+  const lifestyleCost = calculateLifestyle(housingCosts, transportationCosts, numberOfPets);
 
   money = R.reduce((accum, currentAge) => {
     const year = currentAge - age;
@@ -101,7 +125,8 @@ const calculateFunds = () => {
       monthly,
       totalNetworth: lastYear.totalNetworth + netAnnualIncome,
       expenses,
-      educationCost
+      educationCost,
+      lifestyleCost
     }];
   }, money)(workingYears);
 

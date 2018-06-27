@@ -3,8 +3,7 @@ import { navigateForward, navigateBackward, navigateToAPage } from '../../../nav
 
 export const updateHeroes = (financialData) => {
   const dataAt65 = financialData.find(item => item.age === 65);
-  const netWorthAt65 = dataAt65.totalNetworth - dataAt65.expenses - dataAt65.educationCost;
-
+  const netWorthAt65 = dataAt65.totalNetworth - dataAt65.expenses - dataAt65.educationCost - dataAt65.lifestyleCost;
   $('#hero_2 h1').html(`$${Math.round(netWorthAt65).toLocaleString()}`);
   const monthlyIncome = dataAt65.monthly[11].currentMonthlySalary;
   $('#hero_1 h1').html(`$${Math.round(monthlyIncome).toLocaleString()}`);
@@ -58,7 +57,7 @@ export const addOrUpdateInfo = (i) => {
     if ($(`#info-row-${idKey}`).length) {
       $(`#info-row-${idKey} .val`).html(item.val);
     } else {
-      $('#info-table').append(`<li id="info-row-${idKey}"><span class="key">${item.key}</span><span class="val" style="word-wrap: break-word; display: block;">${item.val}</span></li>`);
+      $('#info-table').append(`<li id="info-row-${idKey}"><span class="key">${item.key}</span><span class="val" style="word-wrap: break-word; color: white; display: block;">${item.val}</span></li>`);
     }
     return item;
   });
