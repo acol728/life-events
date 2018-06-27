@@ -71,7 +71,9 @@ const calculateLifestyle = (housingCosts, transportationCosts, leisureCosts) => 
 
 const calculateFunds = () => {
   const age = state.ui.values.currentAgeInput || DEFAULT_AGE;
-  const rAge = state.ui.values.retirementAgeInput;
+  // Added in a default retirment age of 65
+  // Feel free to change this, or to make it more dynamic by using a constant variable instead of "65"
+  const rAge = state.ui.values.retirementAgeInput || 65;
   const initialFunds = state.ui.values.networthInput || 0;
   const currentAnnualIncome = state.ui.values.currentAnnualIncomeInput || 0;
   const careerId = state.ui.values.careerInput || '';
@@ -103,7 +105,6 @@ const calculateFunds = () => {
       monthly,
       totalNetworth: initialFunds + netIncome
     }];
-
   const workingYears = R.takeLast(rAge - age, R.times(R.identity, rAge + 1));
 
   const expenses = getTotalExpenses(lengthOfVacations, numOfVacations, dailyCoffee, numOfDependents);
