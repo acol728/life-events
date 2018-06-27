@@ -49,19 +49,16 @@ const getTotalExpenses = (lengthOfVacations, numberOfVacations, dailyCoffee, num
 
 const calculateCollege = (numOfYears, costPerYear) => numOfYears * costPerYear;
 
-const calculateLifestyle = (housingCosts, transportationCosts, numOfPets) => {
+const calculateLifestyle = (housingCosts, transportationCosts) => {
   const age = state.ui.values.currentAgeInput || DEFAULT_AGE;
   const inflation = 1.03;
-  let avgPetCost = 500;
   let housingCost = housingCosts || 0;
   let transportationCost = transportationCosts || 0;
-  const numOfPet = numOfPets || 0;
   let result = 0;
   for (let i = 0; i <= DEFAULT_RETIREMENT_AGE - age; i += 1) {
-    result += housingCost + transportationCost + (numOfPet * avgPetCost);
+    result += housingCost + transportationCost;
     housingCost *= inflation;
     transportationCost *= inflation;
-    avgPetCost *= inflation;
   }
   return result;
 };
@@ -79,7 +76,6 @@ const calculateFunds = () => {
 
   const housingCosts = parseInt(state.ui.values.housingCostsInput, 10) || 0;
   const transportationCosts = parseInt(state.ui.values.numberOfCarsInput, 10) || 0;
-  const numberOfPets = parseInt(state.ui.values.numberOfPetsInput, 10) || 0;
 
   const numberOfYearsCollege = parseInt(state.ui.values.yearsEnrolledInput, 10) || 0;
   const costOfCollegePerYear = parseInt(state.ui.values.tuitionCostInput, 10) || 0;
@@ -104,7 +100,7 @@ const calculateFunds = () => {
 
   const expenses = getTotalExpenses(lengthOfVacations, numOfVacations, dailyCoffee, numOfDependents);
   const educationCost = calculateCollege(numberOfYearsCollege, costOfCollegePerYear);
-  const lifestyleCost = calculateLifestyle(housingCosts, transportationCosts, numberOfPets);
+  const lifestyleCost = calculateLifestyle(housingCosts, transportationCosts);
 
   money = R.reduce((accum, currentAge) => {
     const year = currentAge - age;

@@ -77,29 +77,5 @@ export default {
     const financialData = state.calculateFunds();
     state.data = { ...state.data, financialData };
     updateHeroes(financialData);
-  },
-  [QUESTION_IDS[LIFESTYLE_PAGE].NUMBER_OF_PETS_TEXT]: (e) => {
-    const parsedValue = parseInt(e.target.value, 10);
-    let isValid = !Number.isNaN(parsedValue);
-
-    isValid = !!(isValid && (parsedValue >= 0 && parsedValue <= 10));
-
-    if (isValid) {
-      state.ui.values[QUESTION_IDS[LIFESTYLE_PAGE].NUMBER_OF_PETS_TEXT] = parsedValue;
-      state.ui.values.info[pages[4].questions[3].info] = parsedValue;
-      const infoItems = [
-        {
-          key: pages[4].questions[3].info,
-          val: parsedValue
-        }
-      ];
-      addOrUpdateInfo(infoItems);
-      removeError(QUESTION_IDS[LIFESTYLE_PAGE].NUMBER_OF_PETS_TEXT);
-    } else {
-      showError(QUESTION_IDS[LIFESTYLE_PAGE].NUMBER_OF_PETS_TEXT, 'Please enter a number from 0 to 10.');
-    }
-    const financialData = state.calculateFunds();
-    state.data = { ...state.data, financialData };
-    updateHeroes(financialData);
   }
 };
