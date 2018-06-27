@@ -34,8 +34,7 @@ export const QUESTION_IDS = {
   [LIFESTYLE_PAGE]: {
     HOUSING_COSTS_TEXT: 'housingCostsInput',
     NUMBER_OF_CARS_TEXT: 'numberOfCarsInput',
-    NUMBER_OF_DEPENDENTS_TEXT: 'numberOfDependentsInput',
-    NUMBER_OF_PETS_TEXT: 'numberOfPetsInput'
+    NUMBER_OF_DEPENDENTS_TEXT: 'numberOfDependentsInput'
   },
   [LEISURE_PAGE]: {
     NUMBER_OF_VACATIONS_DROPDOWN: 'numberOfVacationsInput',

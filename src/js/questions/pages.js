@@ -152,15 +152,6 @@ const lifestylePage = {
       info: 'Number of Dependents',
       type: 'text',
       changeEvent: changeEvents[QUESTION_IDS[LIFESTYLE_PAGE].NUMBER_OF_DEPENDENTS_TEXT]
-    },
-    {
-      id: QUESTION_IDS[LIFESTYLE_PAGE].NUMBER_OF_PETS_TEXT,
-      label: 'Number of Pets',
-      show: true,
-      placeholder: 'Number of pets',
-      info: 'Number of Pets',
-      type: 'text',
-      changeEvent: changeEvents[QUESTION_IDS[LIFESTYLE_PAGE].NUMBER_OF_PETS_TEXT]
     }
   ]
 };
