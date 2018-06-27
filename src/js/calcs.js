@@ -27,12 +27,13 @@ const createChart = () => {
 
 const getTotalExpenses = (lengthOfVacations, numberOfVacations, dailyCoffee, numOfDependents) => { //, otherExpenses) => {
   const age = state.ui.values.currentAgeInput || DEFAULT_AGE;
+  const rAge = state.ui.values.retirementAgeInput || DEFAULT_RETIREMENT_AGE;
   const inflation = 1.03;
   let coffeePerYear = 1460;
   let vacationCost = 200;
   const numOfDependent = numOfDependents || 1;
   let result = 0;
-  for (let i = 0; i <= DEFAULT_RETIREMENT_AGE - age; i += 1) {
+  for (let i = 0; i <= rAge - age; i += 1) {
     result += vacationCost * numberOfVacations * lengthOfVacations * numOfDependent;
     // result += otherExpenses;
     // otherExpenses *= inflation;
@@ -51,11 +52,12 @@ const calculateCollege = (numOfYears, costPerYear) => numOfYears * costPerYear;
 
 const calculateLifestyle = (housingCosts, transportationCosts) => {
   const age = state.ui.values.currentAgeInput || DEFAULT_AGE;
+  const rAge = state.ui.values.retirementAgeInput || DEFAULT_RETIREMENT_AGE;
   const inflation = 1.03;
   let housingCost = housingCosts || 0;
   let transportationCost = transportationCosts || 0;
   let result = 0;
-  for (let i = 0; i <= DEFAULT_RETIREMENT_AGE - age; i += 1) {
+  for (let i = 0; i <= rAge - age; i += 1) {
     result += housingCost + transportationCost;
     housingCost *= inflation;
     transportationCost *= inflation;
@@ -65,6 +67,7 @@ const calculateLifestyle = (housingCosts, transportationCosts) => {
 
 const calculateFunds = () => {
   const age = state.ui.values.currentAgeInput || DEFAULT_AGE;
+  const rAge = state.ui.values.retirementAgeInput;
   const initialFunds = state.ui.values.networthInput || 0;
   const currentAnnualIncome = state.ui.values.currentAnnualIncomeInput || 0;
   const careerId = state.ui.values.careerInput || '';
@@ -96,7 +99,7 @@ const calculateFunds = () => {
       totalNetworth: initialFunds + netIncome
     }];
 
-  const workingYears = R.takeLast(DEFAULT_RETIREMENT_AGE - age, R.times(R.identity, DEFAULT_RETIREMENT_AGE + 1));
+  const workingYears = R.takeLast(rAge - age, R.times(R.identity, rAge + 1));
 
   const expenses = getTotalExpenses(lengthOfVacations, numOfVacations, dailyCoffee, numOfDependents);
   const educationCost = calculateCollege(numberOfYearsCollege, costOfCollegePerYear);

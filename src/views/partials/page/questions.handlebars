@@ -22,12 +22,12 @@
 							{{subtitle2}}
 					</div>
 					{{/if}} {{#each questions}} {{#compare type "===" "text"}}
-					<div {{#if hasId}} id="{{hasIdVal}}" {{/if}} class="md-text-field with-floating-label" title="{{hoverText}}">
+					<div {{#if hasId}} id="{{hasIdVal}}" {{/if}} class="md-text-field with-floating-label" {{#if initialDisplayNo}}style="display: none;"{{/if}}title="{{hoverText}}">
 						<input type="{{type}}" id="{{id}}" required value="{{value}}" style="font-size: 1.5rem; height: 3rem; width: 24vw;" placeholder=""></input>
 						<label for={{id}}>{{placeholder}}</label>
 					</div>
 					{{/compare}} {{#compare type "===" "select-dropdown"}}
-					<div class="uitk-select md-text-field with-floating-label" style="margin-top: 4rem; width: 24vw" title="{{hoverText}}">
+					<div {{#if hasId}}id = "{{hasIdVal}}"{{/if}}class="uitk-select md-text-field with-floating-label" style="margin-top: 4rem; width: 24vw; {{#if initialDisplayNo}} display: none;{{/if}}" title="{{hoverText}}">
 						<input id="{{id}}" type="text" class="select-input" readonly="true" placeholder="{{placeholder}}" required>
 						<span class="select-arrow"></span>
 						<ul class="select-dropdown">

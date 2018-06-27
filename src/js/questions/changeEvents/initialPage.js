@@ -25,6 +25,8 @@ export default {
       addOrUpdateInfo(infoItems);
       removeError(QUESTION_IDS[INITIAL_PAGE].CURRENT_AGE_TEXT);
     } else {
+      state.ui.values[QUESTION_IDS[INITIAL_PAGE].RETIREMENT_AGE_TEXT] = 18;
+      state.ui.values.info[pages[1].questions[1].info] = `${18} [DEFAULT]`;
       showError(QUESTION_IDS[INITIAL_PAGE].CURRENT_AGE_TEXT, 'Please enter an age from 18 to 130');
     }
 
@@ -56,6 +58,8 @@ export default {
       state.data = { ...state.data, financialData };
       updateHeroes(financialData);
     } else {
+      state.ui.values[QUESTION_IDS[INITIAL_PAGE].RETIREMENT_AGE_TEXT] = 65;
+      state.ui.values.info[pages[1].questions[1].info] = `${65} [DEFAULT]`;
       showError(QUESTION_IDS[INITIAL_PAGE].RETIREMENT_AGE_TEXT, 'Please enter an age greater than your current age and under 130');
     }
   }

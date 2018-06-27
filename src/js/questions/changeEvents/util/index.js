@@ -2,7 +2,8 @@ import $ from 'jquery';
 import { navigateForward, navigateBackward, navigateToAPage } from '../../../navigation';
 
 export const updateHeroes = (financialData) => {
-  const dataAt65 = financialData.find(item => item.age === 65);
+  const retirementAge = state.ui.values.retirementAgeInput || 65;
+  const dataAt65 = financialData.find(item => item.age === retirementAge);
   const netWorthAt65 = dataAt65.totalNetworth - dataAt65.expenses - dataAt65.educationCost - dataAt65.lifestyleCost;
   $('#hero_2 h1').html(`$${Math.round(netWorthAt65).toLocaleString()}`);
   const monthlyIncome = dataAt65.monthly[11].currentMonthlySalary;

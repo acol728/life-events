@@ -8,7 +8,7 @@ const {
 } = CONSTANTS.IDs.PAGE_IDS;
 const { QUESTION_IDS } = CONSTANTS.IDs;
 const {
-  HOUSING_COSTS_DATA, NUMBER_OF_VACATIONS_DATA, LENGTH_OF_VACATIONS_DATA, COFFEE_DATA, INCOME_OR_CAREER_DATA
+  HOUSING_COSTS_DATA, NUMBER_OF_VACATIONS_DATA, LENGTH_OF_VACATIONS_DATA, COFFEE_DATA, INCOME_OR_CAREER_DATA, OCCUPATIONAL_DATA
 } = CONSTANTS;
 
 const welcomePage = {
@@ -110,9 +110,24 @@ const careerPlansPage = {
       placeholder: 'Annual Income',
       type: 'text',
       required: true,
+      initialDisplayNo: true,
       hasId: true,
       hasIdVal: 'annualIncomeText',
       changeEvent: changeEvents[QUESTION_IDS[CAREER_PLANS_PAGE].CURRENT_ANNUAL_INCOME_TEXT]
+    },
+    {
+      id: QUESTION_IDS[CAREER_PLANS_PAGE].CAREER_DROPDOWN,
+      label: 'Career',
+      show: true,
+      initialDisplayNo: true,
+      placeholder: 'Choose a Career...',
+      info: 'Career',
+      type: 'select-dropdown',
+      required: true,
+      hasId: true,
+      hasIdVal: 'careerDropdown',
+      changeEvent: changeEvents[QUESTION_IDS[CAREER_PLANS_PAGE].CAREER_DROPDOWN],
+      values: OCCUPATIONAL_DATA
     }
   ]
 };
