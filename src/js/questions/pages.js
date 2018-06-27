@@ -7,7 +7,8 @@ const {
   WELCOME_PAGE, INITIAL_PAGE, EDUCATION_PAGE, CAREER_PLANS_PAGE, LIFESTYLE_PAGE, LEISURE_PAGE, SUBMIT_PAGE
 } = CONSTANTS.IDs.PAGE_IDS;
 const { QUESTION_IDS } = CONSTANTS.IDs;
-const { HOUSING_COSTS_DATA, NUMBER_OF_VACATIONS_DATA, LENGTH_OF_VACATIONS_DATA, COFFEE_DATA, INCOME_OR_CAREER_DATA
+const {
+  HOUSING_COSTS_DATA, NUMBER_OF_VACATIONS_DATA, LENGTH_OF_VACATIONS_DATA, COFFEE_DATA, INCOME_OR_CAREER_DATA
 } = CONSTANTS;
 
 const welcomePage = {
@@ -149,15 +150,6 @@ const lifestylePage = {
       info: 'Number of Dependents',
       type: 'text',
       changeEvent: changeEvents[QUESTION_IDS[LIFESTYLE_PAGE].NUMBER_OF_DEPENDENTS_TEXT]
-    },
-    {
-      id: QUESTION_IDS[LIFESTYLE_PAGE].NUMBER_OF_PETS_TEXT,
-      label: 'Number of Pets',
-      show: true,
-      placeholder: 'Number of pets',
-      info: 'Number of Pets',
-      type: 'text',
-      changeEvent: changeEvents[QUESTION_IDS[LIFESTYLE_PAGE].NUMBER_OF_PETS_TEXT]
     }
   ]
 };
