@@ -57,7 +57,7 @@ export const addOrUpdateInfo = (i) => {
     if ($(`#info-row-${idKey}`).length) {
       $(`#info-row-${idKey} .val`).html(item.val);
     } else {
-      $('#info-table').append(`<li id="info-row-${idKey}"><span class="key">${item.key}</span><span class="val" style="word-wrap: break-word; color: white; display: block;">${item.val}</span></li>`);
+      $('#info-table').append(`<li id="info-row-${idKey}"><span class="key" style = "color: white;">${item.key}</span><span class="val" style="word-wrap: break-word; color: white; display: block;">${item.val}</span></li>`);
     }
     return item;
   });

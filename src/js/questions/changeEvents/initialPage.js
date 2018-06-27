@@ -58,42 +58,5 @@ export default {
     } else {
       showError(QUESTION_IDS[INITIAL_PAGE].RETIREMENT_AGE_TEXT, 'Please enter an age greater than your current age and under 130');
     }
-  },
-  [QUESTION_IDS[INITIAL_PAGE].NETWORTH_TEXT]: (e) => {
-    const parsedValue = parseInt(e.target.value, 10);
-    const isValid = !Number.isNaN(parsedValue);
-    if (isValid) {
-      state.ui.values[QUESTION_IDS[INITIAL_PAGE].NETWORTH_TEXT] = Number.isNaN(parsedValue) ? 0 : parsedValue;
-
-      const infoItems = [
-        {
-          key: pages[1].questions[2].info,
-          val: parsedValue
-        }
-      ];
-      addOrUpdateInfo(infoItems);
-
-      const financialData = state.calculateFunds();
-      state.data = { ...state.data, financialData };
-      updateHeroes(financialData);
-    } else {
-      state.ui.values[QUESTION_IDS[INITIAL_PAGE].NETWORTH_TEXT] = undefined;
-    }
-  },
-  [QUESTION_IDS[INITIAL_PAGE].CURRENT_ANNUAL_INCOME_TEXT]: (e) => {
-    const value = parseInt(e.target.value, 10);
-    state.ui.values[QUESTION_IDS[INITIAL_PAGE].CURRENT_ANNUAL_INCOME_TEXT] = Number.isNaN(value) ? 0 : value;
-
-    const infoItems = [
-      {
-        key: pages[1].questions[3].info,
-        val: value
-      }
-    ];
-    addOrUpdateInfo(infoItems);
-
-    const financialData = state.calculateFunds();
-    updateHeroes(financialData);
-    state.data = { ...state.data, financialData };
   }
 };

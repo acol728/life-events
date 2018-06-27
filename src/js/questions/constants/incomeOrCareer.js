@@ -1,11 +1,13 @@
 export const INCOME_OR_CAREER_DATA = [
   {
     id: 'income',
-    text: 'Income'
+    text: 'Income',
+    value: true
   },
   {
     id: 'career',
-    text: 'Career'
+    text: 'Career',
+    value: false
   }
 ];
 

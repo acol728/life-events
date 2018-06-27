@@ -20,16 +20,16 @@ export const QUESTION_IDS = {
   [WELCOME_PAGE]: {},
   [INITIAL_PAGE]: {
     CURRENT_AGE_TEXT: 'currentAgeInput',
-    RETIREMENT_AGE_TEXT: 'retirementAgeInput',
-    NETWORTH_TEXT: 'networthInput',
-    CURRENT_ANNUAL_INCOME_TEXT: 'currentAnnualIncomeInput'
+    RETIREMENT_AGE_TEXT: 'retirementAgeInput'
   },
   [EDUCATION_PAGE]: {
     YEARS_ENROLLED_TEXT: 'yearsEnrolledInput',
     TUITION_COST_TEXT: 'tuitionCostInput'
   },
   [CAREER_PLANS_PAGE]: {
-    INCOME_OR_CAREER_RADIO: 'incomeOrCareerInput'
+    NETWORTH_TEXT: 'networthInput',
+    INCOME_OR_CAREER_RADIO: 'incomeOrCareerInput',
+    CURRENT_ANNUAL_INCOME_TEXT: 'currentAnnualIncomeInput'
   },
   [LIFESTYLE_PAGE]: {
     HOUSING_COSTS_TEXT: 'housingCostsInput',
