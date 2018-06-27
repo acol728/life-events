@@ -4,7 +4,7 @@ import { setInputEvents, selectInputClickEvent } from './helpers';
 import changeEvents from './changeEvents';
 
 const {
-  WELCOME_PAGE, INITIAL_PAGE, EDUCATION_PAGE, CAREER_PLANS_PAGE, LIFESTYLE_PAGE, LEISURE_PAGE, SUBMIT_PAGE
+  WELCOME_PAGE, INITIAL_PAGE, EDUCATION_PAGE, CAREER_PLANS_PAGE, LIFESTYLE_PAGE, LEISURE_PAGE
 } = CONSTANTS.IDs.PAGE_IDS;
 const { QUESTION_IDS } = CONSTANTS.IDs;
 const {
@@ -208,26 +208,13 @@ const leisurePage = {
   ]
 };
 
-const submitPage = {
-  id: SUBMIT_PAGE,
-  nav: 'Submit',
-  icon: 'icon-util-down-alt',
-  title: 'View your results...',
-  show: false,
-  type: 'table',
-  amount1: '',
-  amount2: '',
-  amount3: ''
-};
-
 const pages = [
   welcomePage,
   initialInfoPage,
   educationPage,
   careerPlansPage,
   lifestylePage,
-  leisurePage,
-  submitPage
+  leisurePage
 ];
 
 export { setInputEvents, selectInputClickEvent };
