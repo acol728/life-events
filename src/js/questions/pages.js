@@ -203,13 +203,13 @@ const leisurePage = {
       values: LENGTH_OF_VACATIONS_DATA
     },
     {
-      id: QUESTION_IDS[LEISURE_PAGE].SUBSCRIPTION_DROPDOWN,
+      id: QUESTION_IDS[LEISURE_PAGE].SUBSCRIPTION_SLIDER,
       label: 'Amount paid to entertainment each month (TV, media subscriptions, nights out, etc.)',
       show: true,
       placeholder: 'Choose amount',
       info: 'subscriptions',
       type: 'slider-bar',
-      changeEvent: changeEvents[QUESTION_IDS[LEISURE_PAGE].SUBSCRIPTION_DROPDOWN]
+      changeEvent: changeEvents[QUESTION_IDS[LEISURE_PAGE].SUBSCRIPTION_SLIDER]
     },
     {
       id: QUESTION_IDS[LEISURE_PAGE].COFFEE_RADIO,
