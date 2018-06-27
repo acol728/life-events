@@ -29,7 +29,8 @@ export const QUESTION_IDS = {
   [CAREER_PLANS_PAGE]: {
     NETWORTH_TEXT: 'networthInput',
     INCOME_OR_CAREER_RADIO: 'incomeOrCareerInput',
-    CURRENT_ANNUAL_INCOME_TEXT: 'currentAnnualIncomeInput'
+    CURRENT_ANNUAL_INCOME_TEXT: 'currentAnnualIncomeInput',
+    CAREER_DROPDOWN: 'careerInput'
   },
   [LIFESTYLE_PAGE]: {
     HOUSING_COSTS_TEXT: 'housingCostsInput',
