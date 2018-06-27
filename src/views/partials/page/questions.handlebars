@@ -22,7 +22,7 @@
 							{{subtitle2}}
 					</div>
 					{{/if}} {{#each questions}} {{#compare type "===" "text"}}
-					<div class="md-text-field with-floating-label" title="{{hoverText}}">
+					<div {{#if hasId}} id="{{hasIdVal}}" {{/if}} class="md-text-field with-floating-label" title="{{hoverText}}">
 						<input type="{{type}}" id="{{id}}" required value="{{value}}" style="font-size: 1.5rem; height: 3rem; width: 24vw;" placeholder=""></input>
 						<label for={{id}}>{{placeholder}}</label>
 					</div>

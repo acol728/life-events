@@ -30,6 +30,7 @@ function drowdownClickHandler () {
 $('#myRange').change((e) => {
   const output = document.getElementById('sliderOutput');
   output.innerHTML = `$${e.currentTarget.value}`;
+  // Search here
 });
 
 // Open dropdown when input clicked

@@ -31,6 +31,7 @@ export default {
     updateHeroes(financialData);
   },
   [QUESTION_IDS[LEISURE_PAGE].SUBSCRIPTION_DROPDOWN]: (subId) => {
+    console.log(subId);
     const index = SUBSCRIPTION_DATA.findIndex(element => element.id === subId);
     const subscriptionAmount = SUBSCRIPTION_DATA[index].value;
 

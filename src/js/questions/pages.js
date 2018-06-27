@@ -44,13 +44,6 @@ const initialInfoPage = {
       icon2: 'success',
       required: true,
       changeEvent: changeEvents[QUESTION_IDS[INITIAL_PAGE].RETIREMENT_AGE_TEXT]
-    },
-    {
-      id: QUESTION_IDS[INITIAL_PAGE].CURRENT_ANNUAL_INCOME_TEXT,
-      placeholder: 'Annual Income',
-      type: 'text',
-      required: true,
-      changeEvent: changeEvents[QUESTION_IDS[INITIAL_PAGE].CURRENT_ANNUAL_INCOME_TEXT]
     }
   ]
 };
@@ -96,21 +89,30 @@ const careerPlansPage = {
   required: true,
   questions: [
     {
-      id: QUESTION_IDS[INITIAL_PAGE].NETWORTH_TEXT,
+      id: QUESTION_IDS[CAREER_PLANS_PAGE].NETWORTH_TEXT,
       placeholder: 'Current Networth',
       info: 'Initial Net Worth',
       type: 'text',
       required: true,
-      changeEvent: changeEvents[QUESTION_IDS[INITIAL_PAGE].NETWORTH_TEXT]
+      changeEvent: changeEvents[QUESTION_IDS[CAREER_PLANS_PAGE].NETWORTH_TEXT]
     },
     {
-      id: 'selectIncome',
+      id: QUESTION_IDS[CAREER_PLANS_PAGE].INCOME_OR_CAREER_RADIO,
       label: 'Would you like to enter an annual income, or select a prospective career?',
       show: true,
       info: 'Income Type Selection',
       type: 'radio',
       changeEvent: changeEvents[QUESTION_IDS[CAREER_PLANS_PAGE].INCOME_OR_CAREER],
       values: INCOME_OR_CAREER_DATA
+    },
+    {
+      id: QUESTION_IDS[CAREER_PLANS_PAGE].CURRENT_ANNUAL_INCOME_TEXT,
+      placeholder: 'Annual Income',
+      type: 'text',
+      required: true,
+      hasId: true,
+      hasIdVal: 'annualIncomeText',
+      changeEvent: changeEvents[QUESTION_IDS[CAREER_PLANS_PAGE].CURRENT_ANNUAL_INCOME_TEXT]
     }
   ]
 };
