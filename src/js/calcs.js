@@ -35,8 +35,6 @@ const getTotalExpenses = (lengthOfVacations, numberOfVacations, dailyCoffee, num
   let result = 0;
   for (let i = 0; i <= rAge - age; i += 1) {
     result += vacationCost * numberOfVacations * lengthOfVacations * numOfDependent;
-    // result += otherExpenses;
-    // otherExpenses *= inflation;
     vacationCost *= inflation;
     if (dailyCoffee) {
       result += coffeePerYear;
@@ -70,9 +68,7 @@ const calculateLifestyle = (housingCosts, transportationCosts, leisureCosts) => 
 
 const calculateFunds = () => {
   const age = state.ui.values.currentAgeInput || DEFAULT_AGE;
-  // Added in a default retirment age of 65
-  // Feel free to change this, or to make it more dynamic by using a constant variable instead of "65"
-  const rAge = state.ui.values.retirementAgeInput || 65;
+  const rAge = state.ui.values.retirementAgeInput || DEFAULT_RETIREMENT_AGE;
   const initialFunds = state.ui.values.networthInput || 0;
   const currentAnnualIncome = state.ui.values.currentAnnualIncomeInput || 0;
   const careerId = state.ui.values.careerInput || '';

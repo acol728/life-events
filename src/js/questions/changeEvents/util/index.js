@@ -15,7 +15,7 @@ export const updateHeroes = (financialData) => {
     deathAge = retirementAge + 15;
   }
   console.log(deathAge);
-  const monthlyRetirementAllowance = (netWorthAt65 / deathAge) / 12;
+  const monthlyRetirementAllowance = (netWorthAt65 / (deathAge - retirementAge)) / 12;
   $('#hero_3 h1').html(`$${Math.round(monthlyRetirementAllowance).toLocaleString()}`);
 };
 
