@@ -40,7 +40,7 @@ export const QUESTION_IDS = {
   [LEISURE_PAGE]: {
     NUMBER_OF_VACATIONS_DROPDOWN: 'numberOfVacationsInput',
     LENGTH_OF_VACATIONS_DROPDOWN: 'lengthOfVacationsInput',
-    SUBSCRIPTION_DROPDOWN: 'subscriptionInput',
+    SUBSCRIPTION_SLIDER: 'subscriptionSlider',
     COFFEE_RADIO: 'coffeeInput'
   },
   [SUBMIT_PAGE]: {}

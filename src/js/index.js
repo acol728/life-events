@@ -2,7 +2,12 @@ import $ from 'jquery';
 import '../styles/entry.scss';
 import globals, { setInputEvents, selectInputClickEvent } from './globals';
 import { navigateForward, navigateBackward, navigateToAPage } from './navigation';
+import { updateHeroes } from './questions/changeEvents/util';
 import calcs from './calcs';
+import CONSTANTS from './questions/constants';
+
+const { PAGE_IDS, QUESTION_IDS } = CONSTANTS.IDs;
+const { LEISURE_PAGE } = PAGE_IDS;
 
 $(document).ready(() => {
   // Stub to create chart. Not used initially. Feel free to create using D3!
@@ -30,7 +35,10 @@ function drowdownClickHandler () {
 $('#myRange').change((e) => {
   const output = document.getElementById('sliderOutput');
   output.innerHTML = `$${e.currentTarget.value}`;
-  // Search here
+  state.ui.values[QUESTION_IDS[LEISURE_PAGE].SUBSCRIPTION_SLIDER] = e.currentTarget.value;
+  const financialData = state.calculateFunds();
+  state.data = { ...state.data, financialData };
+  updateHeroes(financialData);
 });
 
 // Open dropdown when input clicked
