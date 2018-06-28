@@ -53,7 +53,7 @@ const calculateCollege = (numOfYears, costPerYear) => numOfYears * costPerYear;
 const calculateLifestyle = (housingCosts, transportationCosts, leisureCosts) => {
   const age = state.ui.values.currentAgeInput || DEFAULT_AGE;
   const rAge = state.ui.values.retirementAgeInput || DEFAULT_RETIREMENT_AGE;
-  const inflation = 1.03;
+  const inflation = 1.02;
   let housingCost = housingCosts || 0;
   let transportationCost = transportationCosts || 0;
   let leisureCost = leisureCosts || 0;
@@ -64,7 +64,6 @@ const calculateLifestyle = (housingCosts, transportationCosts, leisureCosts) => 
     transportationCost *= inflation;
     leisureCost *= inflation;
   }
-  console.log('result in calculateLifestyle: ', result);
 
   return result;
 };

@@ -1,7 +1,7 @@
 export const HEROES_DATA = [
   {
     id: 'hero_1',
-    title: 'Monthly Net-Income At 65',
+    title: 'Monthly Net-Income At Retirement',
     defaultValue: '$0'
   },
   {
