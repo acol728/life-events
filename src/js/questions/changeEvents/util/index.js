@@ -8,7 +8,14 @@ export const updateHeroes = (financialData) => {
   $('#hero_2 h1').html(`$${Math.round(netWorthAt65).toLocaleString()}`);
   const monthlyIncome = dataAt65.monthly[11].currentMonthlySalary;
   $('#hero_1 h1').html(`$${Math.round(monthlyIncome).toLocaleString()}`);
-  const monthlyRetirementAllowance = (netWorthAt65 / 15) / 12;
+  let deathAge = 80;
+  if (retirementAge <= 65) {
+    deathAge = 80;
+  } else {
+    deathAge = retirementAge + 15;
+  }
+  console.log(deathAge);
+  const monthlyRetirementAllowance = (netWorthAt65 / deathAge) / 12;
   $('#hero_3 h1').html(`$${Math.round(monthlyRetirementAllowance).toLocaleString()}`);
 };
 
